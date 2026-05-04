@@ -22,53 +22,98 @@ def extract_fee_rate(text_block: str):
     信託報酬年率（税込）を抽出する。
 
     優先順位:
-    1. 「現在は、年率X%」 = 最も具体的な現在値
-    2. 委託会社＋販売会社＋受託会社の内訳税抜合計 × 1.1
-    3. 「合計 X%」（税込）
-    4. 「X%（税込）」
-    5. 「年率X%」最初の数値（上限値誤抽出リスクあり、最後の手段）
-
-    上限・超えないなどの表現の直後に出てくる数値は除外する。
+    1. 「現在は、年率X%」= 最も具体的な現在値
+    2. 「純資産総額に年X%（税抜/税込）」= 野村・SMBCなどの標準表現
+    3. 「年率X%（税抜/税込）」= 明示的な税込/税抜表記付き
+    4. 委託会社＋販売会社＋受託会社の内訳税抜合計 × 1.1
+    5. 「合計 X%（税込）」
+    6. 「X%（税込）」
+    7. 「年率X%」上限値でないもの
     """
     text = text_block.strip('"').replace("　", " ")
 
-    # 上限言及部分をマスク（「超えない」「以下」「以内」直前の率表記は除外）
-    # → 上限値の除外は、代わりに優先パターンを先に試すことで対処
-
-    # 1. 現在の実値: 「現在は、年率X%」または「現在 年率X%」
+    # 1a. 現在の実値（%表記）
     m = re.search(r'現在[はは]?[、,\s]*年率\s*(\d+\.?\d+)\s*[%％]', text)
     if m:
         v = float(m.group(1))
         if 0.0 < v < 3.0:
             return round(v, 4)
 
-    # 2. 内訳の税抜合計 (委託会社 + 販売会社 + 受託会社)
+    # 1b. 現在の実値（10,000分の表記）例: 「現在は、年率10,000分の13.2」
+    m = re.search(r'現在[はは]?[、,\s]*年率\s*(?:10[,，]?000分の|万分の)\s*(\d+\.?\d+)', text)
+    if m:
+        v = float(m.group(1)) / 100
+        if 0.0 < v < 3.0:
+            return round(v, 4)
+
+    # 1c. 「年率10,000分のX（税抜10,000分のY）」形式（ETF等）
+    m = re.search(r'年率\s*(?:10[,，]?000分の|万分の)\s*(\d+\.?\d+)\s*[（(]税抜', text)
+    if m:
+        v = float(m.group(1)) / 100
+        if 0.0 < v < 3.0:
+            return round(v, 4)
+
+    # 2. 「純資産総額に年X%（税抜年Y%）」- 野村つみたて等の形式
+    #    税込が先に来る: 「年0.209％（税抜年0.19％）」
+    m = re.search(r'純資産総額に年\s*(\d+\.?\d+)\s*[%％]', text)
+    if m:
+        v = float(m.group(1))
+        if 0.0 < v < 3.0:
+            return round(v, 4)
+
+    # 3a. 「年率X%（税込）」
+    for m in re.finditer(r'年率\s*(\d+\.?\d+)\s*[%％][（(]税込[）)]', text):
+        v = float(m.group(1))
+        if 0.0 < v < 3.0:
+            return round(v, 4)
+
+    # 3b. 「年X%（税抜年Y%）」- 税込Xを取得
+    m = re.search(r'年\s*(\d+\.?\d+)\s*[%％]\s*[（(]税抜', text)
+    if m:
+        v = float(m.group(1))
+        if 0.0 < v < 3.0:
+            return round(v, 4)
+
+    # 3c. 「年率X%（税抜Y%）」- 税込Xを取得
+    m = re.search(r'年率\s*(\d+\.?\d+)\s*[%％]\s*[（(]税抜', text)
+    if m:
+        v = float(m.group(1))
+        if 0.0 < v < 3.0:
+            return round(v, 4)
+
+    # 3d. 「X%（税抜Y%）」形式: 税込Xが直前、税抜Yが括弧内 (ひふみ等)
+    # パターン: 数値%（数値% の形で税込→税抜の順に並ぶ
+    m = re.search(r'(\d+\.\d{2,4})\s*[%％]\s*[（(]\s*\d+\.\d+\s*[%％][）)]', text)
+    if m:
+        v = float(m.group(1))
+        if 0.3 < v < 3.0:
+            return round(v, 4)
+
+    # 4. 内訳の税抜合計 (委託会社 + 販売会社 + 受託会社)
     breakdown_rates = re.findall(
-        r'(?:委託会社|販売会社|受託会社|委 託 会 社|販 売 会 社|受 託 会 社)[^\d]{0,10}(\d+\.?\d+)\s*[%％]',
+        r'(?:委託会社|販売会社|受託会社|委 託 会 社|販 売 会 社|受 託 会 社)[^\d]{0,15}(\d+\.?\d+)\s*[%％]',
         text
     )
     if len(breakdown_rates) >= 2:
         total_taxex = sum(float(r) for r in breakdown_rates if float(r) < 3.0)
         if 0.0 < total_taxex < 3.0:
-            return round(total_taxex * 1.1, 4)  # 税抜 → 税込
+            return round(total_taxex * 1.1, 4)
 
-    # 3. 合計X%（税込）
+    # 5. 合計X%（税込）
     m = re.search(r'合計\s*(\d+\.?\d+)\s*[%％][^超以]*(?:税込|込み)', text)
     if m:
         v = float(m.group(1))
         if 0.0 < v < 3.0:
             return round(v, 4)
 
-    # 4. X%（税込）
+    # 6. X%（税込）
     for m in re.finditer(r'(\d+\.?\d+)\s*[%％][（(]税込[）)]', text):
         v = float(m.group(1))
         if 0.0 < v < 3.0:
             return round(v, 4)
 
-    # 5. フォールバック：「年率X%」最初の小さい値
-    # ただし「超えない/以下/以内」「上限」直前の値はスキップ
+    # 7. フォールバック：「年率X%」上限値を除く
     for m in re.finditer(r'年率\s*(\d+\.?\d+)\s*[%％]', text):
-        # その直後に「超えない/以下/以内」がある場合はスキップ
         after = text[m.end():m.end()+12]
         if re.search(r'超えな|以[下内]|未満', after):
             continue
