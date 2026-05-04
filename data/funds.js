@@ -1,0 +1,2837 @@
+// 金融庁 つみたて投資枠対象商品届出一覧
+// 出典: 金融庁 つみたて投資枠対象商品届出一覧（対象資産別）
+// URL: https://www.fsa.go.jp/policy/nisa2/products/
+// 公開日: 2026-04-30
+// ライセンス: 公共データ利用規約 PDL1.0（CC BY 4.0互換）
+//
+// つみたて投資枠の対象は法令で手数料上限が定められています：
+//   国内型インデックス：信託報酬 0.5%以下
+//   海外型インデックス：信託報酬 0.75%以下
+//   国内型アクティブ：信託報酬 1.0%以下
+//   海外型アクティブ：信託報酬 1.5%以下
+//   ETF：信託報酬 0.25%以下
+
+const fundDatabase = [
+  {
+    "name": "SBI・iシェアーズ・TOPIXインデックス・ファンド",
+    "company": "SBIアセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "国内型",
+    "index": "TOPIX",
+    "fundType": "index"
+  },
+  {
+    "name": "たわらノーロード TOPIX",
+    "company": "アセットマネジメントOne株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "国内型",
+    "index": "TOPIX",
+    "fundType": "index"
+  },
+  {
+    "name": "インデックスファンドTOPIX（日本株式）",
+    "company": "アモーヴァ・アセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "国内型",
+    "index": "TOPIX",
+    "fundType": "index"
+  },
+  {
+    "name": "インデックスポートフォリオ",
+    "company": "アモーヴァ・アセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "国内型",
+    "index": "TOPIX",
+    "fundType": "index"
+  },
+  {
+    "name": "ステート・ストリートTOPIXインデックス・オープン",
+    "company": "ステート・ストリート・グローバル・アドバイザーズ株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "国内型",
+    "index": "TOPIX",
+    "fundType": "index"
+  },
+  {
+    "name": "ｉＦｒｅｅ TOPIXインデックス",
+    "company": "大和アセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "国内型",
+    "index": "TOPIX",
+    "fundType": "index"
+  },
+  {
+    "name": "東京海上セレクション・日本株TOPIX",
+    "company": "東京海上アセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "国内型",
+    "index": "TOPIX",
+    "fundType": "index"
+  },
+  {
+    "name": "ニッセイTOPIXインデックスファンド＜購入・換金手数料なし＞",
+    "company": "ニッセイアセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "国内型",
+    "index": "TOPIX",
+    "fundType": "index"
+  },
+  {
+    "name": "ニッセイTOPIXオープン",
+    "company": "ニッセイアセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "国内型",
+    "index": "TOPIX",
+    "fundType": "index"
+  },
+  {
+    "name": "野村インデックスファンド・TOPIX",
+    "company": "野村アセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "国内型",
+    "index": "TOPIX",
+    "fundType": "index"
+  },
+  {
+    "name": "はじめてのNISA・日本株式インデックス（TOPIX）",
+    "company": "野村アセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "国内型",
+    "index": "TOPIX",
+    "fundType": "index"
+  },
+  {
+    "name": "三井住友・DCつみたてNISA・日本株インデックスファンド",
+    "company": "三井住友DSアセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "国内型",
+    "index": "TOPIX",
+    "fundType": "index"
+  },
+  {
+    "name": "My SMT TOPIXインデックス（ノーロード）",
+    "company": "三井住友トラスト・アセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "国内型",
+    "index": "TOPIX",
+    "fundType": "index"
+  },
+  {
+    "name": "SMT TOPIXインデックス・オープン",
+    "company": "三井住友トラスト・アセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "国内型",
+    "index": "TOPIX",
+    "fundType": "index"
+  },
+  {
+    "name": "eMAXIS Slim 国内株式（TOPIX）",
+    "company": "三菱ＵＦＪアセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "国内型",
+    "index": "TOPIX",
+    "fundType": "index"
+  },
+  {
+    "name": "eMAXIS TOPIXインデックス",
+    "company": "三菱ＵＦＪアセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "国内型",
+    "index": "TOPIX",
+    "fundType": "index"
+  },
+  {
+    "name": "つみたて日本株式（TOPIX）",
+    "company": "三菱ＵＦＪアセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "国内型",
+    "index": "TOPIX",
+    "fundType": "index"
+  },
+  {
+    "name": "明治安田DC・TOPIXインデックスファンド",
+    "company": "明治安田アセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "国内型",
+    "index": "TOPIX",
+    "fundType": "index"
+  },
+  {
+    "name": "Smart-i TOPIXインデックス",
+    "company": "りそなアセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "国内型",
+    "index": "TOPIX",
+    "fundType": "index"
+  },
+  {
+    "name": "インデックスオープン・日経２２５",
+    "company": "アセットマネジメントOne株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "国内型",
+    "index": "日経平均株価",
+    "fundType": "index"
+  },
+  {
+    "name": "SBI・iシェアーズ・日経225インデックス・ファンド",
+    "company": "SBIアセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "国内型",
+    "index": "日経平均株価",
+    "fundType": "index"
+  },
+  {
+    "name": "ALAMCO 日経平均ファンド",
+    "company": "朝日ライフ アセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "国内型",
+    "index": "日経平均株価",
+    "fundType": "index"
+  },
+  {
+    "name": "たわらノーロード 日経225",
+    "company": "アセットマネジメントOne株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "国内型",
+    "index": "日経平均株価",
+    "fundType": "index"
+  },
+  {
+    "name": "インデックスファンド２２５（日本株式）",
+    "company": "アモーヴァ・アセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "国内型",
+    "index": "日経平均株価",
+    "fundType": "index"
+  },
+  {
+    "name": "しんきんノーロード日経225",
+    "company": "しんきんアセットマネジメント投信株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "国内型",
+    "index": "日経平均株価",
+    "fundType": "index"
+  },
+  {
+    "name": "ｉＦｒｅｅ 日経225インデックス",
+    "company": "大和アセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "国内型",
+    "index": "日経平均株価",
+    "fundType": "index"
+  },
+  {
+    "name": "つみたて日経225インデックスファンド",
+    "company": "中銀アセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "国内型",
+    "index": "日経平均株価",
+    "fundType": "index"
+  },
+  {
+    "name": "東京海上・日経225インデックスファンド",
+    "company": "東京海上アセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "国内型",
+    "index": "日経平均株価",
+    "fundType": "index"
+  },
+  {
+    "name": "ニッセイ日経平均インデックスファンド＜購入・換金手数料なし＞",
+    "company": "ニッセイアセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "国内型",
+    "index": "日経平均株価",
+    "fundType": "index"
+  },
+  {
+    "name": "ニッセイ日経225インデックスファンド",
+    "company": "ニッセイアセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "国内型",
+    "index": "日経平均株価",
+    "fundType": "index"
+  },
+  {
+    "name": "農林中金＜パートナーズ＞つみたて日本株式 日経225",
+    "company": "農林中金全共連アセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "国内型",
+    "index": "日経平均株価",
+    "fundType": "index"
+  },
+  {
+    "name": "JAバンクよりそいノーロード日本株式 日経225",
+    "company": "農林中金全共連アセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "国内型",
+    "index": "日経平均株価",
+    "fundType": "index"
+  },
+  {
+    "name": "NZAM・ベータ　日経225",
+    "company": "農林中金全共連アセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "国内型",
+    "index": "日経平均株価",
+    "fundType": "index"
+  },
+  {
+    "name": "野村インデックスファンド・日経225",
+    "company": "野村アセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "国内型",
+    "index": "日経平均株価",
+    "fundType": "index"
+  },
+  {
+    "name": "野村つみたて日本株投信",
+    "company": "野村アセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "国内型",
+    "index": "日経平均株価",
+    "fundType": "index"
+  },
+  {
+    "name": "はじめてのNISA・日本株式インデックス（日経225）",
+    "company": "野村アセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "国内型",
+    "index": "日経平均株価",
+    "fundType": "index"
+  },
+  {
+    "name": "SMBC・DCインデックスファンド（日経225）",
+    "company": "三井住友DSアセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "国内型",
+    "index": "日経平均株価",
+    "fundType": "index"
+  },
+  {
+    "name": "My SMT 日経 225 インデックス（ノーロード）",
+    "company": "三井住友トラスト・アセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "国内型",
+    "index": "日経平均株価",
+    "fundType": "index"
+  },
+  {
+    "name": "SMT 日経225インデックス・オープン",
+    "company": "三井住友トラスト・アセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "国内型",
+    "index": "日経平均株価",
+    "fundType": "index"
+  },
+  {
+    "name": "eMAXIS Slim 国内株式（日経平均）",
+    "company": "三菱ＵＦＪアセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "国内型",
+    "index": "日経平均株価",
+    "fundType": "index"
+  },
+  {
+    "name": "eMAXIS 日経225インデックス",
+    "company": "三菱ＵＦＪアセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "国内型",
+    "index": "日経平均株価",
+    "fundType": "index"
+  },
+  {
+    "name": "つみたて日本株式（日経平均）",
+    "company": "三菱ＵＦＪアセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "国内型",
+    "index": "日経平均株価",
+    "fundType": "index"
+  },
+  {
+    "name": "楽天・プラス・日経225インデックス・ファンド",
+    "company": "楽天投信投資顧問株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "国内型",
+    "index": "日経平均株価",
+    "fundType": "index"
+  },
+  {
+    "name": "Smart-i 日経225インデックス",
+    "company": "りそなアセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "国内型",
+    "index": "日経平均株価",
+    "fundType": "index"
+  },
+  {
+    "name": "ｉＦｒｅｅ JPX日経400インデックス",
+    "company": "大和アセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "国内型",
+    "index": "JPX日経インデックス400",
+    "fundType": "index"
+  },
+  {
+    "name": "ニッセイJPX日経400インデックスファンド＜購入・換金手数料なし＞",
+    "company": "ニッセイアセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "国内型",
+    "index": "JPX日経インデックス400",
+    "fundType": "index"
+  },
+  {
+    "name": "野村インデックスファンド・JPX日経400",
+    "company": "野村アセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "国内型",
+    "index": "JPX日経インデックス400",
+    "fundType": "index"
+  },
+  {
+    "name": "SMT JPX日経インデックス400・オープン",
+    "company": "三井住友トラスト・アセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "国内型",
+    "index": "JPX日経インデックス400",
+    "fundType": "index"
+  },
+  {
+    "name": "eMAXIS JPX日経400インデックス",
+    "company": "三菱ＵＦＪアセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "国内型",
+    "index": "JPX日経インデックス400",
+    "fundType": "index"
+  },
+  {
+    "name": "SBI読売333インデックス・ファンド※5",
+    "company": "SBIアセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "国内型",
+    "index": "読売株価指数",
+    "fundType": "index"
+  },
+  {
+    "name": "たわらノーロード　読売333※5",
+    "company": "アセットマネジメントOne株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "国内型",
+    "index": "読売株価指数",
+    "fundType": "index"
+  },
+  {
+    "name": "eMAXIS Slim 国内株式（読売333） ※5",
+    "company": "三菱UFJアセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "国内型",
+    "index": "読売株価指数",
+    "fundType": "index"
+  },
+  {
+    "name": "マネーフォワード全世界株式インデックスファンド",
+    "company": "株式会社sustenキャピタル・マネジメント",
+    "category": "単一指数 （株式型）",
+    "region": "海外型",
+    "index": "MSCI ACWI Index",
+    "fundType": "index"
+  },
+  {
+    "name": "インデックスオープン・世界株式",
+    "company": "アセットマネジメントOne株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "海外型",
+    "index": "MSCI ACWI Index",
+    "fundType": "index"
+  },
+  {
+    "name": "たわらノーロード 全世界株式",
+    "company": "アセットマネジメントOne株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "海外型",
+    "index": "MSCI ACWI Index",
+    "fundType": "index"
+  },
+  {
+    "name": "Tracers MSCI オール・カントリー・インデックス（全世界株式）",
+    "company": "アモーヴァ・アセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "海外型",
+    "index": "MSCI ACWI Index",
+    "fundType": "index"
+  },
+  {
+    "name": "ステート・ストリート全世界株式インデックス・オープン",
+    "company": "ステート・ストリート・グローバル・アドバイザーズ株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "海外型",
+    "index": "MSCI ACWI Index",
+    "fundType": "index"
+  },
+  {
+    "name": "全世界株式インデックス・ファンド",
+    "company": "ステート・ストリート・グローバル・アドバイザーズ株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "海外型",
+    "index": "MSCI ACWI Index",
+    "fundType": "index"
+  },
+  {
+    "name": "ｉＦｒｅｅ 全世界株式インデックス（オール・カントリー）",
+    "company": "大和アセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "海外型",
+    "index": "MSCI ACWI Index",
+    "fundType": "index"
+  },
+  {
+    "name": "全世界株式インデックス・ファンド（オール・カントリー）",
+    "company": "大和アセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "海外型",
+    "index": "MSCI ACWI Index",
+    "fundType": "index"
+  },
+  {
+    "name": "JAバンクよりそいノーロード全世界株式",
+    "company": "農林中金全共連アセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "海外型",
+    "index": "MSCI ACWI Index",
+    "fundType": "index"
+  },
+  {
+    "name": "野村つみたて外国株投信",
+    "company": "野村アセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "海外型",
+    "index": "MSCI ACWI Index",
+    "fundType": "index"
+  },
+  {
+    "name": "はじめてのNISA・全世界株式インデックス（オール・カントリー）",
+    "company": "野村アセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "海外型",
+    "index": "MSCI ACWI Index",
+    "fundType": "index"
+  },
+  {
+    "name": "三井住友・DCつみたてNISA・全海外株インデックスファンド",
+    "company": "三井住友DSアセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "海外型",
+    "index": "MSCI ACWI Index",
+    "fundType": "index"
+  },
+  {
+    "name": "eMAXIS Slim 全世界株式（除く日本）",
+    "company": "三菱ＵＦＪアセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "海外型",
+    "index": "MSCI ACWI Index",
+    "fundType": "index"
+  },
+  {
+    "name": "eMAXIS Slim 全世界株式（オール・カントリー）",
+    "company": "三菱ＵＦＪアセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "海外型",
+    "index": "MSCI ACWI Index",
+    "fundType": "index"
+  },
+  {
+    "name": "eMAXIS 全世界株式インデックス（除く日本）",
+    "company": "三菱ＵＦＪアセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "海外型",
+    "index": "MSCI ACWI Index",
+    "fundType": "index"
+  },
+  {
+    "name": "つみたて全世界株式",
+    "company": "三菱ＵＦＪアセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "海外型",
+    "index": "MSCI ACWI Index",
+    "fundType": "index"
+  },
+  {
+    "name": "楽天・オールカントリー株式（除く日本）インデックス・ファンド",
+    "company": "楽天投信投資顧問株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "海外型",
+    "index": "MSCI ACWI Index",
+    "fundType": "index"
+  },
+  {
+    "name": "楽天・プラス・オールカントリー株式インデックス・ファンド",
+    "company": "楽天投信投資顧問株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "海外型",
+    "index": "MSCI ACWI Index",
+    "fundType": "index"
+  },
+  {
+    "name": "Smart-i Select 全世界株式インデックス",
+    "company": "りそなアセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "海外型",
+    "index": "MSCI ACWI Index",
+    "fundType": "index"
+  },
+  {
+    "name": "Smart-i Select 全世界株式インデックス（除く日本）",
+    "company": "りそなアセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "海外型",
+    "index": "MSCI ACWI Index",
+    "fundType": "index"
+  },
+  {
+    "name": "SBI・全世界株式インデックス・ファンド",
+    "company": "SBIアセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "海外型",
+    "index": "FTSE Global All Cap Index",
+    "fundType": "index"
+  },
+  {
+    "name": "SBI・V・全世界株式インデックス・ファンド",
+    "company": "SBIアセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "海外型",
+    "index": "FTSE Global All Cap Index",
+    "fundType": "index"
+  },
+  {
+    "name": "楽天・全世界株式インデックス・ファンド",
+    "company": "楽天投信投資顧問株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "海外型",
+    "index": "FTSE Global All Cap Index",
+    "fundType": "index"
+  },
+  {
+    "name": "楽天・全世界株式（除く米国）インデックス・ファンド",
+    "company": "楽天投信投資顧問株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "海外型",
+    "index": "FTSE Global All Cap Index",
+    "fundType": "index"
+  },
+  {
+    "name": "インデックスオープン・先進国株式",
+    "company": "アセットマネジメントOne株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "海外型",
+    "index": "MSCI World Index\n（MSCIコクサイ・インデックス）",
+    "fundType": "index"
+  },
+  {
+    "name": "たわらノーロード 先進国株式",
+    "company": "アセットマネジメントOne株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "海外型",
+    "index": "MSCI World Index\n（MSCIコクサイ・インデックス）",
+    "fundType": "index"
+  },
+  {
+    "name": "たわらノーロード 先進国株式＜為替ヘッジあり＞",
+    "company": "アセットマネジメントOne株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "海外型",
+    "index": "MSCI World Index\n（MSCIコクサイ・インデックス）",
+    "fundType": "index"
+  },
+  {
+    "name": "インデックスファンド海外株式（ヘッジあり）",
+    "company": "アモーヴァ・アセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "海外型",
+    "index": "MSCI World Index\n（MSCIコクサイ・インデックス）",
+    "fundType": "index"
+  },
+  {
+    "name": "インデックスファンド海外株式（ヘッジなし）",
+    "company": "アモーヴァ・アセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "海外型",
+    "index": "MSCI World Index\n（MSCIコクサイ・インデックス）",
+    "fundType": "index"
+  },
+  {
+    "name": "ステート・ストリート・グローバル株式インデックス・オープン",
+    "company": "ステート・ストリート・グローバル・アドバイザーズ株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "海外型",
+    "index": "MSCI World Index\n（MSCIコクサイ・インデックス）",
+    "fundType": "index"
+  },
+  {
+    "name": "ｉＦｒｅｅ 外国株式インデックス（為替ヘッジあり）",
+    "company": "大和アセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "海外型",
+    "index": "MSCI World Index\n（MSCIコクサイ・インデックス）",
+    "fundType": "index"
+  },
+  {
+    "name": "ｉＦｒｅｅ 外国株式インデックス（為替ヘッジなし）",
+    "company": "大和アセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "海外型",
+    "index": "MSCI World Index\n（MSCIコクサイ・インデックス）",
+    "fundType": "index"
+  },
+  {
+    "name": "東京海上セレクション・外国株式インデックス",
+    "company": "東京海上アセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "海外型",
+    "index": "MSCI World Index\n（MSCIコクサイ・インデックス）",
+    "fundType": "index"
+  },
+  {
+    "name": "ニッセイ外国株式インデックスファンド＜購入・換金手数料なし＞",
+    "company": "ニッセイアセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "海外型",
+    "index": "MSCI World Index\n（MSCIコクサイ・インデックス）",
+    "fundType": "index"
+  },
+  {
+    "name": "JAバンクよりそいノーロード先進国株式（除く日本）",
+    "company": "農林中金全共連アセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "海外型",
+    "index": "MSCI World Index\n（MSCIコクサイ・インデックス）",
+    "fundType": "index"
+  },
+  {
+    "name": "NZAM・ベータ　先進国株式",
+    "company": "農林中金全共連アセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "海外型",
+    "index": "MSCI World Index\n（MSCIコクサイ・インデックス）",
+    "fundType": "index"
+  },
+  {
+    "name": "野村インデックスファンド・外国株式",
+    "company": "野村アセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "海外型",
+    "index": "MSCI World Index\n（MSCIコクサイ・インデックス）",
+    "fundType": "index"
+  },
+  {
+    "name": "野村インデックスファンド・外国株式・為替ヘッジ型",
+    "company": "野村アセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "海外型",
+    "index": "MSCI World Index\n（MSCIコクサイ・インデックス）",
+    "fundType": "index"
+  },
+  {
+    "name": "野村スリーゼロ先進国株式投信",
+    "company": "野村アセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "海外型",
+    "index": "MSCI World Index\n（MSCIコクサイ・インデックス）",
+    "fundType": "index"
+  },
+  {
+    "name": "外国株式指数ファンド",
+    "company": "三井住友DSアセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "海外型",
+    "index": "MSCI World Index\n（MSCIコクサイ・インデックス）",
+    "fundType": "index"
+  },
+  {
+    "name": "SMBC・DCインデックスファンド（MSCIコクサイ）",
+    "company": "三井住友DSアセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "海外型",
+    "index": "MSCI World Index\n（MSCIコクサイ・インデックス）",
+    "fundType": "index"
+  },
+  {
+    "name": "My SMT グローバル株式インデックス（ノーロード）",
+    "company": "三井住友トラスト・アセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "海外型",
+    "index": "MSCI World Index\n（MSCIコクサイ・インデックス）",
+    "fundType": "index"
+  },
+  {
+    "name": "SMT グローバル株式インデックス・オープン",
+    "company": "三井住友トラスト・アセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "海外型",
+    "index": "MSCI World Index\n（MSCIコクサイ・インデックス）",
+    "fundType": "index"
+  },
+  {
+    "name": "eMAXIS Slim 先進国株式インデックス（除く日本）",
+    "company": "三菱ＵＦＪアセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "海外型",
+    "index": "MSCI World Index\n（MSCIコクサイ・インデックス）",
+    "fundType": "index"
+  },
+  {
+    "name": "eMAXIS Slim 先進国株式（含む日本）＜オール先進国＞",
+    "company": "三菱ＵＦＪアセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "海外型",
+    "index": "MSCI World Index\n（MSCIコクサイ・インデックス）",
+    "fundType": "index"
+  },
+  {
+    "name": "eMAXIS 先進国株式インデックス（除く日本）",
+    "company": "三菱ＵＦＪアセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "海外型",
+    "index": "MSCI World Index\n（MSCIコクサイ・インデックス）",
+    "fundType": "index"
+  },
+  {
+    "name": "つみたて先進国株式",
+    "company": "三菱ＵＦＪアセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "海外型",
+    "index": "MSCI World Index\n（MSCIコクサイ・インデックス）",
+    "fundType": "index"
+  },
+  {
+    "name": "つみたて先進国株式（為替ヘッジあり）",
+    "company": "三菱ＵＦＪアセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "海外型",
+    "index": "MSCI World Index\n（MSCIコクサイ・インデックス）",
+    "fundType": "index"
+  },
+  {
+    "name": "楽天・プラス・先進国株式（除く日本）インデックス・ファンド",
+    "company": "楽天投信投資顧問株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "海外型",
+    "index": "MSCI World Index\n（MSCIコクサイ・インデックス）",
+    "fundType": "index"
+  },
+  {
+    "name": "Smart-i 先進国株式インデックス",
+    "company": "りそなアセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "海外型",
+    "index": "MSCI World Index\n（MSCIコクサイ・インデックス）",
+    "fundType": "index"
+  },
+  {
+    "name": "SBI・先進国株式インデックス・ファンド",
+    "company": "SBIアセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "海外型",
+    "index": "FTSE Developed All Cap Index",
+    "fundType": "index"
+  },
+  {
+    "name": "SBI・V･S&P500インデックス･ファンド",
+    "company": "SBIアセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "海外型",
+    "index": "S&P500",
+    "fundType": "index"
+  },
+  {
+    "name": "インデックスオープン・アメリカ株式",
+    "company": "アセットマネジメントOne株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "海外型",
+    "index": "S&P500",
+    "fundType": "index"
+  },
+  {
+    "name": "たわらノーロード S&P500",
+    "company": "アセットマネジメントOne株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "海外型",
+    "index": "S&P500",
+    "fundType": "index"
+  },
+  {
+    "name": "ステート・ストリートS&P500インデックス・オープン",
+    "company": "ステート・ストリート・グローバル・アドバイザーズ株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "海外型",
+    "index": "S&P500",
+    "fundType": "index"
+  },
+  {
+    "name": "米国株式インデックス・ファンド",
+    "company": "ステート・ストリート・グローバル・アドバイザーズ株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "海外型",
+    "index": "S&P500",
+    "fundType": "index"
+  },
+  {
+    "name": "ｉＦｒｅｅ S&P500インデックス",
+    "company": "大和アセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "海外型",
+    "index": "S&P500",
+    "fundType": "index"
+  },
+  {
+    "name": "農林中金＜パートナーズ＞つみたて米国株式 S&P500",
+    "company": "農林中金全共連アセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "海外型",
+    "index": "S&P500",
+    "fundType": "index"
+  },
+  {
+    "name": "JAバンクよりそいノーロード米国株式 S&P500",
+    "company": "農林中金全共連アセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "海外型",
+    "index": "S&P500",
+    "fundType": "index"
+  },
+  {
+    "name": "NZAM・ベータ　S&P500",
+    "company": "農林中金全共連アセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "海外型",
+    "index": "S&P500",
+    "fundType": "index"
+  },
+  {
+    "name": "はじめてのNISA・米国株式インデックス（S&P500）",
+    "company": "野村アセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "海外型",
+    "index": "S&P500",
+    "fundType": "index"
+  },
+  {
+    "name": "iシェアーズ　米国株式（S&P500）インデックス・ファンド",
+    "company": "ブラックロック･ジャパン株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "海外型",
+    "index": "S&P500",
+    "fundType": "index"
+  },
+  {
+    "name": "つみたてiシェアーズ　米国株式（S&P500）インデックス・ファンド",
+    "company": "ブラックロック･ジャパン株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "海外型",
+    "index": "S&P500",
+    "fundType": "index"
+  },
+  {
+    "name": "SMBC・DCインデックスファンド（S&P500）",
+    "company": "三井住友DSアセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "海外型",
+    "index": "S&P500",
+    "fundType": "index"
+  },
+  {
+    "name": "My SMT S&P500インデックス（ノーロード）",
+    "company": "三井住友トラスト・アセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "海外型",
+    "index": "S&P500",
+    "fundType": "index"
+  },
+  {
+    "name": "eMAXIS S&P500インデックス",
+    "company": "三菱ＵＦＪアセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "海外型",
+    "index": "S&P500",
+    "fundType": "index"
+  },
+  {
+    "name": "eMAXIS Slim 米国株式（S&P500）",
+    "company": "三菱ＵＦＪアセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "海外型",
+    "index": "S&P500",
+    "fundType": "index"
+  },
+  {
+    "name": "つみたて米国株式（S&P500）",
+    "company": "三菱ＵＦＪアセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "海外型",
+    "index": "S&P500",
+    "fundType": "index"
+  },
+  {
+    "name": "楽天・プラス・S&P500インデックス・ファンド",
+    "company": "楽天投信投資顧問株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "海外型",
+    "index": "S&P500",
+    "fundType": "index"
+  },
+  {
+    "name": "Smart-i　S&P500インデックス",
+    "company": "りそなアセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "海外型",
+    "index": "S&P500",
+    "fundType": "index"
+  },
+  {
+    "name": "SBI・V・全米株式インデックス・ファンド",
+    "company": "SBIアセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "海外型",
+    "index": "CRSP U.S. Total Market Index",
+    "fundType": "index"
+  },
+  {
+    "name": "楽天・全米株式インデックス・ファンド",
+    "company": "楽天投信投資顧問株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "海外型",
+    "index": "CRSP U.S. Total Market Index",
+    "fundType": "index"
+  },
+  {
+    "name": "たわらノーロード 新興国株式",
+    "company": "アセットマネジメントOne株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "海外型",
+    "index": "MSCI Emerging Markets Index",
+    "fundType": "index"
+  },
+  {
+    "name": "インデックスファンド海外新興国（エマージング）株式",
+    "company": "アモーヴァ・アセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "海外型",
+    "index": "MSCI Emerging Markets Index",
+    "fundType": "index"
+  },
+  {
+    "name": "ニッセイ新興国株式インデックスファンド＜購入・換金手数料なし＞",
+    "company": "ニッセイアセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "海外型",
+    "index": "MSCI Emerging Markets Index",
+    "fundType": "index"
+  },
+  {
+    "name": "JAバンクよりそいノーロード新興国株式",
+    "company": "農林中金全共連アセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "海外型",
+    "index": "MSCI Emerging Markets Index",
+    "fundType": "index"
+  },
+  {
+    "name": "野村インデックスファンド・新興国株式",
+    "company": "野村アセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "海外型",
+    "index": "MSCI Emerging Markets Index",
+    "fundType": "index"
+  },
+  {
+    "name": "はじめてのNISA・新興国株式インデックス",
+    "company": "野村アセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "海外型",
+    "index": "MSCI Emerging Markets Index",
+    "fundType": "index"
+  },
+  {
+    "name": "三井住友・DC新興国株式インデックスファンド",
+    "company": "三井住友DSアセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "海外型",
+    "index": "MSCI Emerging Markets Index",
+    "fundType": "index"
+  },
+  {
+    "name": "My SMT 新興国株式インデックス（ノーロード）",
+    "company": "三井住友トラスト・アセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "海外型",
+    "index": "MSCI Emerging Markets Index",
+    "fundType": "index"
+  },
+  {
+    "name": "SMT 新興国株式インデックス・オープン",
+    "company": "三井住友トラスト・アセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "海外型",
+    "index": "MSCI Emerging Markets Index",
+    "fundType": "index"
+  },
+  {
+    "name": "eMAXIS Slim 新興国株式インデックス",
+    "company": "三菱ＵＦＪアセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "海外型",
+    "index": "MSCI Emerging Markets Index",
+    "fundType": "index"
+  },
+  {
+    "name": "eMAXIS 新興国株式インデックス",
+    "company": "三菱ＵＦＪアセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "海外型",
+    "index": "MSCI Emerging Markets Index",
+    "fundType": "index"
+  },
+  {
+    "name": "つみたて新興国株式",
+    "company": "三菱ＵＦＪアセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "海外型",
+    "index": "MSCI Emerging Markets Index",
+    "fundType": "index"
+  },
+  {
+    "name": "楽天・エマージング株式インデックス・ファンド",
+    "company": "楽天投信投資顧問株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "海外型",
+    "index": "MSCI Emerging Markets Index",
+    "fundType": "index"
+  },
+  {
+    "name": "Smart-i 新興国株式インデックス",
+    "company": "りそなアセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "海外型",
+    "index": "MSCI Emerging Markets Index",
+    "fundType": "index"
+  },
+  {
+    "name": "SBI・新興国株式インデックス・ファンド",
+    "company": "SBIアセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "海外型",
+    "index": "FTSE Emerging Index",
+    "fundType": "index"
+  },
+  {
+    "name": "ｉＦｒｅｅ 新興国株式インデックス",
+    "company": "大和アセットマネジメント株式会社",
+    "category": "単一指数 （株式型）",
+    "region": "海外型",
+    "index": "FTSE RAFI Emerging Index",
+    "fundType": "index"
+  },
+  {
+    "name": "日本株式・Jリートバランスファンド",
+    "company": "SBI岡三アセットマネジメント株式会社",
+    "category": " 複数指数 （バランス型）",
+    "region": "\n国内型",
+    "index": "2指数",
+    "fundType": "index"
+  },
+  {
+    "name": "NZAM・ベータ 日本2資産（株式+REIT）",
+    "company": "農林中金全共連アセットマネジメント株式会社",
+    "category": " 複数指数 （バランス型）",
+    "region": "\n国内型",
+    "index": "2指数",
+    "fundType": "index"
+  },
+  {
+    "name": "東京海上・円資産インデックスバランスファンド",
+    "company": "東京海上アセットマネジメント株式会社",
+    "category": " 複数指数 （バランス型）",
+    "region": "\n国内型",
+    "index": "3指数",
+    "fundType": "index"
+  },
+  {
+    "name": "ニッセイ・インデックスパッケージ（国内・株式／リート／債券）",
+    "company": "ニッセイアセットマネジメント株式会社",
+    "category": " 複数指数 （バランス型）",
+    "region": "\n国内型",
+    "index": "3指数",
+    "fundType": "index"
+  },
+  {
+    "name": "susten新興国インカム・インデックスファンド（年4回決算型）",
+    "company": "株式会社sustenキャピタル・マネジメント",
+    "category": " 複数指数 （バランス型）",
+    "region": "海外型",
+    "index": "2指数",
+    "fundType": "index"
+  },
+  {
+    "name": "ドイチェ・ETFバランス・ファンド",
+    "company": "ドイチェ・アセット・マネジメント株式会社",
+    "category": " 複数指数 （バランス型）",
+    "region": "海外型",
+    "index": "2指数",
+    "fundType": "index"
+  },
+  {
+    "name": "NZAM・ベータ 先進国2資産（株式+REIT）",
+    "company": "農林中金全共連アセットマネジメント株式会社",
+    "category": " 複数指数 （バランス型）",
+    "region": "海外型",
+    "index": "2指数",
+    "fundType": "index"
+  },
+  {
+    "name": "NZAM・ベータ 米国2資産（株式+REIT）",
+    "company": "農林中金全共連アセットマネジメント株式会社",
+    "category": " 複数指数 （バランス型）",
+    "region": "海外型",
+    "index": "2指数",
+    "fundType": "index"
+  },
+  {
+    "name": "楽天・インデックス・バランス・ファンド（株式重視型）",
+    "company": "楽天投信投資顧問株式会社",
+    "category": " 複数指数 （バランス型）",
+    "region": "海外型",
+    "index": "2指数",
+    "fundType": "index"
+  },
+  {
+    "name": "楽天・インデックス・バランス・ファンド（均等型）",
+    "company": "楽天投信投資顧問株式会社",
+    "category": " 複数指数 （バランス型）",
+    "region": "海外型",
+    "index": "2指数",
+    "fundType": "index"
+  },
+  {
+    "name": "楽天・インデックス・バランス・ファンド（債券重視型）",
+    "company": "楽天投信投資顧問株式会社",
+    "category": " 複数指数 （バランス型）",
+    "region": "海外型",
+    "index": "2指数",
+    "fundType": "index"
+  },
+  {
+    "name": "グローバル株式ファンド",
+    "company": "スカイオーシャン・アセットマネジメント株式会社",
+    "category": " 複数指数 （バランス型）",
+    "region": "海外型",
+    "index": "3指数",
+    "fundType": "index"
+  },
+  {
+    "name": "ＤＣニッセイ全世界株式インデックスコレクト",
+    "company": "ニッセイアセットマネジメント株式会社",
+    "category": " 複数指数 （バランス型）",
+    "region": "海外型",
+    "index": "3指数",
+    "fundType": "index"
+  },
+  {
+    "name": "ニッセイ・インデックスパッケージ（内外・株式）",
+    "company": "ニッセイアセットマネジメント株式会社",
+    "category": " 複数指数 （バランス型）",
+    "region": "海外型",
+    "index": "3指数",
+    "fundType": "index"
+  },
+  {
+    "name": "ニッセイ世界株式ファンド（GDP型バスケット）＜購入・換金手数料なし＞",
+    "company": "ニッセイアセットマネジメント株式会社",
+    "category": " 複数指数 （バランス型）",
+    "region": "海外型",
+    "index": "3指数",
+    "fundType": "index"
+  },
+  {
+    "name": "eMAXIS Slim 全世界株式（3地域均等型）",
+    "company": "三菱ＵＦＪアセットマネジメント株式会社",
+    "category": " 複数指数 （バランス型）",
+    "region": "海外型",
+    "index": "3指数",
+    "fundType": "index"
+  },
+  {
+    "name": "auスマート・ベーシック（安定）",
+    "company": "auアセットマネジメント株式会社",
+    "category": " 複数指数 （バランス型）",
+    "region": "海外型",
+    "index": "4指数",
+    "fundType": "index"
+  },
+  {
+    "name": "JP4資産均等バランス",
+    "company": "JP投信株式会社",
+    "category": " 複数指数 （バランス型）",
+    "region": "海外型",
+    "index": "4指数",
+    "fundType": "index"
+  },
+  {
+    "name": "ダイワ・ライフ・バランス30",
+    "company": "大和アセットマネジメント株式会社",
+    "category": " 複数指数 （バランス型）",
+    "region": "海外型",
+    "index": "4指数",
+    "fundType": "index"
+  },
+  {
+    "name": "ダイワ・ライフ・バランス50",
+    "company": "大和アセットマネジメント株式会社",
+    "category": " 複数指数 （バランス型）",
+    "region": "海外型",
+    "index": "4指数",
+    "fundType": "index"
+  },
+  {
+    "name": "ダイワ・ライフ・バランス70",
+    "company": "大和アセットマネジメント株式会社",
+    "category": " 複数指数 （バランス型）",
+    "region": "海外型",
+    "index": "4指数",
+    "fundType": "index"
+  },
+  {
+    "name": "スタイル9（4資産分散・保守型）",
+    "company": "大和アセットマネジメント株式会社",
+    "category": " 複数指数 （バランス型）",
+    "region": "海外型",
+    "index": "4指数",
+    "fundType": "index"
+  },
+  {
+    "name": "スタイル9（4資産分散・バランス型）",
+    "company": "大和アセットマネジメント株式会社",
+    "category": " 複数指数 （バランス型）",
+    "region": "海外型",
+    "index": "4指数",
+    "fundType": "index"
+  },
+  {
+    "name": "スタイル9（4資産分散・積極型）",
+    "company": "大和アセットマネジメント株式会社",
+    "category": " 複数指数 （バランス型）",
+    "region": "海外型",
+    "index": "4指数",
+    "fundType": "index"
+  },
+  {
+    "name": "ちゅうぎん４資産バランスファンド＜株式重視型＞",
+    "company": "中銀アセットマネジメント株式会社",
+    "category": " 複数指数 （バランス型）",
+    "region": "海外型",
+    "index": "4指数",
+    "fundType": "index"
+  },
+  {
+    "name": "ちゅうぎん４資産バランスファンド＜債券重視型＞",
+    "company": "中銀アセットマネジメント株式会社",
+    "category": " 複数指数 （バランス型）",
+    "region": "海外型",
+    "index": "4指数",
+    "fundType": "index"
+  },
+  {
+    "name": "東京海上ターゲット・イヤー・ファンド2035",
+    "company": "東京海上アセットマネジメント株式会社",
+    "category": " 複数指数 （バランス型）",
+    "region": "海外型",
+    "index": "4指数",
+    "fundType": "index"
+  },
+  {
+    "name": "東京海上ターゲット・イヤー・ファンド2040",
+    "company": "東京海上アセットマネジメント株式会社",
+    "category": " 複数指数 （バランス型）",
+    "region": "海外型",
+    "index": "4指数",
+    "fundType": "index"
+  },
+  {
+    "name": "東京海上ターゲット・イヤー・ファンド2045",
+    "company": "東京海上アセットマネジメント株式会社",
+    "category": " 複数指数 （バランス型）",
+    "region": "海外型",
+    "index": "4指数",
+    "fundType": "index"
+  },
+  {
+    "name": "東京海上ターゲット・イヤー・ファンド2050",
+    "company": "東京海上アセットマネジメント株式会社",
+    "category": " 複数指数 （バランス型）",
+    "region": "海外型",
+    "index": "4指数",
+    "fundType": "index"
+  },
+  {
+    "name": "東京海上ターゲット・イヤー・ファンド2055",
+    "company": "東京海上アセットマネジメント株式会社",
+    "category": " 複数指数 （バランス型）",
+    "region": "海外型",
+    "index": "4指数",
+    "fundType": "index"
+  },
+  {
+    "name": "東京海上ターゲット・イヤー・ファンド2060",
+    "company": "東京海上アセットマネジメント株式会社",
+    "category": " 複数指数 （バランス型）",
+    "region": "海外型",
+    "index": "4指数",
+    "fundType": "index"
+  },
+  {
+    "name": "東京海上ターゲット・イヤー・ファンド2065",
+    "company": "東京海上アセットマネジメント株式会社",
+    "category": " 複数指数 （バランス型）",
+    "region": "海外型",
+    "index": "4指数",
+    "fundType": "index"
+  },
+  {
+    "name": "東京海上ターゲット・イヤー・ファンド2070",
+    "company": "東京海上アセットマネジメント株式会社",
+    "category": " 複数指数 （バランス型）",
+    "region": "海外型",
+    "index": "4指数",
+    "fundType": "index"
+  },
+  {
+    "name": "DCニッセイワールドセレクトファンド（安定型）",
+    "company": "ニッセイアセットマネジメント株式会社",
+    "category": " 複数指数 （バランス型）",
+    "region": "海外型",
+    "index": "4指数",
+    "fundType": "index"
+  },
+  {
+    "name": "DCニッセイワールドセレクトファンド（株式重視型）",
+    "company": "ニッセイアセットマネジメント株式会社",
+    "category": " 複数指数 （バランス型）",
+    "region": "海外型",
+    "index": "4指数",
+    "fundType": "index"
+  },
+  {
+    "name": "DCニッセイワールドセレクトファンド（債券重視型）",
+    "company": "ニッセイアセットマネジメント株式会社",
+    "category": " 複数指数 （バランス型）",
+    "region": "海外型",
+    "index": "4指数",
+    "fundType": "index"
+  },
+  {
+    "name": "DCニッセイワールドセレクトファンド（標準型）",
+    "company": "ニッセイアセットマネジメント株式会社",
+    "category": " 複数指数 （バランス型）",
+    "region": "海外型",
+    "index": "4指数",
+    "fundType": "index"
+  },
+  {
+    "name": "ニッセイ・インデックスバランスファンド（4資産均等型）＜購入・換金手数料なし＞",
+    "company": "ニッセイアセットマネジメント株式会社",
+    "category": " 複数指数 （バランス型）",
+    "region": "海外型",
+    "index": "4指数",
+    "fundType": "index"
+  },
+  {
+    "name": "三井住友・DCターゲットイヤーファンド2040（4資産タイプ）",
+    "company": "三井住友DSアセットマネジメント株式会社",
+    "category": " 複数指数 （バランス型）",
+    "region": "海外型",
+    "index": "4指数",
+    "fundType": "index"
+  },
+  {
+    "name": "三井住友・DCターゲットイヤーファンド2045（4資産タイプ）",
+    "company": "三井住友DSアセットマネジメント株式会社",
+    "category": " 複数指数 （バランス型）",
+    "region": "海外型",
+    "index": "4指数",
+    "fundType": "index"
+  },
+  {
+    "name": "三井住友・DC年金バランス30（債券重点型）",
+    "company": "三井住友DSアセットマネジメント株式会社",
+    "category": " 複数指数 （バランス型）",
+    "region": "海外型",
+    "index": "4指数",
+    "fundType": "index"
+  },
+  {
+    "name": "三井住友・DC年金バランス50（標準型）",
+    "company": "三井住友DSアセットマネジメント株式会社",
+    "category": " 複数指数 （バランス型）",
+    "region": "海外型",
+    "index": "4指数",
+    "fundType": "index"
+  },
+  {
+    "name": "三井住友・DC年金バランス70（株式重点型）",
+    "company": "三井住友DSアセットマネジメント株式会社",
+    "category": " 複数指数 （バランス型）",
+    "region": "海外型",
+    "index": "4指数",
+    "fundType": "index"
+  },
+  {
+    "name": "eMAXIS バランス（4資産均等型）",
+    "company": "三菱ＵＦＪアセットマネジメント株式会社",
+    "category": " 複数指数 （バランス型）",
+    "region": "海外型",
+    "index": "4指数",
+    "fundType": "index"
+  },
+  {
+    "name": "つみたて4資産均等バランス",
+    "company": "三菱ＵＦＪアセットマネジメント株式会社",
+    "category": " 複数指数 （バランス型）",
+    "region": "海外型",
+    "index": "4指数",
+    "fundType": "index"
+  },
+  {
+    "name": "ニッセイ・インデックスパッケージ（内外・株式／リート）",
+    "company": "ニッセイアセットマネジメント株式会社",
+    "category": " 複数指数 （バランス型）",
+    "region": "海外型",
+    "index": "5指数",
+    "fundType": "index"
+  },
+  {
+    "name": "野村インデックスファンド・海外5資産バランス",
+    "company": "野村アセットマネジメント株式会社",
+    "category": " 複数指数 （バランス型）",
+    "region": "海外型",
+    "index": "5指数",
+    "fundType": "index"
+  },
+  {
+    "name": "auスマート・ベーシック（安定成長）",
+    "company": "auアセットマネジメント株式会社",
+    "category": " 複数指数 （バランス型）",
+    "region": "海外型",
+    "index": "6指数",
+    "fundType": "index"
+  },
+  {
+    "name": "スタイル9（6資産分散・保守型）",
+    "company": "大和アセットマネジメント株式会社",
+    "category": " 複数指数 （バランス型）",
+    "region": "海外型",
+    "index": "6指数",
+    "fundType": "index"
+  },
+  {
+    "name": "スタイル9（6資産分散・バランス型）",
+    "company": "大和アセットマネジメント株式会社",
+    "category": " 複数指数 （バランス型）",
+    "region": "海外型",
+    "index": "6指数",
+    "fundType": "index"
+  },
+  {
+    "name": "スタイル9（6資産分散・積極型）",
+    "company": "大和アセットマネジメント株式会社",
+    "category": " 複数指数 （バランス型）",
+    "region": "海外型",
+    "index": "6指数",
+    "fundType": "index"
+  },
+  {
+    "name": "ニッセイ・インデックスバランスファンド（6資産均等型）＜購入・換金手数料なし＞",
+    "company": "ニッセイアセットマネジメント株式会社",
+    "category": " 複数指数 （バランス型）",
+    "region": "海外型",
+    "index": "6指数",
+    "fundType": "index"
+  },
+  {
+    "name": "世界6資産分散ファンド",
+    "company": "野村アセットマネジメント株式会社",
+    "category": " 複数指数 （バランス型）",
+    "region": "海外型",
+    "index": "6指数",
+    "fundType": "index"
+  },
+  {
+    "name": "野村6資産均等バランス",
+    "company": "野村アセットマネジメント株式会社",
+    "category": " 複数指数 （バランス型）",
+    "region": "海外型",
+    "index": "6指数",
+    "fundType": "index"
+  },
+  {
+    "name": "フィデリティ・ターゲット・デート・ファンド（ベーシック）2040",
+    "company": "フィデリティ投信株式会社",
+    "category": " 複数指数 （バランス型）",
+    "region": "海外型",
+    "index": "6指数",
+    "fundType": "index"
+  },
+  {
+    "name": "フィデリティ・ターゲット・デート・ファンド（ベーシック）2045",
+    "company": "フィデリティ投信株式会社",
+    "category": " 複数指数 （バランス型）",
+    "region": "海外型",
+    "index": "6指数",
+    "fundType": "index"
+  },
+  {
+    "name": "フィデリティ・ターゲット・デート・ファンド（ベーシック）2050",
+    "company": "フィデリティ投信株式会社",
+    "category": " 複数指数 （バランス型）",
+    "region": "海外型",
+    "index": "6指数",
+    "fundType": "index"
+  },
+  {
+    "name": "フィデリティ・ターゲット・デート・ファンド（ベーシック）2055",
+    "company": "フィデリティ投信株式会社",
+    "category": " 複数指数 （バランス型）",
+    "region": "海外型",
+    "index": "6指数",
+    "fundType": "index"
+  },
+  {
+    "name": "フィデリティ・ターゲット・デート・ファンド（ベーシック）2060",
+    "company": "フィデリティ投信株式会社",
+    "category": " 複数指数 （バランス型）",
+    "region": "海外型",
+    "index": "6指数",
+    "fundType": "index"
+  },
+  {
+    "name": "フィデリティ・ターゲット・デート・ファンド（ベーシック）2065",
+    "company": "フィデリティ投信株式会社",
+    "category": " 複数指数 （バランス型）",
+    "region": "海外型",
+    "index": "6指数",
+    "fundType": "index"
+  },
+  {
+    "name": "フィデリティ・ターゲット・デート・ファンド（ベーシック）2070",
+    "company": "フィデリティ投信株式会社",
+    "category": " 複数指数 （バランス型）",
+    "region": "海外型",
+    "index": "6指数",
+    "fundType": "index"
+  },
+  {
+    "name": "ブラックロック・つみたて・グローバルバランスファンド",
+    "company": "ブラックロック・ジャパン株式会社",
+    "category": " 複数指数 （バランス型）",
+    "region": "海外型",
+    "index": "6指数",
+    "fundType": "index"
+  },
+  {
+    "name": "SBI資産設計オープン（つみたてNISA対応型）",
+    "company": "三井住友トラスト・アセットマネジメント株式会社",
+    "category": " 複数指数 （バランス型）",
+    "region": "海外型",
+    "index": "6指数",
+    "fundType": "index"
+  },
+  {
+    "name": "SMT 世界経済インデックス・オープン",
+    "company": "三井住友トラスト・アセットマネジメント株式会社",
+    "category": " 複数指数 （バランス型）",
+    "region": "海外型",
+    "index": "6指数",
+    "fundType": "index"
+  },
+  {
+    "name": "SMT 世界経済インデックス・オープン（株式シフト型）",
+    "company": "三井住友トラスト・アセットマネジメント株式会社",
+    "category": " 複数指数 （バランス型）",
+    "region": "海外型",
+    "index": "6指数",
+    "fundType": "index"
+  },
+  {
+    "name": "SMT 世界経済インデックス・オープン（債券シフト型）",
+    "company": "三井住友トラスト・アセットマネジメント株式会社",
+    "category": " 複数指数 （バランス型）",
+    "region": "海外型",
+    "index": "6指数",
+    "fundType": "index"
+  },
+  {
+    "name": "eMAXIS 最適化バランス（マイ　ゴールキーパー）",
+    "company": "三菱ＵＦＪアセットマネジメント株式会社",
+    "category": " 複数指数 （バランス型）",
+    "region": "海外型",
+    "index": "6指数",
+    "fundType": "index"
+  },
+  {
+    "name": "三菱UFJ 資産配分最適化バランス（R1）",
+    "company": "三菱ＵＦＪアセットマネジメント株式会社",
+    "category": " 複数指数 （バランス型）",
+    "region": "海外型",
+    "index": "6指数",
+    "fundType": "index"
+  },
+  {
+    "name": "Tracers グローバル3分法（おとなのバランス）",
+    "company": "アモーヴァ・アセットマネジメント株式会社",
+    "category": "複数指数 （バランス型）  ",
+    "region": "海外型\n",
+    "index": "7指数",
+    "fundType": "index"
+  },
+  {
+    "name": "ニッセイ・インデックスパッケージ（内外・株式／リート／債券）",
+    "company": "ニッセイアセットマネジメント株式会社",
+    "category": "複数指数 （バランス型）  ",
+    "region": "海外型\n",
+    "index": "7指数",
+    "fundType": "index"
+  },
+  {
+    "name": "野村インデックスファンド・内外7資産バランス・為替ヘッジ型",
+    "company": "野村アセットマネジメント株式会社",
+    "category": "複数指数 （バランス型）  ",
+    "region": "海外型\n",
+    "index": "7指数",
+    "fundType": "index"
+  },
+  {
+    "name": "楽天・資産づくりファンド（がっちりコース）",
+    "company": "楽天投信投資顧問株式会社",
+    "category": "複数指数 （バランス型）  ",
+    "region": "海外型\n",
+    "index": "7指数",
+    "fundType": "index"
+  },
+  {
+    "name": "楽天・資産づくりファンド（しっかりコース）",
+    "company": "楽天投信投資顧問株式会社",
+    "category": "複数指数 （バランス型）  ",
+    "region": "海外型\n",
+    "index": "7指数",
+    "fundType": "index"
+  },
+  {
+    "name": "楽天・資産づくりファンド（じっくりコース）",
+    "company": "楽天投信投資顧問株式会社",
+    "category": "複数指数 （バランス型）  ",
+    "region": "海外型\n",
+    "index": "7指数",
+    "fundType": "index"
+  },
+  {
+    "name": "楽天・資産づくりファンド（なかなかコース）",
+    "company": "楽天投信投資顧問株式会社",
+    "category": "複数指数 （バランス型）  ",
+    "region": "海外型\n",
+    "index": "7指数",
+    "fundType": "index"
+  },
+  {
+    "name": "楽天・資産づくりファンド（のんびりコース）",
+    "company": "楽天投信投資顧問株式会社",
+    "category": "複数指数 （バランス型）  ",
+    "region": "海外型\n",
+    "index": "7指数",
+    "fundType": "index"
+  },
+  {
+    "name": "たわらノーロード 最適化バランス（安定型）",
+    "company": "アセットマネジメントOne株式会社",
+    "category": "複数指数 （バランス型）  ",
+    "region": "海外型\n",
+    "index": "8指数",
+    "fundType": "index"
+  },
+  {
+    "name": "たわらノーロード 最適化バランス（安定成長型）",
+    "company": "アセットマネジメントOne株式会社",
+    "category": "複数指数 （バランス型）  ",
+    "region": "海外型\n",
+    "index": "8指数",
+    "fundType": "index"
+  },
+  {
+    "name": "たわらノーロード 最適化バランス（成長型）",
+    "company": "アセットマネジメントOne株式会社",
+    "category": "複数指数 （バランス型）  ",
+    "region": "海外型\n",
+    "index": "8指数",
+    "fundType": "index"
+  },
+  {
+    "name": "たわらノーロード 最適化バランス（積極型）",
+    "company": "アセットマネジメントOne株式会社",
+    "category": "複数指数 （バランス型）  ",
+    "region": "海外型\n",
+    "index": "8指数",
+    "fundType": "index"
+  },
+  {
+    "name": "たわらノーロード 最適化バランス（保守型）",
+    "company": "アセットマネジメントOne株式会社",
+    "category": "複数指数 （バランス型）  ",
+    "region": "海外型\n",
+    "index": "8指数",
+    "fundType": "index"
+  },
+  {
+    "name": "たわらノーロード バランス（8資産均等型）",
+    "company": "アセットマネジメントOne株式会社",
+    "category": "複数指数 （バランス型）  ",
+    "region": "海外型\n",
+    "index": "8指数",
+    "fundType": "index"
+  },
+  {
+    "name": "たわらノーロード バランス（堅実型）",
+    "company": "アセットマネジメントOne株式会社",
+    "category": "複数指数 （バランス型）  ",
+    "region": "海外型\n",
+    "index": "8指数",
+    "fundType": "index"
+  },
+  {
+    "name": "たわらノーロード バランス（積極型）",
+    "company": "アセットマネジメントOne株式会社",
+    "category": "複数指数 （バランス型）  ",
+    "region": "海外型\n",
+    "index": "8指数",
+    "fundType": "index"
+  },
+  {
+    "name": "たわらノーロード バランス（標準型）",
+    "company": "アセットマネジメントOne株式会社",
+    "category": "複数指数 （バランス型）  ",
+    "region": "海外型\n",
+    "index": "8指数",
+    "fundType": "index"
+  },
+  {
+    "name": "ｉＦｒｅｅ 8資産バランス",
+    "company": "大和アセットマネジメント株式会社",
+    "category": "複数指数 （バランス型）  ",
+    "region": "海外型\n",
+    "index": "8指数",
+    "fundType": "index"
+  },
+  {
+    "name": "スタイル9（8資産分散・保守型）",
+    "company": "大和アセットマネジメント株式会社",
+    "category": "複数指数 （バランス型）  ",
+    "region": "海外型\n",
+    "index": "8指数",
+    "fundType": "index"
+  },
+  {
+    "name": "スタイル9（8資産分散・バランス型）",
+    "company": "大和アセットマネジメント株式会社",
+    "category": "複数指数 （バランス型）  ",
+    "region": "海外型\n",
+    "index": "8指数",
+    "fundType": "index"
+  },
+  {
+    "name": "スタイル9（8資産分散・積極型）",
+    "company": "大和アセットマネジメント株式会社",
+    "category": "複数指数 （バランス型）  ",
+    "region": "海外型\n",
+    "index": "8指数",
+    "fundType": "index"
+  },
+  {
+    "name": "野村資産設計ファンド（DC・つみたてNISA）2030",
+    "company": "野村アセットマネジメント株式会社",
+    "category": "複数指数 （バランス型）  ",
+    "region": "海外型\n",
+    "index": "8指数",
+    "fundType": "index"
+  },
+  {
+    "name": "野村資産設計ファンド（DC・つみたてNISA）2040",
+    "company": "野村アセットマネジメント株式会社",
+    "category": "複数指数 （バランス型）  ",
+    "region": "海外型\n",
+    "index": "8指数",
+    "fundType": "index"
+  },
+  {
+    "name": "野村資産設計ファンド（DC・つみたてNISA）2050",
+    "company": "野村アセットマネジメント株式会社",
+    "category": "複数指数 （バランス型）  ",
+    "region": "海外型\n",
+    "index": "8指数",
+    "fundType": "index"
+  },
+  {
+    "name": "野村資産設計ファンド（DC・つみたてNISA）2060",
+    "company": "野村アセットマネジメント株式会社",
+    "category": "複数指数 （バランス型）  ",
+    "region": "海外型\n",
+    "index": "8指数",
+    "fundType": "index"
+  },
+  {
+    "name": "三井住友・DCつみたてNISA・世界分散ファンド",
+    "company": "三井住友DSアセットマネジメント株式会社",
+    "category": "複数指数 （バランス型）  ",
+    "region": "海外型\n",
+    "index": "8指数",
+    "fundType": "index"
+  },
+  {
+    "name": "SMT 8資産インデックスバランス・オープン",
+    "company": "三井住友トラスト・アセットマネジメント株式会社",
+    "category": "複数指数 （バランス型）  ",
+    "region": "海外型\n",
+    "index": "8指数",
+    "fundType": "index"
+  },
+  {
+    "name": "eMAXIS Slim バランス（8資産均等型）",
+    "company": "三菱ＵＦＪアセットマネジメント株式会社",
+    "category": "複数指数 （バランス型）  ",
+    "region": "海外型\n",
+    "index": "8指数",
+    "fundType": "index"
+  },
+  {
+    "name": "eMAXIS 最適化バランス（マイ ストライカー）",
+    "company": "三菱ＵＦＪアセットマネジメント株式会社",
+    "category": "複数指数 （バランス型）  ",
+    "region": "海外型\n",
+    "index": "8指数",
+    "fundType": "index"
+  },
+  {
+    "name": "eMAXIS 最適化バランス（マイ ディフェンダー）",
+    "company": "三菱ＵＦＪアセットマネジメント株式会社",
+    "category": "複数指数 （バランス型）  ",
+    "region": "海外型\n",
+    "index": "8指数",
+    "fundType": "index"
+  },
+  {
+    "name": "eMAXIS 最適化バランス（マイ フォワード）",
+    "company": "三菱ＵＦＪアセットマネジメント株式会社",
+    "category": "複数指数 （バランス型）  ",
+    "region": "海外型\n",
+    "index": "8指数",
+    "fundType": "index"
+  },
+  {
+    "name": "eMAXIS 最適化バランス（マイ ミッドフィルダー）",
+    "company": "三菱ＵＦＪアセットマネジメント株式会社",
+    "category": "複数指数 （バランス型）  ",
+    "region": "海外型\n",
+    "index": "8指数",
+    "fundType": "index"
+  },
+  {
+    "name": "eMAXIS バランス（8資産均等型）",
+    "company": "三菱ＵＦＪアセットマネジメント株式会社",
+    "category": "複数指数 （バランス型）  ",
+    "region": "海外型\n",
+    "index": "8指数",
+    "fundType": "index"
+  },
+  {
+    "name": "eMAXIS マイマネージャー 1970s",
+    "company": "三菱ＵＦＪアセットマネジメント株式会社",
+    "category": "複数指数 （バランス型）  ",
+    "region": "海外型\n",
+    "index": "8指数",
+    "fundType": "index"
+  },
+  {
+    "name": "eMAXIS マイマネージャー 1980s",
+    "company": "三菱ＵＦＪアセットマネジメント株式会社",
+    "category": "複数指数 （バランス型）  ",
+    "region": "海外型\n",
+    "index": "8指数",
+    "fundType": "index"
+  },
+  {
+    "name": "eMAXIS マイマネージャー 1990s",
+    "company": "三菱ＵＦＪアセットマネジメント株式会社",
+    "category": "複数指数 （バランス型）  ",
+    "region": "海外型\n",
+    "index": "8指数",
+    "fundType": "index"
+  },
+  {
+    "name": "つみたて8資産均等バランス",
+    "company": "三菱ＵＦＪアセットマネジメント株式会社",
+    "category": "複数指数 （バランス型）  ",
+    "region": "海外型\n",
+    "index": "8指数",
+    "fundType": "index"
+  },
+  {
+    "name": "三菱UFJ 資産配分最適化バランス（R2）",
+    "company": "三菱ＵＦＪアセットマネジメント株式会社",
+    "category": "複数指数 （バランス型）  ",
+    "region": "海外型\n",
+    "index": "8指数",
+    "fundType": "index"
+  },
+  {
+    "name": "三菱UFJ 資産配分最適化バランス（R3）",
+    "company": "三菱ＵＦＪアセットマネジメント株式会社",
+    "category": "複数指数 （バランス型）  ",
+    "region": "海外型\n",
+    "index": "8指数",
+    "fundType": "index"
+  },
+  {
+    "name": "三菱UFJ 資産配分最適化バランス（R4）",
+    "company": "三菱ＵＦＪアセットマネジメント株式会社",
+    "category": "複数指数 （バランス型）  ",
+    "region": "海外型\n",
+    "index": "8指数",
+    "fundType": "index"
+  },
+  {
+    "name": "三菱UFJ 資産配分最適化バランス（R5）",
+    "company": "三菱ＵＦＪアセットマネジメント株式会社",
+    "category": "複数指数 （バランス型）  ",
+    "region": "海外型\n",
+    "index": "8指数",
+    "fundType": "index"
+  },
+  {
+    "name": "Smart-i 8資産バランス 安定型",
+    "company": "りそなアセットマネジメント株式会社",
+    "category": "複数指数 （バランス型）  ",
+    "region": "海外型\n",
+    "index": "8指数",
+    "fundType": "index"
+  },
+  {
+    "name": "Smart-i 8資産バランス 安定成長型",
+    "company": "りそなアセットマネジメント株式会社",
+    "category": "複数指数 （バランス型）  ",
+    "region": "海外型\n",
+    "index": "8指数",
+    "fundType": "index"
+  },
+  {
+    "name": "Smart-i 8資産バランス 成長型",
+    "company": "りそなアセットマネジメント株式会社",
+    "category": "複数指数 （バランス型）  ",
+    "region": "海外型\n",
+    "index": "8指数",
+    "fundType": "index"
+  },
+  {
+    "name": "つみたてバランスファンド",
+    "company": "りそなアセットマネジメント株式会社",
+    "category": "複数指数 （バランス型）  ",
+    "region": "海外型\n",
+    "index": "8指数",
+    "fundType": "index"
+  },
+  {
+    "name": "三井住友DS・バランスファンド（保守コース）",
+    "company": "三井住友DSアセットマネジメント株式会社",
+    "category": "複数指数 （バランス型）  ",
+    "region": "海外型\n",
+    "index": "9指数",
+    "fundType": "index"
+  },
+  {
+    "name": "三井住友DS・バランスファンド（安定コース）",
+    "company": "三井住友DSアセットマネジメント株式会社",
+    "category": "複数指数 （バランス型）  ",
+    "region": "海外型\n",
+    "index": "9指数",
+    "fundType": "index"
+  },
+  {
+    "name": "三井住友DS・バランスファンド（標準コース）",
+    "company": "三井住友DSアセットマネジメント株式会社",
+    "category": "複数指数 （バランス型）  ",
+    "region": "海外型\n",
+    "index": "9指数",
+    "fundType": "index"
+  },
+  {
+    "name": "三井住友DS・バランスファンド（成長コース）",
+    "company": "三井住友DSアセットマネジメント株式会社",
+    "category": "複数指数 （バランス型）  ",
+    "region": "海外型\n",
+    "index": "9指数",
+    "fundType": "index"
+  },
+  {
+    "name": "三井住友DS・バランスファンド（積極コース）",
+    "company": "三井住友DSアセットマネジメント株式会社",
+    "category": "複数指数 （バランス型）  ",
+    "region": "海外型\n",
+    "index": "9指数",
+    "fundType": "index"
+  },
+  {
+    "name": "ターゲットリターンバランスファンド（目標2%）",
+    "company": "りそなアセットマネジメント株式会社",
+    "category": "複数指数 （バランス型）  ",
+    "region": "海外型\n",
+    "index": "9指数",
+    "fundType": "index"
+  },
+  {
+    "name": "ターゲットリターンバランスファンド（目標3%）",
+    "company": "りそなアセットマネジメント株式会社",
+    "category": "複数指数 （バランス型）  ",
+    "region": "海外型\n",
+    "index": "9指数",
+    "fundType": "index"
+  },
+  {
+    "name": "ターゲットリターンバランスファンド（目標4%）",
+    "company": "りそなアセットマネジメント株式会社",
+    "category": "複数指数 （バランス型）  ",
+    "region": "海外型\n",
+    "index": "9指数",
+    "fundType": "index"
+  },
+  {
+    "name": "ターゲットリターンバランスファンド（目標5%）",
+    "company": "りそなアセットマネジメント株式会社",
+    "category": "複数指数 （バランス型）  ",
+    "region": "海外型\n",
+    "index": "9指数",
+    "fundType": "index"
+  },
+  {
+    "name": "ターゲットリターンバランスファンド（目標6%）",
+    "company": "りそなアセットマネジメント株式会社",
+    "category": "複数指数 （バランス型）  ",
+    "region": "海外型\n",
+    "index": "9指数",
+    "fundType": "index"
+  },
+  {
+    "name": "りそなターゲット・イヤー・ファンド2045",
+    "company": "りそなアセットマネジメント株式会社",
+    "category": "複数指数 （バランス型）  ",
+    "region": "海外型\n",
+    "index": "9指数",
+    "fundType": "index"
+  },
+  {
+    "name": "りそなターゲット・イヤー・ファンド2050",
+    "company": "りそなアセットマネジメント株式会社",
+    "category": "複数指数 （バランス型）  ",
+    "region": "海外型\n",
+    "index": "9指数",
+    "fundType": "index"
+  },
+  {
+    "name": "りそなターゲット・イヤー・ファンド2055",
+    "company": "りそなアセットマネジメント株式会社",
+    "category": "複数指数 （バランス型）  ",
+    "region": "海外型\n",
+    "index": "9指数",
+    "fundType": "index"
+  },
+  {
+    "name": "りそなターゲット・イヤー・ファンド2060",
+    "company": "りそなアセットマネジメント株式会社",
+    "category": "複数指数 （バランス型）  ",
+    "region": "海外型\n",
+    "index": "9指数",
+    "fundType": "index"
+  },
+  {
+    "name": "りそなターゲット・イヤー・ファンド2065",
+    "company": "りそなアセットマネジメント株式会社",
+    "category": "複数指数 （バランス型）  ",
+    "region": "海外型\n",
+    "index": "9指数",
+    "fundType": "index"
+  },
+  {
+    "name": "りそなターゲット・イヤー・ファンド2035（運用継続型）",
+    "company": "りそなアセットマネジメント株式会社",
+    "category": "複数指数 （バランス型）  ",
+    "region": "海外型\n",
+    "index": "9指数",
+    "fundType": "index"
+  },
+  {
+    "name": "りそなターゲット・イヤー・ファンド2040（運用継続型）",
+    "company": "りそなアセットマネジメント株式会社",
+    "category": "複数指数 （バランス型）  ",
+    "region": "海外型\n",
+    "index": "9指数",
+    "fundType": "index"
+  },
+  {
+    "name": "りそなターゲット・イヤー・ファンド2045（運用継続型）",
+    "company": "りそなアセットマネジメント株式会社",
+    "category": "複数指数 （バランス型）  ",
+    "region": "海外型\n",
+    "index": "9指数",
+    "fundType": "index"
+  },
+  {
+    "name": "りそなターゲット・イヤー・ファンド2050（運用継続型）",
+    "company": "りそなアセットマネジメント株式会社",
+    "category": "複数指数 （バランス型）  ",
+    "region": "海外型\n",
+    "index": "9指数",
+    "fundType": "index"
+  },
+  {
+    "name": "りそなターゲット・イヤー・ファンド2055（運用継続型）",
+    "company": "りそなアセットマネジメント株式会社",
+    "category": "複数指数 （バランス型）  ",
+    "region": "海外型\n",
+    "index": "9指数",
+    "fundType": "index"
+  },
+  {
+    "name": "りそなターゲット・イヤー・ファンド2060（運用継続型）",
+    "company": "りそなアセットマネジメント株式会社",
+    "category": "複数指数 （バランス型）  ",
+    "region": "海外型\n",
+    "index": "9指数",
+    "fundType": "index"
+  },
+  {
+    "name": "りそなターゲット・イヤー・ファンド2065（運用継続型）",
+    "company": "りそなアセットマネジメント株式会社",
+    "category": "複数指数 （バランス型）  ",
+    "region": "海外型\n",
+    "index": "9指数",
+    "fundType": "index"
+  },
+  {
+    "name": "りそなターゲット・イヤー・ファンド2070",
+    "company": "りそなアセットマネジメント株式会社",
+    "category": "複数指数 （バランス型）  ",
+    "region": "海外型\n",
+    "index": "9指数",
+    "fundType": "index"
+  },
+  {
+    "name": "りそなターゲット・イヤー・ファンド2070（運用継続型）",
+    "company": "りそなアセットマネジメント株式会社",
+    "category": "複数指数 （バランス型）  ",
+    "region": "海外型\n",
+    "index": "9指数",
+    "fundType": "index"
+  },
+  {
+    "name": "りそなターゲット・イヤー・ファンド2075",
+    "company": "りそなアセットマネジメント株式会社",
+    "category": "複数指数 （バランス型）  ",
+    "region": "海外型\n",
+    "index": "9指数",
+    "fundType": "index"
+  },
+  {
+    "name": "りそなターゲット・イヤー・ファンド2075（運用継続型）",
+    "company": "りそなアセットマネジメント株式会社",
+    "category": "複数指数 （バランス型）  ",
+    "region": "海外型\n",
+    "index": "9指数",
+    "fundType": "index"
+  },
+  {
+    "name": "Niつみインデックスラップ世界10指数（安定成長型）",
+    "company": "アモーヴァ・アセットマネジメント株式会社",
+    "category": "複数指数 （バランス型）  ",
+    "region": "海外型\n",
+    "index": "10指数",
+    "fundType": "index"
+  },
+  {
+    "name": "Niつみインデックスラップ世界10指数（均等型）",
+    "company": "アモーヴァ・アセットマネジメント株式会社",
+    "category": "複数指数 （バランス型）  ",
+    "region": "海外型\n",
+    "index": "10指数",
+    "fundType": "index"
+  },
+  {
+    "name": "Ｏｎｅ高配当利回り厳選ジャパン",
+    "company": "アセットマネジメントOne株式会社",
+    "category": "アクティブ",
+    "region": "国内型",
+    "assetClass": "株式",
+    "fundType": "active"
+  },
+  {
+    "name": "年金積立 Jグロース",
+    "company": "アモーヴァ・アセットマネジメント株式会社",
+    "category": "アクティブ",
+    "region": "国内型",
+    "assetClass": "株式",
+    "fundType": "active"
+  },
+  {
+    "name": "コモンズ30ファンド",
+    "company": "コモンズ投信株式会社",
+    "category": "アクティブ",
+    "region": "国内型",
+    "assetClass": "株式",
+    "fundType": "active"
+  },
+  {
+    "name": "ニッセイ日本株ファンド",
+    "company": "ニッセイアセットマネジメント株式会社",
+    "category": "アクティブ",
+    "region": "国内型",
+    "assetClass": "株式",
+    "fundType": "active"
+  },
+  {
+    "name": "iTrust日本株式",
+    "company": "ピクテ・ジャパン株式会社",
+    "category": "アクティブ",
+    "region": "国内型",
+    "assetClass": "株式",
+    "fundType": "active"
+  },
+  {
+    "name": "大和住銀DC国内株式ファンド",
+    "company": "三井住友DSアセットマネジメント株式会社",
+    "category": "アクティブ",
+    "region": "国内型",
+    "assetClass": "株式",
+    "fundType": "active"
+  },
+  {
+    "name": "SMT 日本株配当貴族インデックス・オープン",
+    "company": "三井住友トラスト・アセットマネジメント株式会社",
+    "category": "アクティブ",
+    "region": "国内型",
+    "assetClass": "株式",
+    "fundType": "active"
+  },
+  {
+    "name": "日経平均高配当利回り株ファンド",
+    "company": "三菱ＵＦＪアセットマネジメント株式会社",
+    "category": "アクティブ",
+    "region": "国内型",
+    "assetClass": "株式",
+    "fundType": "active"
+  },
+  {
+    "name": "ひふみ投信",
+    "company": "レオス・キャピタルワークス株式会社",
+    "category": "アクティブ",
+    "region": "国内型",
+    "assetClass": "株式",
+    "fundType": "active"
+  },
+  {
+    "name": "ひふみプラス",
+    "company": "レオス・キャピタルワークス株式会社",
+    "category": "アクティブ",
+    "region": "国内型",
+    "assetClass": "株式",
+    "fundType": "active"
+  },
+  {
+    "name": "結い 2101",
+    "company": "鎌倉投信株式会社",
+    "category": "アクティブ",
+    "region": "国内型",
+    "assetClass": "株式及び公社債",
+    "fundType": "active"
+  },
+  {
+    "name": "EXE-i 全世界中小型株式ファンド",
+    "company": "SBIアセットマネジメント株式会社",
+    "category": "アクティブ",
+    "region": "海外型",
+    "assetClass": "株式",
+    "fundType": "active"
+  },
+  {
+    "name": "あおぞら・徹底分散グローバル株式ファンド",
+    "company": "あおぞら投信株式会社",
+    "category": "アクティブ",
+    "region": "海外型",
+    "assetClass": "株式",
+    "fundType": "active"
+  },
+  {
+    "name": "グローバル・ハイクオリティ成長株式ファンド（為替ヘッジなし）",
+    "company": "アセットマネジメントOne株式会社",
+    "category": "アクティブ",
+    "region": "海外型",
+    "assetClass": "株式",
+    "fundType": "active"
+  },
+  {
+    "name": "たわらノーロード ＮＹダウ",
+    "company": "アセットマネジメントOne株式会社",
+    "category": "アクティブ",
+    "region": "海外型",
+    "assetClass": "株式",
+    "fundType": "active"
+  },
+  {
+    "name": "インデックスファンドNYダウ30（アメリカ株式）",
+    "company": "アモーヴァ・アセットマネジメント株式会社",
+    "category": "アクティブ",
+    "region": "海外型",
+    "assetClass": "株式",
+    "fundType": "active"
+  },
+  {
+    "name": "グローバル株式トップフォーカス",
+    "company": "アモーヴァ・アセットマネジメント株式会社",
+    "category": "アクティブ",
+    "region": "海外型",
+    "assetClass": "株式",
+    "fundType": "active"
+  },
+  {
+    "name": "アライアンス・バーンスタイン・グローバル・グロース・オポチュニティーズ（年金つみたて向け）",
+    "company": "アライアンス・バーンスタイン株式会社",
+    "category": "アクティブ",
+    "region": "海外型",
+    "assetClass": "株式",
+    "fundType": "active"
+  },
+  {
+    "name": "THEOグロース・ＡＩファンド（世界の株式中心）",
+    "company": "お金のデザイン株式会社",
+    "category": "アクティブ",
+    "region": "海外型",
+    "assetClass": "株式",
+    "fundType": "active"
+  },
+  {
+    "name": "キャピタル世界株式ファンド（DC年金つみたて専用）",
+    "company": "キャピタル・インターナショナル株式会社",
+    "category": "アクティブ",
+    "region": "海外型",
+    "assetClass": "株式",
+    "fundType": "active"
+  },
+  {
+    "name": "GS グローバル・コア株式ファンド（DC・つみたてNISA専用）",
+    "company": "ゴールドマン・サックス・アセット・マネジメント株式会社",
+    "category": "アクティブ",
+    "region": "海外型",
+    "assetClass": "株式",
+    "fundType": "active"
+  },
+  {
+    "name": "セゾン資産形成の達人ファンド",
+    "company": "セゾン投信株式会社",
+    "category": "アクティブ",
+    "region": "海外型",
+    "assetClass": "株式",
+    "fundType": "active"
+  },
+  {
+    "name": "iFreeNEXT FANG+インデックス",
+    "company": "大和アセットマネジメント株式会社",
+    "category": "アクティブ",
+    "region": "海外型",
+    "assetClass": "株式",
+    "fundType": "active"
+  },
+  {
+    "name": "iFreeNEXT NASDAQ100インデックス",
+    "company": "大和アセットマネジメント株式会社",
+    "category": "アクティブ",
+    "region": "海外型",
+    "assetClass": "株式",
+    "fundType": "active"
+  },
+  {
+    "name": "ｉＦｒｅｅ ＮＹダウ・インデックス",
+    "company": "大和アセットマネジメント株式会社",
+    "category": "アクティブ",
+    "region": "海外型",
+    "assetClass": "株式",
+    "fundType": "active"
+  },
+  {
+    "name": "ニッセイSDGｓグローバルセレクトファンド（資産成長型・為替ヘッジなし）",
+    "company": "ニッセイアセットマネジメント株式会社",
+    "category": "アクティブ",
+    "region": "海外型",
+    "assetClass": "株式",
+    "fundType": "active"
+  },
+  {
+    "name": "農林中金＜パートナーズ＞長期厳選投資　おおぶね",
+    "company": "農林中金全共連アセットマネジメント株式会社",
+    "category": "アクティブ",
+    "region": "海外型",
+    "assetClass": "株式",
+    "fundType": "active"
+  },
+  {
+    "name": "野村インデックスファンド・米国株式配当貴族",
+    "company": "野村アセットマネジメント株式会社",
+    "category": "アクティブ",
+    "region": "海外型",
+    "assetClass": "株式",
+    "fundType": "active"
+  },
+  {
+    "name": "野村インデックスファンド・米国株式配当貴族・為替ヘッジ型",
+    "company": "野村アセットマネジメント株式会社",
+    "category": "アクティブ",
+    "region": "海外型",
+    "assetClass": "株式",
+    "fundType": "active"
+  },
+  {
+    "name": "iTrustインド株式",
+    "company": "ピクテ・ジャパン株式会社",
+    "category": "アクティブ",
+    "region": "海外型",
+    "assetClass": "株式",
+    "fundType": "active"
+  },
+  {
+    "name": "iTrust新興国株式",
+    "company": "ピクテ・ジャパン株式会社",
+    "category": "アクティブ",
+    "region": "海外型",
+    "assetClass": "株式",
+    "fundType": "active"
+  },
+  {
+    "name": "iTrust世界株式",
+    "company": "ピクテ・ジャパン株式会社",
+    "category": "アクティブ",
+    "region": "海外型",
+    "assetClass": "株式",
+    "fundType": "active"
+  },
+  {
+    "name": "フィデリティ・欧州株・ファンド",
+    "company": "フィデリティ投信株式会社",
+    "category": "アクティブ",
+    "region": "海外型",
+    "assetClass": "株式",
+    "fundType": "active"
+  },
+  {
+    "name": "フィデリティ・米国優良株・ファンド",
+    "company": "フィデリティ投信株式会社",
+    "category": "アクティブ",
+    "region": "海外型",
+    "assetClass": "株式",
+    "fundType": "active"
+  },
+  {
+    "name": "イノベーション・インデックス・ＡＩ",
+    "company": "三井住友DSアセットマネジメント株式会社",
+    "category": "アクティブ",
+    "region": "海外型",
+    "assetClass": "株式",
+    "fundType": "active"
+  },
+  {
+    "name": "三井住友・ＮＹダウ・ジョーンズ・インデックスファンド（為替ノーヘッジ型）",
+    "company": "三井住友DSアセットマネジメント株式会社",
+    "category": "アクティブ",
+    "region": "海外型",
+    "assetClass": "株式",
+    "fundType": "active"
+  },
+  {
+    "name": "SMT ダウ・ジョーンズ　インデックス・オープン",
+    "company": "三井住友トラスト・アセットマネジメント株式会社",
+    "category": "アクティブ",
+    "region": "海外型",
+    "assetClass": "株式",
+    "fundType": "active"
+  },
+  {
+    "name": "SMT 米国株配当貴族インデックス・オープン",
+    "company": "三井住友トラスト・アセットマネジメント株式会社",
+    "category": "アクティブ",
+    "region": "海外型",
+    "assetClass": "株式",
+    "fundType": "active"
+  },
+  {
+    "name": "SMTAMダウ・ジョーンズ　インデックスファンド",
+    "company": "三井住友トラスト・アセットマネジメント株式会社",
+    "category": "アクティブ",
+    "region": "海外型",
+    "assetClass": "株式",
+    "fundType": "active"
+  },
+  {
+    "name": "eMAXIS NYダウインデックス",
+    "company": "三菱ＵＦＪアセットマネジメント株式会社",
+    "category": "アクティブ",
+    "region": "海外型",
+    "assetClass": "株式",
+    "fundType": "active"
+  },
+  {
+    "name": "ベイリー・ギフォード世界長期成長株ファンド",
+    "company": "三菱ＵＦＪアセットマネジメント株式会社",
+    "category": "アクティブ",
+    "region": "海外型",
+    "assetClass": "株式",
+    "fundType": "active"
+  },
+  {
+    "name": "明治安田DC外国株式リサーチオープン（愛称：DCジェットストリーム）",
+    "company": "明治安田アセットマネジメント株式会社",
+    "category": "アクティブ",
+    "region": "海外型",
+    "assetClass": "株式",
+    "fundType": "active"
+  },
+  {
+    "name": "楽天・米国高配当株式インデックス・ファンド",
+    "company": "楽天投信投資顧問株式会社",
+    "category": "アクティブ",
+    "region": "海外型",
+    "assetClass": "株式",
+    "fundType": "active"
+  },
+  {
+    "name": "Smart-i 先進国株式ESGインデックス",
+    "company": "りそなアセットマネジメント株式会社",
+    "category": "アクティブ",
+    "region": "海外型",
+    "assetClass": "株式",
+    "fundType": "active"
+  },
+  {
+    "name": "ひふみワールド",
+    "company": "レオス・キャピタルワークス株式会社",
+    "category": "アクティブ",
+    "region": "海外型",
+    "assetClass": "株式",
+    "fundType": "active"
+  },
+  {
+    "name": "ひふみワールド＋",
+    "company": "レオス・キャピタルワークス株式会社",
+    "category": "アクティブ",
+    "region": "海外型",
+    "assetClass": "株式",
+    "fundType": "active"
+  },
+  {
+    "name": "auスマート・プライム（高成長）",
+    "company": "auアセットマネジメント株式会社",
+    "category": "アクティブ",
+    "region": "海外型",
+    "assetClass": "株式及び公社債",
+    "fundType": "active"
+  },
+  {
+    "name": "セゾン・グローバルバランスファンド",
+    "company": "セゾン投信株式会社",
+    "category": "アクティブ",
+    "region": "海外型",
+    "assetClass": "株式及び公社債",
+    "fundType": "active"
+  },
+  {
+    "name": "ハッピーエイジング20",
+    "company": "SOMPOアセットマネジメント株式会社",
+    "category": "アクティブ",
+    "region": "海外型",
+    "assetClass": "株式及び公社債",
+    "fundType": "active"
+  },
+  {
+    "name": "ハッピーエイジング30",
+    "company": "SOMPOアセットマネジメント株式会社",
+    "category": "アクティブ",
+    "region": "海外型",
+    "assetClass": "株式及び公社債",
+    "fundType": "active"
+  },
+  {
+    "name": "ハッピーエイジング40",
+    "company": "SOMPOアセットマネジメント株式会社",
+    "category": "アクティブ",
+    "region": "海外型",
+    "assetClass": "株式及び公社債",
+    "fundType": "active"
+  },
+  {
+    "name": "東京海上セレクション・バランス50",
+    "company": "東京海上アセットマネジメント株式会社",
+    "category": "アクティブ",
+    "region": "海外型",
+    "assetClass": "株式及び公社債",
+    "fundType": "active"
+  },
+  {
+    "name": "東京海上セレクション・バランス70",
+    "company": "東京海上アセットマネジメント株式会社",
+    "category": "アクティブ",
+    "region": "海外型",
+    "assetClass": "株式及び公社債",
+    "fundType": "active"
+  },
+  {
+    "name": "ブラックロックESG世界株式ファンド（為替ヘッジなし）",
+    "company": "ブラックロック・ジャパン株式会社",
+    "category": "アクティブ",
+    "region": "海外型",
+    "assetClass": "株式及び公社債",
+    "fundType": "active"
+  },
+  {
+    "name": "世界経済インデックスファンド",
+    "company": "三井住友トラスト・アセットマネジメント株式会社",
+    "category": "アクティブ",
+    "region": "海外型",
+    "assetClass": "株式及び公社債",
+    "fundType": "active"
+  },
+  {
+    "name": "世界経済インデックスファンド（株式シフト型）",
+    "company": "三井住友トラスト・アセットマネジメント株式会社",
+    "category": "アクティブ",
+    "region": "海外型",
+    "assetClass": "株式及び公社債",
+    "fundType": "active"
+  },
+  {
+    "name": "資産形成ファンド",
+    "company": "明治安田アセットマネジメント株式会社",
+    "category": "アクティブ",
+    "region": "海外型",
+    "assetClass": "株式及び公社債",
+    "fundType": "active"
+  },
+  {
+    "name": "HSBC ワールド・セレクション（成長コース）",
+    "company": "HSBCアセットマネジメント株式会社",
+    "category": "アクティブ",
+    "region": "海外型",
+    "assetClass": "株式、公社債\n及びREIT",
+    "fundType": "active"
+  },
+  {
+    "name": "LOSA長期保有型国際分散インデックスファンド",
+    "company": "アセットマネジメントOne株式会社",
+    "category": "アクティブ",
+    "region": "海外型",
+    "assetClass": "株式、公社債\n及びREIT",
+    "fundType": "active"
+  },
+  {
+    "name": "のむラップ・ファンド（積極型）",
+    "company": "野村アセットマネジメント株式会社",
+    "category": "アクティブ",
+    "region": "海外型",
+    "assetClass": "株式、公社債\n及びREIT",
+    "fundType": "active"
+  },
+  {
+    "name": "ブラックロック世界分散投資ファンド",
+    "company": "ブラックロック・ジャパン株式会社",
+    "category": "アクティブ",
+    "region": "海外型",
+    "assetClass": "株式、公社債\n及びREIT",
+    "fundType": "active"
+  },
+  {
+    "name": "りそなラップ型ファンド（成長型）",
+    "company": "りそなアセットマネジメント株式会社",
+    "category": "アクティブ",
+    "region": "海外型",
+    "assetClass": "株式、公社債\n及びREIT",
+    "fundType": "active"
+  },
+  {
+    "name": "iFreeETF TOPIX（年1回決算型）",
+    "company": "大和アセットマネジメント株式会社",
+    "category": "ETF",
+    "index": "TOPIX",
+    "fundType": "etf"
+  },
+  {
+    "name": "iFreeETF 日経225（年1回決算型）",
+    "company": "大和アセットマネジメント株式会社",
+    "category": "ETF",
+    "index": "日経平均株価",
+    "fundType": "etf"
+  },
+  {
+    "name": "iFreeETF JPX 日経400",
+    "company": "大和アセットマネジメント株式会社",
+    "category": "ETF",
+    "index": "JPX日経インデックス400",
+    "fundType": "etf"
+  },
+  {
+    "name": "上場インデックスファンド世界株式（MSCI ACWI）除く日本",
+    "company": "アモーヴァ・アセットマネジメント株式会社",
+    "category": "ETF",
+    "index": "MSCI ACWI Index",
+    "fundType": "etf"
+  },
+  {
+    "name": "上場インデックスファンド海外先進国株式（MSCI-KOKUSAI）",
+    "company": "アモーヴァ・アセットマネジメント株式会社",
+    "category": "ETF",
+    "index": "MSCI World Index\n（MSCIコクサイ・インデックス）",
+    "fundType": "etf"
+  },
+  {
+    "name": "iシェアーズ・コア MSCI 先進国（除く米国） ETF",
+    "company": "ブラックロック・ファンド・アドバイザーズ",
+    "category": "ETF",
+    "index": "MSCI WORLD IMI Index",
+    "fundType": "etf"
+  },
+  {
+    "name": "上場インデックスファンド米国株式（S&P500)",
+    "company": "アモーヴァ・アセットマネジメント株式会社",
+    "category": "ETF",
+    "index": "S&P500",
+    "fundType": "etf"
+  },
+  {
+    "name": "iシェアーズ・コア S&P 500 ETF",
+    "company": "ブラックロック・ファンド・アドバイザーズ",
+    "category": "ETF",
+    "index": null,
+    "fundType": "etf"
+  },
+  {
+    "name": "上場インデックスファンド海外新興国株式（MSCIエマージング）",
+    "company": "アモーヴァ・アセットマネジメント株式会社",
+    "category": "ETF",
+    "index": "MSCI Emerging Markets Index",
+    "fundType": "etf"
+  }
+];
+
+const dataSource = {
+  "source": "金融庁 つみたて投資枠対象商品届出一覧（対象資産別）",
+  "license": "公共データ利用規約 PDL1.0（CC BY 4.0互換）",
+  "publishedDate": "2026-04-30",
+  "url": "https://www.fsa.go.jp/policy/nisa2/products/"
+};

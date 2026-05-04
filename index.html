@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>投資信託 手数料比較ツール</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1>投資信託 手数料比較ツール</h1>
+    <p>ファンド名を入力すると、手数料の全項目と同カテゴリーの低コスト候補を比較できます。<br>
+    （現バージョンはNISAつみたて投資枠対象 353本に対応。成長投資枠は今後追加予定）</p>
+  </header>
+
+  <main>
+    <section class="search-box">
+      <h2>ファンド名を入力してください</h2>
+      <input type="text" id="fund-input" placeholder="例：eMAXIS Slim 全世界株式" />
+      <button id="search-btn">手数料を見る</button>
+    </section>
+
+    <section id="result" class="result hidden">
+      <div class="fund-card" id="input-fund">
+        <h3>検索結果</h3>
+        <div id="input-fund-info"></div>
+      </div>
+
+      <div class="fee-detail" id="fee-detail-box">
+        <h3>手数料の内訳（5項目）</h3>
+        <p class="note">投資信託の実質的なコストは以下の5項目で構成されます。</p>
+        <table id="fee-table">
+          <thead>
+            <tr>
+              <th>項目</th>
+              <th>内容</th>
+              <th>このファンド</th>
+            </tr>
+          </thead>
+          <tbody id="fee-body"></tbody>
+        </table>
+        <p class="note" style="margin-top:8px;">
+          ※ 実値（信託報酬・実質コスト等）はEDINET（金融庁電子開示システム）連携で順次拡充予定です。<br>
+          ※ 現時点では法令上の上限値および目論見書参照の案内を表示しています。
+        </p>
+      </div>
+
+      <div class="comparison">
+        <h3 id="alt-title">同カテゴリー内の信託報酬ランキング</h3>
+        <p class="note" id="comparison-note">信託報酬はEDINET届出書から取得。実際の最新値は各社目論見書をご確認ください。投資を推奨するものではありません。</p>
+        <table id="comparison-table">
+          <thead>
+            <tr>
+              <th style="width:4rem; text-align:center;">順位</th>
+              <th>ファンド名</th>
+              <th>運用会社</th>
+              <th style="text-align:center;">信託報酬（年率）</th>
+            </tr>
+          </thead>
+          <tbody id="comparison-body"></tbody>
+        </table>
+      </div>
+
+      <div class="summary" id="summary-box"></div>
+    </section>
+
+    <section id="no-result" class="hidden">
+      <div class="fund-card" style="border-left-color:#c73535;">
+        <h3 style="color:#c73535;">該当ファンドが見つかりませんでした</h3>
+        <p>入力されたファンド名は、2026年4月30日時点で金融庁が公表する「つみたて投資枠対象商品届出一覧」に該当しませんでした。</p>
+        <p style="margin-top:12px; font-size:0.9rem; color:#555;">
+          現バージョンはつみたて投資枠対象 353本のみを収録しています。成長投資枠対象ファンド（約2,000本）は今後追加予定です。<br>
+          つみたて対象外のファンドは、法令上の手数料上限（インデックス：0.5〜0.75%以下、アクティブ：1.0〜1.5%以下、ETF：0.25%以下）を超える信託報酬を採用している可能性があります。
+        </p>
+        <p style="margin-top:12px; font-size:0.85rem; color:#888;">
+          ※入力した名称が正確でない場合もあります。正式名称で再度お試しください。
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>
+      データ出典：
+      <a href="https://www.fsa.go.jp/policy/nisa2/products/" target="_blank" rel="noopener">金融庁「つみたて投資枠対象商品届出一覧」</a>
+      （2026年4月30日時点）<br>
+      ライセンス：公共データ利用規約 PDL1.0（CC BY 4.0互換）<br>
+      本サイトは情報提供を目的としており、投資助言ではありません。投資判断はご自身の責任で行ってください。
+    </p>
+  </footer>
+
+  <script src="data/funds.js"></script>
+  <script src="data/fee_data.js" onerror="console.log('fee_data.js not yet available')"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,206 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  background: #f5f7fa;
+  color: #333;
+  line-height: 1.6;
+}
+
+header {
+  background: #1a3a5c;
+  color: white;
+  padding: 2rem;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+header p {
+  font-size: 0.95rem;
+  opacity: 0.85;
+}
+
+main {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.search-box {
+  background: white;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.search-box h2 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #1a3a5c;
+}
+
+#fund-input {
+  width: 60%;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  margin-right: 0.5rem;
+}
+
+#fund-input:focus {
+  outline: none;
+  border-color: #1a3a5c;
+}
+
+#search-btn {
+  padding: 0.75rem 1.5rem;
+  background: #e84545;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+#search-btn:hover {
+  background: #c73535;
+}
+
+.hidden {
+  display: none;
+}
+
+.fund-card {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  margin-bottom: 1.5rem;
+  border-left: 5px solid #e84545;
+}
+
+.fund-card h3 {
+  color: #1a3a5c;
+  margin-bottom: 1rem;
+}
+
+.fund-info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.fund-info-item {
+  text-align: center;
+}
+
+.fund-info-item .label {
+  font-size: 0.8rem;
+  color: #888;
+}
+
+.fund-info-item .value {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #e84545;
+}
+
+.comparison, .fee-detail {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  margin-bottom: 1.5rem;
+}
+
+.fee-detail h3 {
+  color: #1a3a5c;
+  margin-bottom: 0.5rem;
+}
+
+#fee-table td {
+  vertical-align: top;
+}
+
+#fee-table td:first-child {
+  width: 22%;
+  color: #1a3a5c;
+}
+
+#fee-table td:nth-child(2) {
+  width: 38%;
+}
+
+.comparison h3 {
+  color: #1a3a5c;
+  margin-bottom: 0.5rem;
+}
+
+.note {
+  font-size: 0.8rem;
+  color: #888;
+  margin-bottom: 1rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  background: #1a3a5c;
+  color: white;
+  padding: 0.75rem;
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+td {
+  padding: 0.75rem;
+  border-bottom: 1px solid #eee;
+  font-size: 0.9rem;
+}
+
+tr:hover td {
+  background: #f9f9f9;
+}
+
+.cost-diff {
+  font-weight: bold;
+  color: #2a9d5c;
+}
+
+.summary {
+  background: #fff8e1;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  border-left: 5px solid #f4a300;
+}
+
+#no-result {
+  background: white;
+  border-radius: 8px;
+  padding: 2rem;
+  text-align: center;
+  color: #888;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.8rem;
+  color: #aaa;
+}

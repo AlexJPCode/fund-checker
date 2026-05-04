@@ -1,0 +1,741 @@
+{
+  "SBI・iシェアーズ・TOPIXインデックス・ファンド": {
+    "rate": 0.0638,
+    "docID": "S100XWM9"
+  },
+  "たわらノーロード TOPIX": {
+    "rate": 0.187,
+    "docID": "S100XE0J"
+  },
+  "インデックスポートフォリオ": {
+    "rate": 0.55,
+    "docID": "S100WFMG"
+  },
+  "ステート・ストリートTOPIXインデックス・オープン": {
+    "rate": 0.0638,
+    "docID": "S100XWM9",
+    "match_type": "partial"
+  },
+  "ｉＦｒｅｅ TOPIXインデックス": {
+    "rate": 0.154,
+    "docID": "S100XD9A",
+    "match_type": "partial"
+  },
+  "東京海上セレクション・日本株TOPIX": {
+    "rate": 0.154,
+    "docID": "S100XM0T"
+  },
+  "ニッセイTOPIXインデックスファンド＜購入・換金手数料なし＞": {
+    "rate": null,
+    "docID": "S100XEBF",
+    "match_type": "partial"
+  },
+  "野村インデックスファンド・TOPIX": {
+    "rate": null,
+    "docID": "S100WSGU"
+  },
+  "はじめてのNISA・日本株式インデックス（TOPIX）": {
+    "rate": null,
+    "docID": "S100WCXD"
+  },
+  "三井住友・DCつみたてNISA・日本株インデックスファンド": {
+    "rate": null,
+    "docID": "S100XIQP"
+  },
+  "My SMT TOPIXインデックス（ノーロード）": {
+    "rate": 0.154,
+    "docID": "S100XD9A"
+  },
+  "SMT TOPIXインデックス・オープン": {
+    "rate": 0.407,
+    "docID": "S100WF8O"
+  },
+  "明治安田DC・TOPIXインデックスファンド": {
+    "rate": null,
+    "docID": "S100XFAD",
+    "match_type": "partial"
+  },
+  "インデックスオープン・日経２２５": {
+    "rate": 0.143,
+    "docID": "S100X7F7"
+  },
+  "SBI・iシェアーズ・日経225インデックス・ファンド": {
+    "rate": 0.0638,
+    "docID": "S100WQAY"
+  },
+  "たわらノーロード 日経225": {
+    "rate": 0.143,
+    "docID": "S100WBOH"
+  },
+  "ｉＦｒｅｅ 日経225インデックス": {
+    "rate": 0.154,
+    "docID": "S100XD9F",
+    "match_type": "partial"
+  },
+  "つみたて日経225インデックスファンド": {
+    "rate": 0.2475,
+    "docID": "S100Y0I4",
+    "match_type": "partial"
+  },
+  "東京海上・日経225インデックスファンド": {
+    "rate": 0.2475,
+    "docID": "S100Y0I4"
+  },
+  "ニッセイ日経平均インデックスファンド＜購入・換金手数料なし＞": {
+    "rate": 0.275,
+    "docID": "S100VPBK",
+    "match_type": "partial"
+  },
+  "ニッセイ日経225インデックスファンド": {
+    "rate": 0.2475,
+    "docID": "S100Y0I4",
+    "match_type": "partial"
+  },
+  "野村インデックスファンド・日経225": {
+    "rate": null,
+    "docID": "S100WVEW"
+  },
+  "野村つみたて日本株投信": {
+    "rate": null,
+    "docID": "S100VV74"
+  },
+  "はじめてのNISA・日本株式インデックス（日経225）": {
+    "rate": null,
+    "docID": "S100WEHE"
+  },
+  "SMBC・DCインデックスファンド（日経225）": {
+    "rate": null,
+    "docID": "S100XIJK",
+    "match_type": "partial"
+  },
+  "My SMT 日経 225 インデックス（ノーロード）": {
+    "rate": 0.154,
+    "docID": "S100XD9F"
+  },
+  "SMT 日経225インデックス・オープン": {
+    "rate": 0.407,
+    "docID": "S100WE67"
+  },
+  "楽天・プラス・日経225インデックス・ファンド": {
+    "rate": 0.407,
+    "docID": "S100WFJF",
+    "match_type": "partial"
+  },
+  "ニッセイJPX日経400インデックスファンド＜購入・換金手数料なし＞": {
+    "rate": 0.1958,
+    "docID": "S100XZI1",
+    "match_type": "partial"
+  },
+  "野村インデックスファンド・JPX日経400": {
+    "rate": null,
+    "docID": "S100WVLA"
+  },
+  "SMT JPX日経インデックス400・オープン": {
+    "rate": 0.407,
+    "docID": "S100XDHE"
+  },
+  "SBI読売333インデックス・ファンド※5": {
+    "rate": 0.132,
+    "docID": "S100XYCA",
+    "match_type": "partial"
+  },
+  "たわらノーロード　読売333※5": {
+    "rate": 0.1428,
+    "docID": "S100XQAO",
+    "match_type": "partial"
+  },
+  "マネーフォワード全世界株式インデックスファンド": {
+    "rate": 0.5335,
+    "docID": "S100WLZ3",
+    "match_type": "partial"
+  },
+  "インデックスオープン・世界株式": {
+    "rate": 0.1099,
+    "docID": "S100WDJ6"
+  },
+  "たわらノーロード 全世界株式": {
+    "rate": 0.1099,
+    "docID": "S100XE1W"
+  },
+  "ステート・ストリート全世界株式インデックス・オープン": {
+    "rate": null,
+    "docID": "S100WCX0",
+    "match_type": "partial"
+  },
+  "全世界株式インデックス・ファンド": {
+    "rate": null,
+    "docID": "S100WF6C",
+    "match_type": "partial"
+  },
+  "ｉＦｒｅｅ 全世界株式インデックス（オール・カントリー）": {
+    "rate": 0.165,
+    "docID": "S100WM3G",
+    "match_type": "partial"
+  },
+  "全世界株式インデックス・ファンド（オール・カントリー）": {
+    "rate": 0.1122,
+    "docID": "S100XAKW",
+    "match_type": "partial"
+  },
+  "野村つみたて外国株投信": {
+    "rate": null,
+    "docID": "S100VVCL"
+  },
+  "はじめてのNISA・全世界株式インデックス（オール・カントリー）": {
+    "rate": null,
+    "docID": "S100WCX0"
+  },
+  "三井住友・DCつみたてNISA・全海外株インデックスファンド": {
+    "rate": null,
+    "docID": "S100XIQJ"
+  },
+  "楽天・プラス・オールカントリー株式インデックス・ファンド": {
+    "rate": 0.0638,
+    "docID": "S100XOAS",
+    "match_type": "partial"
+  },
+  "SBI・全世界株式インデックス・ファンド": {
+    "rate": 0.0682,
+    "docID": "S100XHBO"
+  },
+  "SBI・V・全世界株式インデックス・ファンド": {
+    "rate": 0.0638,
+    "docID": "S100XY6W"
+  },
+  "楽天・全世界株式インデックス・ファンド": {
+    "rate": null,
+    "docID": "S100WF6C",
+    "match_type": "partial"
+  },
+  "楽天・全世界株式（除く米国）インデックス・ファンド": {
+    "rate": 0.0638,
+    "docID": "S100XUQZ",
+    "match_type": "partial"
+  },
+  "インデックスオープン・先進国株式": {
+    "rate": 0.0989,
+    "docID": "S100XXFZ"
+  },
+  "たわらノーロード 先進国株式": {
+    "rate": 0.0989,
+    "docID": "S100XE23"
+  },
+  "たわらノーロード 先進国株式＜為替ヘッジあり＞": {
+    "rate": 0.22,
+    "docID": "S100WBSI"
+  },
+  "東京海上セレクション・外国株式インデックス": {
+    "rate": 0.22,
+    "docID": "S100WBD8"
+  },
+  "ニッセイ外国株式インデックスファンド＜購入・換金手数料なし＞": {
+    "rate": 0.275,
+    "docID": "S100X0DW",
+    "match_type": "partial"
+  },
+  "野村インデックスファンド・外国株式": {
+    "rate": null,
+    "docID": "S100WVC7"
+  },
+  "野村インデックスファンド・外国株式・為替ヘッジ型": {
+    "rate": null,
+    "docID": "S100WSYL"
+  },
+  "野村スリーゼロ先進国株式投信": {
+    "rate": null,
+    "docID": "S100XM9B"
+  },
+  "外国株式指数ファンド": {
+    "rate": null,
+    "docID": "S100XHOV"
+  },
+  "SMBC・DCインデックスファンド（MSCIコクサイ）": {
+    "rate": null,
+    "docID": "S100XIJK"
+  },
+  "My SMT グローバル株式インデックス（ノーロード）": {
+    "rate": 0.1023,
+    "docID": "S100XDAX"
+  },
+  "SMT グローバル株式インデックス・オープン": {
+    "rate": 0.55,
+    "docID": "S100X814"
+  },
+  "eMAXIS 先進国株式インデックス（除く日本）": {
+    "rate": 0.66,
+    "docID": "S100XCH5",
+    "match_type": "partial"
+  },
+  "楽天・プラス・先進国株式（除く日本）インデックス・ファンド": {
+    "rate": 0.0638,
+    "docID": "S100XO0S",
+    "match_type": "partial"
+  },
+  "Smart-i 先進国株式インデックス": {
+    "rate": 0.66,
+    "docID": "S100XCH5",
+    "match_type": "partial"
+  },
+  "SBI・先進国株式インデックス・ファンド": {
+    "rate": 0.0682,
+    "docID": "S100WFH5"
+  },
+  "SBI・V･S&P500インデックス･ファンド": {
+    "rate": 0.0638,
+    "docID": "S100X8NV"
+  },
+  "インデックスオープン・アメリカ株式": {
+    "rate": 0.0937,
+    "docID": "S100WDRQ"
+  },
+  "たわらノーロード S&P500": {
+    "rate": 0.0937,
+    "docID": "S100WBKF"
+  },
+  "ステート・ストリートS&P500インデックス・オープン": {
+    "rate": 0.1078,
+    "docID": "S100XLV1",
+    "match_type": "partial"
+  },
+  "米国株式インデックス・ファンド": {
+    "rate": 0.55,
+    "docID": "S100VNUW",
+    "match_type": "partial"
+  },
+  "ｉＦｒｅｅ S&P500インデックス": {
+    "rate": 0.0968,
+    "docID": "S100W037",
+    "match_type": "partial"
+  },
+  "はじめてのNISA・米国株式インデックス（S&P500）": {
+    "rate": null,
+    "docID": "S100WEIH"
+  },
+  "iシェアーズ　米国株式（S&P500）インデックス・ファンド": {
+    "rate": 0.0638,
+    "docID": "S100XOAS",
+    "match_type": "partial"
+  },
+  "つみたてiシェアーズ　米国株式（S&P500）インデックス・ファンド": {
+    "rate": 0.0638,
+    "docID": "S100XQ71",
+    "match_type": "partial"
+  },
+  "SMBC・DCインデックスファンド（S&P500）": {
+    "rate": null,
+    "docID": "S100XI23"
+  },
+  "My SMT S&P500インデックス（ノーロード）": {
+    "rate": 0.0968,
+    "docID": "S100W037"
+  },
+  "eMAXIS S&P500インデックス": {
+    "rate": null,
+    "docID": "S100WCXT",
+    "match_type": "partial"
+  },
+  "楽天・プラス・S&P500インデックス・ファンド": {
+    "rate": 0.0968,
+    "docID": "S100W037",
+    "match_type": "partial"
+  },
+  "Smart-i　S&P500インデックス": {
+    "rate": null,
+    "docID": "S100WCXT",
+    "match_type": "partial"
+  },
+  "SBI・V・全米株式インデックス・ファンド": {
+    "rate": 0.0638,
+    "docID": "S100WQYO"
+  },
+  "楽天・全米株式インデックス・ファンド": {
+    "rate": 0.2035,
+    "docID": "S100XMOZ",
+    "match_type": "partial"
+  },
+  "たわらノーロード 新興国株式": {
+    "rate": 0.1859,
+    "docID": "S100XE1K"
+  },
+  "ニッセイ新興国株式インデックスファンド＜購入・換金手数料なし＞": {
+    "rate": 0.363,
+    "docID": "S100XEUY",
+    "match_type": "partial"
+  },
+  "野村インデックスファンド・新興国株式": {
+    "rate": null,
+    "docID": "S100WSVJ"
+  },
+  "はじめてのNISA・新興国株式インデックス": {
+    "rate": null,
+    "docID": "S100WEHH"
+  },
+  "三井住友・DC新興国株式インデックスファンド": {
+    "rate": null,
+    "docID": "S100XFAD"
+  },
+  "My SMT 新興国株式インデックス（ノーロード）": {
+    "rate": 0.187,
+    "docID": "S100WAG5"
+  },
+  "SMT 新興国株式インデックス・オープン": {
+    "rate": 0.66,
+    "docID": "S100XGWV"
+  },
+  "eMAXIS 新興国株式インデックス": {
+    "rate": 0.66,
+    "docID": "S100XCH5",
+    "match_type": "partial"
+  },
+  "楽天・エマージング株式インデックス・ファンド": {
+    "rate": null,
+    "docID": "S100XJFC",
+    "match_type": "partial"
+  },
+  "Smart-i 新興国株式インデックス": {
+    "rate": 0.66,
+    "docID": "S100XCH5",
+    "match_type": "partial"
+  },
+  "SBI・新興国株式インデックス・ファンド": {
+    "rate": 0.066,
+    "docID": "S100XHAI"
+  },
+  "ｉＦｒｅｅ 新興国株式インデックス": {
+    "rate": 0.187,
+    "docID": "S100WAG5",
+    "match_type": "partial"
+  },
+  "東京海上・円資産インデックスバランスファンド": {
+    "rate": 0.418,
+    "docID": "S100XZKM"
+  },
+  "susten新興国インカム・インデックスファンド（年4回決算型）": {
+    "rate": 1.7875,
+    "docID": "S100XH1Q",
+    "match_type": "partial"
+  },
+  "グローバル株式ファンド": {
+    "rate": null,
+    "docID": "S100XVMW",
+    "match_type": "partial"
+  },
+  "ちゅうぎん４資産バランスファンド＜株式重視型＞": {
+    "rate": 0.99,
+    "docID": "S100WOB7",
+    "match_type": "partial"
+  },
+  "ちゅうぎん４資産バランスファンド＜債券重視型＞": {
+    "rate": 0.99,
+    "docID": "S100WOB7",
+    "match_type": "partial"
+  },
+  "東京海上ターゲット・イヤー・ファンド2035": {
+    "rate": 0.308,
+    "docID": "S100WVUR",
+    "match_type": "partial"
+  },
+  "東京海上ターゲット・イヤー・ファンド2040": {
+    "rate": 0.308,
+    "docID": "S100WVUR",
+    "match_type": "partial"
+  },
+  "東京海上ターゲット・イヤー・ファンド2045": {
+    "rate": 0.308,
+    "docID": "S100WVUR",
+    "match_type": "partial"
+  },
+  "東京海上ターゲット・イヤー・ファンド2050": {
+    "rate": 0.308,
+    "docID": "S100WVUR",
+    "match_type": "partial"
+  },
+  "東京海上ターゲット・イヤー・ファンド2055": {
+    "rate": 0.308,
+    "docID": "S100WVUR",
+    "match_type": "partial"
+  },
+  "東京海上ターゲット・イヤー・ファンド2060": {
+    "rate": 0.308,
+    "docID": "S100WVUR",
+    "match_type": "partial"
+  },
+  "東京海上ターゲット・イヤー・ファンド2065": {
+    "rate": 0.308,
+    "docID": "S100WVUR",
+    "match_type": "partial"
+  },
+  "東京海上ターゲット・イヤー・ファンド2070": {
+    "rate": 0.308,
+    "docID": "S100WVUR",
+    "match_type": "partial"
+  },
+  "三井住友・DCターゲットイヤーファンド2040（4資産タイプ）": {
+    "rate": 0.242,
+    "docID": "S100VHJE",
+    "match_type": "partial"
+  },
+  "三井住友・DCターゲットイヤーファンド2045（4資産タイプ）": {
+    "rate": 0.242,
+    "docID": "S100VHJE",
+    "match_type": "partial"
+  },
+  "三井住友・DC年金バランス30（債券重点型）": {
+    "rate": null,
+    "docID": "S100XO0J",
+    "match_type": "partial"
+  },
+  "三井住友・DC年金バランス50（標準型）": {
+    "rate": null,
+    "docID": "S100XO0J",
+    "match_type": "partial"
+  },
+  "三井住友・DC年金バランス70（株式重点型）": {
+    "rate": null,
+    "docID": "S100XO0J",
+    "match_type": "partial"
+  },
+  "野村インデックスファンド・海外5資産バランス": {
+    "rate": null,
+    "docID": "S100WT50"
+  },
+  "世界6資産分散ファンド": {
+    "rate": null,
+    "docID": "S100WSYE"
+  },
+  "野村6資産均等バランス": {
+    "rate": null,
+    "docID": "S100WKND"
+  },
+  "SBI資産設計オープン（つみたてNISA対応型）": {
+    "rate": 0.55,
+    "docID": "S100X62J"
+  },
+  "SMT 世界経済インデックス・オープン": {
+    "rate": 0.55,
+    "docID": "S100XINN"
+  },
+  "SMT 世界経済インデックス・オープン（株式シフト型）": {
+    "rate": 0.605,
+    "docID": "S100WGEA"
+  },
+  "SMT 世界経済インデックス・オープン（債券シフト型）": {
+    "rate": 0.495,
+    "docID": "S100WGEK"
+  },
+  "野村インデックスファンド・内外7資産バランス・為替ヘッジ型": {
+    "rate": null,
+    "docID": "S100WT4Q"
+  },
+  "たわらノーロード 最適化バランス（安定型）": {
+    "rate": 0.55,
+    "docID": "S100WBKQ"
+  },
+  "たわらノーロード 最適化バランス（安定成長型）": {
+    "rate": 0.55,
+    "docID": "S100WBKQ"
+  },
+  "たわらノーロード 最適化バランス（成長型）": {
+    "rate": 0.55,
+    "docID": "S100WBKQ"
+  },
+  "たわらノーロード 最適化バランス（積極型）": {
+    "rate": 0.55,
+    "docID": "S100WBKQ"
+  },
+  "たわらノーロード 最適化バランス（保守型）": {
+    "rate": 0.55,
+    "docID": "S100WBKQ"
+  },
+  "たわらノーロード バランス（8資産均等型）": {
+    "rate": 0.143,
+    "docID": "S100WBJE"
+  },
+  "たわらノーロード バランス（堅実型）": {
+    "rate": 0.143,
+    "docID": "S100WBRR"
+  },
+  "たわらノーロード バランス（積極型）": {
+    "rate": 0.143,
+    "docID": "S100WBRR"
+  },
+  "たわらノーロード バランス（標準型）": {
+    "rate": 0.143,
+    "docID": "S100WBRR"
+  },
+  "野村資産設計ファンド（DC・つみたてNISA）2030": {
+    "rate": null,
+    "docID": "S100WFFD"
+  },
+  "野村資産設計ファンド（DC・つみたてNISA）2040": {
+    "rate": null,
+    "docID": "S100WGDK"
+  },
+  "野村資産設計ファンド（DC・つみたてNISA）2050": {
+    "rate": null,
+    "docID": "S100WJY0"
+  },
+  "野村資産設計ファンド（DC・つみたてNISA）2060": {
+    "rate": null,
+    "docID": "S100WF8F"
+  },
+  "三井住友・DCつみたてNISA・世界分散ファンド": {
+    "rate": null,
+    "docID": "S100XIQJ",
+    "match_type": "partial"
+  },
+  "SMT 8資産インデックスバランス・オープン": {
+    "rate": 0.55,
+    "docID": "S100XHKS"
+  },
+  "三井住友DS・バランスファンド（保守コース）": {
+    "rate": null,
+    "docID": "S100XMUR",
+    "match_type": "partial"
+  },
+  "三井住友DS・バランスファンド（安定コース）": {
+    "rate": null,
+    "docID": "S100XMUR",
+    "match_type": "partial"
+  },
+  "三井住友DS・バランスファンド（標準コース）": {
+    "rate": null,
+    "docID": "S100XMUR",
+    "match_type": "partial"
+  },
+  "三井住友DS・バランスファンド（成長コース）": {
+    "rate": null,
+    "docID": "S100XMUR",
+    "match_type": "partial"
+  },
+  "三井住友DS・バランスファンド（積極コース）": {
+    "rate": null,
+    "docID": "S100XMUR",
+    "match_type": "partial"
+  },
+  "Ｏｎｅ高配当利回り厳選ジャパン": {
+    "rate": 1.0989,
+    "docID": "S100VWLT"
+  },
+  "大和住銀DC国内株式ファンド": {
+    "rate": null,
+    "docID": "S100XPZU"
+  },
+  "SMT 日本株配当貴族インデックス・オープン": {
+    "rate": 0.462,
+    "docID": "S100VU0K"
+  },
+  "EXE-i 全世界中小型株式ファンド": {
+    "rate": 0.187,
+    "docID": "S100WFGC"
+  },
+  "グローバル・ハイクオリティ成長株式ファンド（為替ヘッジなし）": {
+    "rate": 1.65,
+    "docID": "S100X7P9"
+  },
+  "たわらノーロード ＮＹダウ": {
+    "rate": 0.2475,
+    "docID": "S100XE8F"
+  },
+  "ｉＦｒｅｅ ＮＹダウ・インデックス": {
+    "rate": 0.55,
+    "docID": "S100VNV2",
+    "match_type": "partial"
+  },
+  "野村インデックスファンド・米国株式配当貴族": {
+    "rate": null,
+    "docID": "S100VVXA"
+  },
+  "野村インデックスファンド・米国株式配当貴族・為替ヘッジ型": {
+    "rate": null,
+    "docID": "S100VVBW"
+  },
+  "イノベーション・インデックス・ＡＩ": {
+    "rate": null,
+    "docID": "S100XNY3"
+  },
+  "三井住友・ＮＹダウ・ジョーンズ・インデックスファンド（為替ノーヘッジ型）": {
+    "rate": 0.5335,
+    "docID": "S100WLZ3",
+    "match_type": "partial"
+  },
+  "SMT ダウ・ジョーンズ　インデックス・オープン": {
+    "rate": 0.55,
+    "docID": "S100VU0E"
+  },
+  "SMT 米国株配当貴族インデックス・オープン": {
+    "rate": 0.605,
+    "docID": "S100VUFQ"
+  },
+  "SMTAMダウ・ジョーンズ　インデックスファンド": {
+    "rate": 0.55,
+    "docID": "S100VU07"
+  },
+  "楽天・米国高配当株式インデックス・ファンド": {
+    "rate": 0.363,
+    "docID": "S100XEUY",
+    "match_type": "partial"
+  },
+  "セゾン・グローバルバランスファンド": {
+    "rate": 0.209,
+    "docID": "S100VU8E",
+    "match_type": "partial"
+  },
+  "東京海上セレクション・バランス50": {
+    "rate": 0.9273,
+    "docID": "S100XQ15",
+    "match_type": "partial"
+  },
+  "東京海上セレクション・バランス70": {
+    "rate": 0.9273,
+    "docID": "S100XQ15",
+    "match_type": "partial"
+  },
+  "ブラックロックESG世界株式ファンド（為替ヘッジなし）": {
+    "rate": 1.87,
+    "docID": "S100WTD6",
+    "match_type": "partial"
+  },
+  "世界経済インデックスファンド": {
+    "rate": 0.55,
+    "docID": "S100XXOS"
+  },
+  "世界経済インデックスファンド（株式シフト型）": {
+    "rate": 0.605,
+    "docID": "S100XXOV"
+  },
+  "資産形成ファンド": {
+    "rate": null,
+    "docID": "S100WFTT",
+    "match_type": "partial"
+  },
+  "LOSA長期保有型国際分散インデックスファンド": {
+    "rate": 0.5335,
+    "docID": "S100WLZ3"
+  },
+  "のむラップ・ファンド（積極型）": {
+    "rate": null,
+    "docID": "S100VTEV",
+    "match_type": "partial"
+  },
+  "上場インデックスファンド世界株式（MSCI ACWI）除く日本": {
+    "rate": null,
+    "docID": "S100VVXA",
+    "match_type": "partial"
+  },
+  "上場インデックスファンド海外先進国株式（MSCI-KOKUSAI）": {
+    "rate": null,
+    "docID": "S100WT50",
+    "match_type": "partial"
+  },
+  "上場インデックスファンド米国株式（S&P500)": {
+    "rate": null,
+    "docID": "S100VVXA",
+    "match_type": "partial"
+  },
+  "上場インデックスファンド海外新興国株式（MSCIエマージング）": {
+    "rate": null,
+    "docID": "S100WT50",
+    "match_type": "partial"
+  }
+}
