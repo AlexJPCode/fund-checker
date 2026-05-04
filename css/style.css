@@ -450,6 +450,266 @@ footer {
   color: #aaa;
 }
 
+/* ---- 共通ボタン ---- */
+
+.btn-secondary {
+  background: white;
+  border: 1.5px solid #1a3a5c;
+  color: #1a3a5c;
+  padding: 0.5rem 1.2rem;
+  border-radius: 6px;
+  font-size: 0.88rem;
+  cursor: pointer;
+}
+
+.btn-secondary:hover {
+  background: #eef3f9;
+}
+
+.btn-secondary.is-added {
+  background: #e6f4ea;
+  border-color: #2a9d5c;
+  color: #2a9d5c;
+}
+
+.btn-text {
+  background: none;
+  border: none;
+  color: #888;
+  font-size: 0.85rem;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+}
+
+.btn-text:hover {
+  color: #333;
+}
+
+.btn-share {
+  background: none;
+  border: 1.5px solid #aaa;
+  color: #555;
+  padding: 0.4rem 0.9rem;
+  border-radius: 6px;
+  font-size: 0.82rem;
+  cursor: pointer;
+}
+
+.btn-share:hover {
+  border-color: #1a3a5c;
+  color: #1a3a5c;
+}
+
+/* ---- ファンドカードヘッダー ---- */
+
+.fund-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.fund-card-header h3 {
+  margin: 0;
+  color: #1a3a5c;
+}
+
+/* ---- 全ファンド一覧 ---- */
+
+.fund-list-card {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  margin-bottom: 2rem;
+}
+
+.fund-list-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.fund-list-header h3 {
+  color: #1a3a5c;
+  margin: 0;
+}
+
+.fund-list-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+}
+
+.fund-list-filters select,
+.fund-list-filters input {
+  padding: 0.45rem 0.7rem;
+  border: 1.5px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.88rem;
+  background: white;
+}
+
+.fund-list-filters input {
+  flex: 1;
+  min-width: 120px;
+}
+
+.fund-list-stats {
+  font-size: 0.82rem;
+  color: #888;
+  margin-bottom: 0.75rem;
+}
+
+.fl-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.fl-table tr:hover td {
+  background: #f0f5ff;
+  cursor: pointer;
+}
+
+.badge {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: bold;
+  padding: 1px 5px;
+  border-radius: 3px;
+  margin: 0 1px;
+}
+
+.badge-tsu {
+  background: #e6f4ea;
+  color: #2a9d5c;
+}
+
+.badge-growth {
+  background: #eef3f9;
+  color: #1a3a5c;
+}
+
+/* ---- 比較パネル ---- */
+
+.compare-panel-inner {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  margin-bottom: 1.5rem;
+  border-left: 5px solid #f4a300;
+}
+
+.compare-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.compare-panel-header h3 {
+  color: #1a3a5c;
+  margin: 0;
+}
+
+.compare-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.compare-table th {
+  background: #1a3a5c;
+  color: white;
+  padding: 0.6rem 0.75rem;
+  font-size: 0.85rem;
+  text-align: left;
+}
+
+.compare-table td {
+  padding: 0.6rem 0.75rem;
+  border-bottom: 1px solid #eee;
+  font-size: 0.88rem;
+  vertical-align: middle;
+}
+
+.btn-remove-compare {
+  background: none;
+  border: 1px solid #ddd;
+  color: #aaa;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 0.75rem;
+  line-height: 1;
+  padding: 0;
+}
+
+.btn-remove-compare:hover {
+  border-color: #c73535;
+  color: #c73535;
+}
+
+/* ---- チャート ---- */
+
+.sim-chart-wrap {
+  margin: 1rem 0 0.5rem;
+  overflow-x: auto;
+}
+
+#sim-chart {
+  display: block;
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  margin: 0 auto;
+}
+
+/* ---- コスト総額ボックス ---- */
+
+.sim-cost-box {
+  background: #f5f7fa;
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+  margin-top: 0.75rem;
+  font-size: 0.82rem;
+  color: #666;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 2rem;
+}
+
+.sim-cost-item strong {
+  color: #1a3a5c;
+}
+
+/* ---- トースト通知 ---- */
+
+#toast {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(1rem);
+  background: #1a3a5c;
+  color: white;
+  padding: 0.65rem 1.4rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s, transform 0.25s;
+  z-index: 999;
+  white-space: nowrap;
+}
+
+#toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
 @media (max-width: 640px) {
   header {
     padding: 1.2rem 1rem;
@@ -548,5 +808,38 @@ footer {
   th {
     padding: 0.5rem 0.6rem;
     font-size: 0.82rem;
+  }
+
+  .fund-list-card {
+    padding: 1rem;
+  }
+
+  .fund-list-filters {
+    flex-direction: column;
+  }
+
+  .fund-list-filters select,
+  .fund-list-filters input {
+    width: 100%;
+  }
+
+  .compare-panel-inner {
+    padding: 1rem;
+    overflow-x: auto;
+  }
+
+  .compare-table th:nth-child(2),
+  .compare-table td:nth-child(2) {
+    display: none;
+  }
+
+  .fund-card-header {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .sim-cost-box {
+    flex-direction: column;
+    gap: 0.3rem;
   }
 }
