@@ -2829,6 +2829,43 @@ const fundDatabase = [
   }
 ];
 
+// 愛称・通称マップ（愛称 → ファンド名の一部または完全一致）
+const nicknameMap = [
+  // 全世界株式
+  { alias: ["オルカン", "オールカントリー", "allcountry", "acwi"], keyword: "全世界株式（オール・カントリー）" },
+  { alias: ["除く日本", "除日本", "acwi ex japan"], keyword: "全世界株式（除く日本）" },
+  { alias: ["全世界", "全世界株式", "vt"], keyword: "全世界株式" },
+  // 米国株式
+  { alias: ["sp500", "s&p500", "s&p 500", "スリム米国", "スリムsp"], keyword: "S&P500" },
+  { alias: ["vti", "全米", "全米株式"], keyword: "全米株式" },
+  { alias: ["nasdaq", "ナスダック"], keyword: "NASDAQ" },
+  // 先進国・新興国
+  { alias: ["先進国", "msci world", "世界株式"], keyword: "先進国株式" },
+  { alias: ["新興国", "emerging", "em"], keyword: "新興国株式" },
+  // 国内株式
+  { alias: ["topix", "トピックス"], keyword: "TOPIX" },
+  { alias: ["日経", "日経225", "nikkei"], keyword: "日経" },
+  { alias: ["jpx", "jpx400"], keyword: "JPX" },
+  // シリーズ名
+  { alias: ["スリム", "slim", "emaxis slim", "イーマクシス"], keyword: "eMAXIS Slim" },
+  { alias: ["たわら", "tawara"], keyword: "たわらノーロード" },
+  { alias: ["ニッセイ", "nissay"], keyword: "ニッセイ" },
+  { alias: ["sbi v", "sbiv"], keyword: "SBI・V・" },
+  { alias: ["楽天プラス", "楽天+"], keyword: "楽天・プラス" },
+  { alias: ["楽天vt", "楽天全世界"], keyword: "楽天・全世界株式" },
+  { alias: ["楽天vti", "楽天全米"], keyword: "楽天・全米株式" },
+  { alias: ["ifree", "アイフリー"], keyword: "iFree" },
+  { alias: ["tracers", "トレーサーズ"], keyword: "Tracers" },
+  { alias: ["つみたて8資産", "8資産"], keyword: "8資産" },
+  // バランス
+  { alias: ["バランス", "balance"], keyword: "バランス" },
+  { alias: ["债券", "bond", "債券"], keyword: "債券" },
+  // アクティブ
+  { alias: ["ひふみ"], keyword: "ひふみ" },
+  { alias: ["セゾン"], keyword: "セゾン" },
+  { alias: ["コモンズ"], keyword: "コモンズ" },
+];
+
 const dataSource = {
   "source": "金融庁 つみたて投資枠対象商品届出一覧（対象資産別）",
   "license": "公共データ利用規約 PDL1.0（CC BY 4.0互換）",

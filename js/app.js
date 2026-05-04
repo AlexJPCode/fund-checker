@@ -4,8 +4,159 @@
 
 document.getElementById("search-btn").addEventListener("click", search);
 document.getElementById("fund-input").addEventListener("keypress", function(e) {
-  if (e.key === "Enter") search();
+  if (e.key === "Enter") { closeDropdown(); search(); }
 });
+document.getElementById("fund-input").addEventListener("input", onInput);
+document.getElementById("fund-input").addEventListener("keydown", onKeydown);
+document.addEventListener("click", function(e) {
+  if (!e.target.closest(".search-box")) closeDropdown();
+});
+
+// ---- オートコンプリート ----
+
+let dropdownIndex = -1;
+
+function onInput() {
+  const q = document.getElementById("fund-input").value.trim();
+  if (q.length < 2) { closeDropdown(); return; }
+  const suggestions = getSuggestions(q, 10);
+  renderDropdown(suggestions);
+}
+
+function onKeydown(e) {
+  const items = document.querySelectorAll(".autocomplete-item");
+  if (!items.length) return;
+  if (e.key === "ArrowDown") {
+    e.preventDefault();
+    dropdownIndex = Math.min(dropdownIndex + 1, items.length - 1);
+    updateActive(items);
+  } else if (e.key === "ArrowUp") {
+    e.preventDefault();
+    dropdownIndex = Math.max(dropdownIndex - 1, -1);
+    updateActive(items);
+  } else if (e.key === "Escape") {
+    closeDropdown();
+  }
+}
+
+function updateActive(items) {
+  items.forEach((el, i) => el.classList.toggle("active", i === dropdownIndex));
+  if (dropdownIndex >= 0) {
+    document.getElementById("fund-input").value = items[dropdownIndex].dataset.name;
+  }
+}
+
+function renderDropdown(suggestions) {
+  let box = document.getElementById("autocomplete-box");
+  if (!box) {
+    box = document.createElement("div");
+    box.id = "autocomplete-box";
+    document.querySelector(".search-box").appendChild(box);
+  }
+  dropdownIndex = -1;
+  if (!suggestions.length) { box.innerHTML = ""; return; }
+  box.innerHTML = suggestions.map(s => `
+    <div class="autocomplete-item" data-name="${s.name.replace(/"/g, '&quot;')}">
+      <span class="ac-name">${highlight(s.name, s.query)}</span>
+      <span class="ac-meta">${s.company}</span>
+      ${s.matchNote ? `<span class="ac-note">${s.matchNote}</span>` : ""}
+    </div>
+  `).join("");
+  box.querySelectorAll(".autocomplete-item").forEach(el => {
+    el.addEventListener("mousedown", function(e) {
+      e.preventDefault();
+      document.getElementById("fund-input").value = this.dataset.name;
+      closeDropdown();
+      search();
+    });
+  });
+}
+
+function closeDropdown() {
+  const box = document.getElementById("autocomplete-box");
+  if (box) box.innerHTML = "";
+  dropdownIndex = -1;
+}
+
+function highlight(name, query) {
+  if (!query) return name;
+  const idx = name.toLowerCase().indexOf(query.toLowerCase());
+  if (idx === -1) return name;
+  return name.slice(0, idx) +
+    `<strong>${name.slice(idx, idx + query.length)}</strong>` +
+    name.slice(idx + query.length);
+}
+
+function getSuggestions(q, limit) {
+  const qn = normalize(q);
+  const results = [];
+  const seen = new Set();
+
+  // 1. 愛称マッチ → 複数キーワードで候補を収集
+  const nicknames = (typeof nicknameMap !== "undefined") ? nicknameMap : [];
+  // マッチした愛称エントリのキーワードリスト（分割して各単語で検索）
+  const nicknameTerms = [];  // [{terms: [...], note: "..."}]
+  for (const entry of nicknames) {
+    if (entry.alias.some(a => {
+      const na = normalize(a);
+      return na.includes(qn) || qn.includes(na);
+    })) {
+      // キーワードをパーツに分割（「全世界株式（オール・カントリー）」→ ["全世界株式", "オールカントリー"]）
+      const parts = entry.keyword
+        .replace(/[（(）)【】]/g, " ").replace(/[・\-]/g, " ")
+        .split(/\s+/).filter(p => p.length >= 2).map(normalize);
+      nicknameTerms.push({ terms: parts, note: `「${entry.keyword}」` });
+    }
+  }
+
+  fundDatabase.forEach(f => {
+    const fn = normalize(f.name);
+    const fc = normalize(f.company);
+    const fi = normalize(f.index || "");
+    const fa = normalize(f.assetClass || "");
+    const fall = fn + fc + fi + fa;
+
+    let score = 0;
+    let matchNote = null;
+
+    // 愛称ヒット：分割したキーワードが全てfallに含まれる場合
+    for (const { terms, note } of nicknameTerms) {
+      if (terms.length > 0 && terms.every(t => fall.includes(t))) {
+        score = 90;
+        matchNote = note;
+        break;
+      }
+      // 半数以上一致でも候補に入れる
+      if (terms.length >= 2) {
+        const hitCount = terms.filter(t => fall.includes(t)).length;
+        if (hitCount >= Math.ceil(terms.length * 0.6)) {
+          score = Math.max(score, 70);
+          matchNote = note;
+        }
+      }
+    }
+
+    // ファンド名前方一致
+    if (!score && fn.startsWith(qn)) score = 80;
+    // ファンド名部分一致
+    else if (!score && fn.includes(qn)) score = 70;
+    // 会社名一致
+    else if (!score && fc.includes(qn) && qn.length >= 3) score = 50;
+    // 指数・資産クラス一致
+    else if (!score && (fi.includes(qn) || fa.includes(qn)) && qn.length >= 3) score = 40;
+    // 部分文字列マッチ
+    else if (!score && qn.length >= 4 && fn.includes(qn.slice(0, Math.max(4, Math.floor(qn.length * 0.6))))) score = 30;
+
+    if (score > 0 && !seen.has(f.name)) {
+      seen.add(f.name);
+      results.push({ ...f, score, matchNote, query: q });
+    }
+  });
+
+  return results
+    .sort((a, b) => b.score - a.score || a.name.length - b.name.length)
+    .slice(0, limit);
+}
 
 // fee_data.js が読み込まれていれば feeDatabase が存在する
 // なければ空オブジェクトで動作する
