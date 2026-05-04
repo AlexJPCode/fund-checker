@@ -18,12 +18,66 @@
       <h2>ファンド名を入力してください</h2>
       <input type="text" id="fund-input" placeholder="例：eMAXIS Slim 全世界株式" />
       <button id="search-btn">手数料を見る</button>
+      <div style="margin-top:1rem;">
+        <button id="list-toggle-btn" class="btn-secondary">全ファンド一覧</button>
+      </div>
+    </section>
+
+    <!-- 全ファンド一覧 -->
+    <section id="fund-list-section" class="hidden">
+      <div class="fund-list-card">
+        <div class="fund-list-header">
+          <h3>全ファンド一覧</h3>
+          <button id="list-close-btn" class="btn-text">閉じる ✕</button>
+        </div>
+        <div class="fund-list-filters">
+          <select id="fl-frame">
+            <option value="">全投資枠</option>
+            <option value="tsumitate">つみたて投資枠</option>
+            <option value="growth">成長投資枠</option>
+          </select>
+          <select id="fl-type">
+            <option value="">全タイプ</option>
+            <option value="index">インデックス</option>
+            <option value="active">アクティブ</option>
+            <option value="etf">ETF</option>
+          </select>
+          <select id="fl-sort">
+            <option value="fee-asc">信託報酬 安い順</option>
+            <option value="fee-desc">信託報酬 高い順</option>
+            <option value="name-asc">ファンド名 昇順</option>
+          </select>
+          <input type="text" id="fl-keyword" placeholder="キーワード絞り込み">
+        </div>
+        <div id="fund-list-stats" class="fund-list-stats"></div>
+        <div id="fund-list-body"></div>
+        <div style="text-align:center; margin-top:1rem;">
+          <button id="fund-list-more" class="btn-secondary" style="display:none;">もっと見る</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 比較パネル -->
+    <section id="compare-panel" class="hidden">
+      <div class="compare-panel-inner">
+        <div class="compare-panel-header">
+          <h3>比較リスト</h3>
+          <button id="compare-clear-btn" class="btn-text">クリア</button>
+        </div>
+        <div id="compare-body"></div>
+      </div>
     </section>
 
     <section id="result" class="result hidden">
       <div class="fund-card" id="input-fund">
-        <h3>検索結果</h3>
+        <div class="fund-card-header">
+          <h3>検索結果</h3>
+          <button id="share-btn" class="btn-share">🔗 URLをコピー</button>
+        </div>
         <div id="input-fund-info"></div>
+        <div style="margin-top:0.75rem;">
+          <button id="add-compare-btn" class="btn-secondary">＋ 比較リストに追加</button>
+        </div>
       </div>
 
       <div class="fee-detail" id="fee-detail-box">
@@ -71,7 +125,6 @@
         <h3 style="color:#c73535;">該当ファンドが見つかりませんでした</h3>
         <p>入力されたファンド名は、2026年4月30日時点で金融庁が公表する「つみたて投資枠対象商品届出一覧」に該当しませんでした。</p>
         <p style="margin-top:12px; font-size:0.9rem; color:#555;">
-          現バージョンはつみたて投資枠対象 353本のみを収録しています。成長投資枠対象ファンド（約2,000本）は今後追加予定です。<br>
           つみたて対象外のファンドは、法令上の手数料上限（インデックス：0.5〜0.75%以下、アクティブ：1.0〜1.5%以下、ETF：0.25%以下）を超える信託報酬を採用している可能性があります。
         </p>
         <p style="margin-top:12px; font-size:0.85rem; color:#888;">
@@ -90,6 +143,8 @@
       本サイトは情報提供を目的としており、投資助言ではありません。投資判断はご自身の責任で行ってください。
     </p>
   </footer>
+
+  <div id="toast"></div>
 
   <script src="data/funds.js"></script>
   <script src="data/growth_funds.js"></script>

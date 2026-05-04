@@ -101,18 +101,14 @@ function getSuggestions(q, limit) {
   const results = [];
   const seen = new Set();
 
-  // 1. 愛称マッチ → 複数キーワードで候補を収集
   const nicknames = (typeof nicknameMap !== "undefined") ? nicknameMap : [];
-  // マッチした愛称エントリのキーワードリスト（分割して各単語で検索）
-  const nicknameTerms = [];  // [{terms: [...], note: "..."}]
+  const nicknameTerms = [];
   for (const entry of nicknames) {
     if (entry.alias.some(a => {
       const na = normalize(a);
-      // 3文字未満のクエリはエイリアス完全一致のみ
       if (qn.length < 3) return na === qn;
       return na.startsWith(qn) || qn.startsWith(na) || (qn.length >= 4 && na.includes(qn));
     })) {
-      // キーワードをパーツに分割（「全世界株式（オール・カントリー）」→ ["全世界株式", "オールカントリー"]）
       const parts = entry.keyword
         .replace(/[（(）)【】]/g, " ").replace(/[・\-]/g, " ")
         .split(/\s+/).filter(p => p.length >= 2).map(normalize);
@@ -120,7 +116,6 @@ function getSuggestions(q, limit) {
     }
   }
 
-  // つみたて + 成長の全ファンドを検索
   const allFunds = [...fundDatabase, ...growthDB.filter(g => !fundDatabase.some(f => normalize(f.name) === normalize(g.name)))];
   allFunds.forEach(f => {
     const fn = normalize(f.name);
@@ -132,14 +127,12 @@ function getSuggestions(q, limit) {
     let score = 0;
     let matchNote = null;
 
-    // 愛称ヒット：分割したキーワードが全てfallに含まれる場合
     for (const { terms, note } of nicknameTerms) {
       if (terms.length > 0 && terms.every(t => fall.includes(t))) {
         score = 90;
         matchNote = note;
         break;
       }
-      // 半数以上一致でも候補に入れる
       if (terms.length >= 2) {
         const hitCount = terms.filter(t => fall.includes(t)).length;
         if (hitCount >= Math.ceil(terms.length * 0.6)) {
@@ -149,15 +142,10 @@ function getSuggestions(q, limit) {
       }
     }
 
-    // ファンド名前方一致
     if (!score && fn.startsWith(qn)) score = 80;
-    // ファンド名部分一致
     else if (!score && fn.includes(qn)) score = 70;
-    // 会社名一致（3文字以上）
     else if (!score && qn.length >= 3 && fc.includes(qn)) score = 50;
-    // 指数・資産クラス一致（4文字以上のみ、誤検知防止）
     else if (!score && qn.length >= 4 && (fi.includes(qn) || fa.includes(qn))) score = 40;
-    // 部分文字列マッチ（5文字以上）
     else if (!score && qn.length >= 5 && fn.includes(qn.slice(0, Math.floor(qn.length * 0.7)))) score = 30;
 
     if (score > 0 && !seen.has(f.name)) {
@@ -171,8 +159,8 @@ function getSuggestions(q, limit) {
     .slice(0, limit);
 }
 
-// fee_data.js が読み込まれていれば feeDatabase が存在する
-// なければ空オブジェクトで動作する
+// ---- 手数料DB ----
+
 const feeDB = (typeof feeDatabase !== "undefined") ? feeDatabase : {};
 
 function getFeeRate(fundName) {
@@ -185,6 +173,8 @@ function getDocID(fundName) {
   const entry = feeDB[fundName];
   return entry ? entry.docID : null;
 }
+
+// ---- 検索 ----
 
 function search() {
   const input = document.getElementById("fund-input").value.trim();
@@ -212,11 +202,9 @@ function findFund(input) {
   const nin = normalize(input);
   if (nin.length < 4) return null;
 
-  // つみたて投資枠を優先検索
   const tsuResult = findInDb(fundDatabase, input, nin);
   if (tsuResult) return { ...tsuResult, frame: "tsumitate" };
 
-  // 成長投資枠を検索
   const growthResult = findInDb(growthDB, input, nin);
   if (growthResult) return { ...growthResult, frame: "growth" };
 
@@ -327,7 +315,6 @@ function renderFeeTable(fund) {
 // ---- 比較ランキングテーブル ----
 
 function getSiblings(fund) {
-  // 成長投資枠のみのファンドはつみたてDBに仲間がいない
   if (fund.frame === "growth" && !fundDatabase.some(f => normalize(f.name) === normalize(fund.name))) {
     return growthDB.filter(f => f.name !== fund.name && f.company === fund.company).slice(0, 20);
   }
@@ -345,7 +332,6 @@ function renderComparisonTable(fund) {
   const siblings = getSiblings(fund);
   const allFunds = [fund, ...siblings];
 
-  // 信託報酬でソート（実値あり→安い順、実値なし→末尾）
   const withRate = allFunds.filter(f => getFeeRate(f.name) != null)
     .sort((a, b) => getFeeRate(a.name) - getFeeRate(b.name));
   const withoutRate = allFunds.filter(f => getFeeRate(f.name) == null);
@@ -379,7 +365,6 @@ function renderComparisonTable(fund) {
     tbody.appendChild(tr);
   });
 
-  // カテゴリー説明
   const categoryDesc = fund.index
     ? `対象指数：${fund.index}`
     : fund.assetClass
@@ -390,8 +375,13 @@ function renderComparisonTable(fund) {
     `${categoryDesc}　同カテゴリー ${sorted.length} 件。信託報酬は EDINET 届出書から抽出（${withRate.length}/${sorted.length} 件取得済み）。`;
 }
 
+// ---- 表示 ----
+
+let currentFund = null;
+
 function showResult(fund) {
-  // つみたて対象かどうか確認
+  currentFund = fund;
+
   const isTsumitate = fund.frame !== "growth" ||
     fundDatabase.some(f => normalize(f.name) === normalize(fund.name));
   const isGrowth = fund.frame === "growth" ||
@@ -428,6 +418,9 @@ function showResult(fund) {
     </div>
   `;
 
+  // 比較ボタンの状態を更新
+  updateAddCompareBtn(fund);
+
   renderFeeTable(fund);
   renderComparisonTable(fund);
   renderSimulation(fund);
@@ -447,6 +440,15 @@ function showResult(fund) {
 
   document.getElementById("result").classList.remove("hidden");
   document.getElementById("result").scrollIntoView({ behavior: "smooth" });
+
+  // URLシェア: シェアボタンのイベント
+  document.getElementById("share-btn").onclick = () => copyShareURL(fund);
+
+  // 比較ボタンのイベント
+  document.getElementById("add-compare-btn").onclick = () => toggleCompare(fund);
+
+  // URLを更新（履歴に残さず）
+  updateURL(fund);
 }
 
 // ---- 積立シミュレーション ----
@@ -490,6 +492,9 @@ function renderSimulation(fund) {
       </div>
     </div>
     <div id="sim-result"></div>
+    <div class="sim-chart-wrap">
+      <canvas id="sim-chart"></canvas>
+    </div>
     <p class="note" style="margin-top:0.8rem;">
       ※試算は複利計算（月次積立・月次複利）に基づく参考値です。実際の運用成果を保証するものではありません。<br>
       ※信託報酬以外のコスト（売買委託手数料・監査費用等）は考慮していません。投資判断はご自身の責任でお願いします。
@@ -502,7 +507,13 @@ function renderSimulation(fund) {
     .filter(f => getFeeRate(f.name) != null)
     .sort((a, b) => getFeeRate(a.name) - getFeeRate(b.name))[0] || null;
 
-  const update = () => updateSimulation(fund, cheapest);
+  const update = () => {
+    updateSimulation(fund, cheapest);
+    // 比較パネルも再描画（月額・年数が変わったとき）
+    if (comparedFunds.length > 0) renderComparePanel();
+    // URLも更新
+    updateURL(fund);
+  };
   ["sim-monthly", "sim-years", "sim-return"].forEach(id => {
     document.getElementById(id).addEventListener("input", update);
   });
@@ -559,6 +570,19 @@ function updateSimulation(fund, cheapest) {
   }
   html += `</div>`;
 
+  // コスト総額の明示（機能5）
+  if (targetFV != null) {
+    const grossFV = calcFV(monthly, years, ret, 0);
+    const feeCost = grossFV - targetFV;
+    const feeRateAnnual = targetRate != null ? targetRate : 0;
+    html += `
+      <div class="sim-cost-box">
+        <div class="sim-cost-item">積立元本：<strong>${fmt(totalContrib)}円</strong></div>
+        <div class="sim-cost-item">信託報酬の累積コスト影響（複利含む）：<strong style="color:#e84545;">約${fmt(feeCost)}円</strong></div>
+        <div class="sim-cost-item">年率 ${feeRateAnnual.toFixed(3)}% × ${years}年間の機会損失</div>
+      </div>`;
+  }
+
   if (!isSame && targetFV != null && cheapestFV != null) {
     const diff = cheapestFV - targetFV;
     html += `
@@ -574,4 +598,391 @@ function updateSimulation(fund, cheapest) {
   }
 
   document.getElementById("sim-result").innerHTML = html;
+
+  // グラフ描画（機能2）
+  drawSimChart("sim-chart", monthly, years, ret, targetRate, (!isSame && cheapest) ? cheapestRate : null);
 }
+
+// ---- グラフ（機能2） ----
+
+function fmtM(v) {
+  if (v >= 1e8) return (v / 1e8).toFixed(1) + "億";
+  if (v >= 1e4) return Math.round(v / 1e4) + "万";
+  return Math.round(v / 1000) + "千";
+}
+
+function drawSimChart(canvasId, monthly, years, ret, targetRate, cheapestRate) {
+  const canvas = document.getElementById(canvasId);
+  if (!canvas) return;
+  const ctx = canvas.getContext("2d");
+
+  const W = 600, H = 200;
+  canvas.width = W;
+  canvas.height = H;
+  canvas.style.maxWidth = "600px";
+  canvas.style.width = "100%";
+  canvas.style.height = "auto";
+
+  const pad = { top: 20, right: 16, bottom: 36, left: 68 };
+  const cW = W - pad.left - pad.right;
+  const cH = H - pad.top - pad.bottom;
+
+  const pts = years + 1;
+  const tData = Array.from({ length: pts }, (_, i) =>
+    i === 0 ? 0 : calcFV(monthly, i, ret, targetRate != null ? targetRate : 0)
+  );
+  const cData = (cheapestRate != null)
+    ? Array.from({ length: pts }, (_, i) => i === 0 ? 0 : calcFV(monthly, i, ret, cheapestRate))
+    : null;
+  const kData = Array.from({ length: pts }, (_, i) => monthly * i * 12);
+
+  const maxV = Math.max(...tData, ...(cData ?? [0]), 1);
+  const toX = i => pad.left + (i / Math.max(years, 1)) * cW;
+  const toY = v => pad.top + cH - (v / maxV) * cH;
+
+  ctx.clearRect(0, 0, W, H);
+
+  // Y グリッド
+  for (let i = 0; i <= 4; i++) {
+    const y = pad.top + (cH / 4) * i;
+    const val = maxV * (1 - i / 4);
+    ctx.strokeStyle = "#eee";
+    ctx.lineWidth = 1;
+    ctx.beginPath(); ctx.moveTo(pad.left, y); ctx.lineTo(pad.left + cW, y); ctx.stroke();
+    ctx.fillStyle = "#bbb";
+    ctx.font = "10px sans-serif";
+    ctx.textAlign = "right";
+    ctx.fillText(fmtM(val), pad.left - 4, y + 4);
+  }
+
+  // X ラベル
+  const xStep = years <= 10 ? 2 : years <= 20 ? 5 : 10;
+  for (let i = 0; i <= years; i += xStep) {
+    const x = toX(i);
+    ctx.fillStyle = "#bbb";
+    ctx.font = "10px sans-serif";
+    ctx.textAlign = "center";
+    ctx.fillText(i + "年", x, H - 6);
+    if (i > 0) {
+      ctx.strokeStyle = "#f0f0f0";
+      ctx.lineWidth = 1;
+      ctx.beginPath(); ctx.moveTo(x, pad.top); ctx.lineTo(x, pad.top + cH); ctx.stroke();
+    }
+  }
+
+  // 積立元本ライン
+  ctx.strokeStyle = "#ddd";
+  ctx.lineWidth = 1.5;
+  ctx.setLineDash([5, 4]);
+  ctx.beginPath();
+  kData.forEach((v, i) => i === 0 ? ctx.moveTo(toX(i), toY(v)) : ctx.lineTo(toX(i), toY(v)));
+  ctx.stroke();
+  ctx.setLineDash([]);
+
+  // 最低コストライン
+  if (cData) {
+    ctx.strokeStyle = "#2a9d5c";
+    ctx.lineWidth = 2.5;
+    ctx.beginPath();
+    cData.forEach((v, i) => i === 0 ? ctx.moveTo(toX(i), toY(v)) : ctx.lineTo(toX(i), toY(v)));
+    ctx.stroke();
+  }
+
+  // このファンドライン
+  ctx.strokeStyle = "#1a3a5c";
+  ctx.lineWidth = 2.5;
+  ctx.beginPath();
+  tData.forEach((v, i) => i === 0 ? ctx.moveTo(toX(i), toY(v)) : ctx.lineTo(toX(i), toY(v)));
+  ctx.stroke();
+
+  // 凡例
+  const drawLeg = (x, y, color, dash, label) => {
+    ctx.strokeStyle = color;
+    ctx.lineWidth = 2;
+    if (dash) ctx.setLineDash([5, 4]);
+    ctx.beginPath(); ctx.moveTo(x, y); ctx.lineTo(x + 18, y); ctx.stroke();
+    ctx.setLineDash([]);
+    ctx.fillStyle = "#666";
+    ctx.font = "10px sans-serif";
+    ctx.textAlign = "left";
+    ctx.fillText(label, x + 22, y + 4);
+  };
+  let lx = pad.left + 2;
+  drawLeg(lx, pad.top + 8, "#1a3a5c", false, "このファンド"); lx += 90;
+  if (cData) { drawLeg(lx, pad.top + 8, "#2a9d5c", false, "最低コスト"); lx += 80; }
+  drawLeg(lx, pad.top + 8, "#ccc", true, "積立元本");
+}
+
+// ---- URLシェア（機能1） ----
+
+function updateURL(fund) {
+  const monthly = document.getElementById("sim-monthly")?.value || "30000";
+  const years   = document.getElementById("sim-years")?.value   || "20";
+  const ret     = document.getElementById("sim-return")?.value  || "5";
+  const params = new URLSearchParams({ fund: fund.name, monthly, years, return: ret });
+  history.replaceState({}, "", "?" + params.toString());
+}
+
+function copyShareURL(fund) {
+  updateURL(fund);
+  navigator.clipboard.writeText(location.href)
+    .then(() => showToast("URLをコピーしました"))
+    .catch(() => {
+      // フォールバック
+      const ta = document.createElement("textarea");
+      ta.value = location.href;
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand("copy");
+      document.body.removeChild(ta);
+      showToast("URLをコピーしました");
+    });
+}
+
+function showToast(msg) {
+  const toast = document.getElementById("toast");
+  toast.textContent = msg;
+  toast.classList.add("show");
+  setTimeout(() => toast.classList.remove("show"), 2500);
+}
+
+function loadFromURL() {
+  const params = new URLSearchParams(location.search);
+  const fundName = params.get("fund");
+  if (!fundName) return;
+
+  document.getElementById("fund-input").value = fundName;
+  search();
+
+  // シミュレーションパラメータを復元
+  const monthly = params.get("monthly");
+  const years   = params.get("years");
+  const ret     = params.get("return");
+  if (monthly || years || ret) {
+    setTimeout(() => {
+      if (document.getElementById("sim-monthly")) {
+        if (monthly) document.getElementById("sim-monthly").value = monthly;
+        if (years)   document.getElementById("sim-years").value   = years;
+        if (ret)     document.getElementById("sim-return").value  = ret;
+        document.getElementById("sim-monthly").dispatchEvent(new Event("input"));
+      }
+    }, 50);
+  }
+}
+
+// ---- 複数ファンド比較（機能3） ----
+
+let comparedFunds = [];
+
+function toggleCompare(fund) {
+  const idx = comparedFunds.findIndex(f => f.name === fund.name);
+  if (idx >= 0) {
+    comparedFunds.splice(idx, 1);
+  } else {
+    if (comparedFunds.length >= 3) {
+      showToast("比較できるのは最大3本です");
+      return;
+    }
+    comparedFunds.push(fund);
+  }
+  updateAddCompareBtn(fund);
+  renderComparePanel();
+}
+
+function updateAddCompareBtn(fund) {
+  const btn = document.getElementById("add-compare-btn");
+  if (!btn) return;
+  const isAdded = comparedFunds.some(f => f.name === fund.name);
+  btn.textContent = isAdded ? "✓ 比較リストに追加済み" : "＋ 比較リストに追加";
+  btn.classList.toggle("is-added", isAdded);
+}
+
+function renderComparePanel() {
+  const panel = document.getElementById("compare-panel");
+  if (comparedFunds.length === 0) {
+    panel.classList.add("hidden");
+    return;
+  }
+  panel.classList.remove("hidden");
+
+  const monthly = parseInt(document.getElementById("sim-monthly")?.value || "30000");
+  const years   = parseInt(document.getElementById("sim-years")?.value   || "20");
+  const ret     = parseFloat(document.getElementById("sim-return")?.value || "5");
+  const fmt     = v => Math.round(v).toLocaleString("ja-JP");
+
+  const body = document.getElementById("compare-body");
+  body.innerHTML = `
+    <div style="overflow-x:auto;">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>ファンド名</th>
+            <th>運用会社</th>
+            <th style="text-align:center;">信託報酬</th>
+            <th style="text-align:center;">${years}年後の試算額</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          ${comparedFunds.map(f => {
+            const rate = getFeeRate(f.name);
+            const fv   = rate != null ? calcFV(monthly, years, ret, rate) : null;
+            return `
+              <tr>
+                <td>${f.name}</td>
+                <td style="font-size:0.82rem; color:#555;">${f.company}</td>
+                <td style="text-align:center;">${rate != null ? `<strong>${rate.toFixed(3)}%</strong>` : "—"}</td>
+                <td style="text-align:center;">${fv != null ? `<strong>${fmt(fv)}円</strong>` : "—"}</td>
+                <td style="text-align:center;">
+                  <button class="btn-remove-compare" data-name="${f.name.replace(/"/g, "&quot;")}">✕</button>
+                </td>
+              </tr>`;
+          }).join("")}
+        </tbody>
+      </table>
+    </div>
+    <p class="note" style="margin-top:0.5rem;">月額${Math.round(monthly/10000*10)/10}万円・${years}年・想定年率${ret}%で試算</p>
+  `;
+
+  body.querySelectorAll(".btn-remove-compare").forEach(btn => {
+    btn.addEventListener("click", function() {
+      comparedFunds = comparedFunds.filter(f => f.name !== this.dataset.name);
+      if (currentFund) updateAddCompareBtn(currentFund);
+      renderComparePanel();
+    });
+  });
+}
+
+document.getElementById("compare-clear-btn").addEventListener("click", () => {
+  comparedFunds = [];
+  if (currentFund) updateAddCompareBtn(currentFund);
+  renderComparePanel();
+});
+
+// ---- 全ファンド一覧（機能4） ----
+
+let flFiltered = [];
+let flPage = 0;
+const FL_PAGE_SIZE = 100;
+
+function getAllFunds() {
+  const tsumitateNames = new Set(fundDatabase.map(f => normalize(f.name)));
+  const growthOnly = growthDB.filter(g => !tsumitateNames.has(normalize(g.name)));
+  return [
+    ...fundDatabase.map(f => ({
+      ...f,
+      frames: growthDB.some(g => normalize(g.name) === normalize(f.name)) ? "both" : "tsumitate"
+    })),
+    ...growthOnly.map(f => ({ ...f, frames: "growth" }))
+  ];
+}
+
+function renderFundList() {
+  const frame = document.getElementById("fl-frame").value;
+  const type  = document.getElementById("fl-type").value;
+  const sort  = document.getElementById("fl-sort").value;
+  const kw    = normalize(document.getElementById("fl-keyword").value.trim());
+
+  let funds = getAllFunds();
+
+  if (frame === "tsumitate") funds = funds.filter(f => f.frames === "tsumitate" || f.frames === "both");
+  else if (frame === "growth") funds = funds.filter(f => f.frames === "growth" || f.frames === "both");
+  if (type) funds = funds.filter(f => f.fundType === type);
+  if (kw.length >= 2) funds = funds.filter(f =>
+    normalize(f.name).includes(kw) || normalize(f.company).includes(kw)
+  );
+
+  if (sort === "fee-asc") {
+    const w = funds.filter(f => getFeeRate(f.name) != null).sort((a, b) => getFeeRate(a.name) - getFeeRate(b.name));
+    const wo = funds.filter(f => getFeeRate(f.name) == null);
+    funds = [...w, ...wo];
+  } else if (sort === "fee-desc") {
+    const w = funds.filter(f => getFeeRate(f.name) != null).sort((a, b) => getFeeRate(b.name) - getFeeRate(a.name));
+    const wo = funds.filter(f => getFeeRate(f.name) == null);
+    funds = [...w, ...wo];
+  } else {
+    funds.sort((a, b) => a.name.localeCompare(b.name));
+  }
+
+  flFiltered = funds;
+  flPage = 0;
+  document.getElementById("fund-list-stats").textContent = `${funds.length.toLocaleString()}件`;
+  document.getElementById("fund-list-body").innerHTML = "";
+  appendFundListPage();
+}
+
+function appendFundListPage() {
+  const start = flPage * FL_PAGE_SIZE;
+  const chunk = flFiltered.slice(start, start + FL_PAGE_SIZE);
+  const wrap  = document.getElementById("fund-list-body");
+
+  if (flPage === 0) {
+    wrap.innerHTML = `
+      <table class="fl-table">
+        <thead>
+          <tr>
+            <th>ファンド名</th>
+            <th>運用会社</th>
+            <th style="text-align:center; white-space:nowrap;">投資枠</th>
+            <th style="text-align:center;">信託報酬</th>
+          </tr>
+        </thead>
+        <tbody id="fl-tbody"></tbody>
+      </table>`;
+  }
+
+  const tbody = document.getElementById("fl-tbody");
+  chunk.forEach(f => {
+    const rate = getFeeRate(f.name);
+    const frameBadge = f.frames === "both"
+      ? '<span class="badge badge-tsu">積</span><span class="badge badge-growth">成</span>'
+      : f.frames === "tsumitate"
+      ? '<span class="badge badge-tsu">積</span>'
+      : '<span class="badge badge-growth">成</span>';
+    const tr = document.createElement("tr");
+    tr.innerHTML = `
+      <td>${f.name}</td>
+      <td style="font-size:0.8rem; color:#555;">${f.company}</td>
+      <td style="text-align:center;">${frameBadge}</td>
+      <td style="text-align:center;">${rate != null ? `<strong>${rate.toFixed(3)}%</strong>` : '<span style="color:#aaa;">—</span>'}</td>
+    `;
+    tr.style.cursor = "pointer";
+    tr.addEventListener("click", () => {
+      document.getElementById("fund-input").value = f.name;
+      document.getElementById("fund-list-section").classList.add("hidden");
+      search();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+    tbody.appendChild(tr);
+  });
+
+  document.getElementById("fund-list-more").style.display =
+    start + FL_PAGE_SIZE < flFiltered.length ? "inline-block" : "none";
+}
+
+// ---- 初期化 ----
+
+document.getElementById("list-toggle-btn").addEventListener("click", () => {
+  const sec = document.getElementById("fund-list-section");
+  const isHidden = sec.classList.toggle("hidden");
+  if (!isHidden) {
+    renderFundList();
+    sec.scrollIntoView({ behavior: "smooth" });
+  }
+});
+
+document.getElementById("list-close-btn").addEventListener("click", () => {
+  document.getElementById("fund-list-section").classList.add("hidden");
+});
+
+["fl-frame", "fl-type", "fl-sort", "fl-keyword"].forEach(id => {
+  document.getElementById(id).addEventListener("input", () => { flPage = 0; renderFundList(); });
+});
+
+document.getElementById("fund-list-more").addEventListener("click", () => {
+  flPage++;
+  appendFundListPage();
+});
+
+// URLパラメータから自動ロード
+loadFromURL();
