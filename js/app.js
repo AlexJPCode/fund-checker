@@ -1,6 +1,9 @@
-// NISAつみたて投資枠 手数料比較ツール
+// NISA 投資信託 手数料比較ツール（つみたて投資枠・成長投資枠）
 // データソース: 金融庁「つみたて投資枠対象商品届出一覧」(data/funds.js)
+//             資産運用業協会「成長投資枠対象商品リスト」(data/growth_funds.js)
 // 信託報酬実値: EDINET電子開示 (data/fee_data.js) ※あれば使用
+
+const growthDB = (typeof growthFundDatabase !== "undefined") ? growthFundDatabase : [];
 
 document.getElementById("search-btn").addEventListener("click", search);
 document.getElementById("fund-input").addEventListener("keypress", function(e) {
@@ -117,7 +120,9 @@ function getSuggestions(q, limit) {
     }
   }
 
-  fundDatabase.forEach(f => {
+  // つみたて + 成長の全ファンドを検索
+  const allFunds = [...fundDatabase, ...growthDB.filter(g => !fundDatabase.some(f => normalize(f.name) === normalize(g.name)))];
+  allFunds.forEach(f => {
     const fn = normalize(f.name);
     const fc = normalize(f.company);
     const fi = normalize(f.index || "");
@@ -207,13 +212,25 @@ function findFund(input) {
   const nin = normalize(input);
   if (nin.length < 4) return null;
 
-  const exact = fundDatabase.find(f => f.name === input);
+  // つみたて投資枠を優先検索
+  const tsuResult = findInDb(fundDatabase, input, nin);
+  if (tsuResult) return { ...tsuResult, frame: "tsumitate" };
+
+  // 成長投資枠を検索
+  const growthResult = findInDb(growthDB, input, nin);
+  if (growthResult) return { ...growthResult, frame: "growth" };
+
+  return null;
+}
+
+function findInDb(db, input, nin) {
+  const exact = db.find(f => f.name === input);
   if (exact) return exact;
 
-  const normExact = fundDatabase.find(f => normalize(f.name) === nin);
+  const normExact = db.find(f => normalize(f.name) === nin);
   if (normExact) return normExact;
 
-  const containsInput = fundDatabase.filter(f => {
+  const containsInput = db.filter(f => {
     const nfn = normalize(f.name);
     return nfn.includes(nin) && nin.length >= nfn.length * 0.7;
   });
@@ -221,7 +238,7 @@ function findFund(input) {
     return containsInput.sort((a, b) => normalize(a.name).length - normalize(b.name).length)[0];
   }
 
-  const containedByInput = fundDatabase.filter(f => {
+  const containedByInput = db.filter(f => {
     const nfn = normalize(f.name);
     return nin.includes(nfn) && nfn.length >= 6;
   });
@@ -310,6 +327,10 @@ function renderFeeTable(fund) {
 // ---- 比較ランキングテーブル ----
 
 function getSiblings(fund) {
+  // 成長投資枠のみのファンドはつみたてDBに仲間がいない
+  if (fund.frame === "growth" && !fundDatabase.some(f => normalize(f.name) === normalize(fund.name))) {
+    return growthDB.filter(f => f.name !== fund.name && f.company === fund.company).slice(0, 20);
+  }
   return fundDatabase.filter(f => {
     if (f.fundType !== fund.fundType) return false;
     if (f.name === fund.name) return false;
@@ -370,10 +391,25 @@ function renderComparisonTable(fund) {
 }
 
 function showResult(fund) {
+  // つみたて対象かどうか確認
+  const isTsumitate = fund.frame !== "growth" ||
+    fundDatabase.some(f => normalize(f.name) === normalize(fund.name));
+  const isGrowth = fund.frame === "growth" ||
+    growthDB.some(f => normalize(f.name) === normalize(fund.name));
+
+  const frameBadge = isTsumitate && isGrowth
+    ? `<strong style="color:#2a9d5c;">✓ つみたて投資枠</strong>
+       <strong style="color:#1a3a5c; margin-left:10px;">✓ 成長投資枠</strong>
+       <span style="font-size:0.85rem; color:#555; margin-left:8px;">（両方対象）</span>`
+    : isTsumitate
+    ? `<strong style="color:#2a9d5c;">✓ NISAつみたて投資枠 対象ファンド</strong>
+       <span style="font-size:0.85rem; color:#555; margin-left:8px;">（金融庁公表の届出一覧に該当）</span>`
+    : `<strong style="color:#1a3a5c;">✓ NISA成長投資枠 対象ファンド</strong>
+       <span style="font-size:0.85rem; color:#555; margin-left:8px;">（資産運用業協会公表リストに該当）</span>`;
+
   document.getElementById("input-fund-info").innerHTML = `
     <div style="background:#e6f4ea; border-left:4px solid #2a9d5c; padding:12px 16px; border-radius:6px; margin-bottom:12px;">
-      <strong style="color:#2a9d5c;">✓ NISAつみたて投資枠 対象ファンド</strong>
-      <span style="font-size:0.85rem; color:#555; margin-left:8px;">（金融庁公表の届出一覧に該当）</span>
+      ${frameBadge}
     </div>
     <div class="fund-info-grid" style="grid-template-columns: repeat(2, 1fr);">
       <div class="fund-info-item" style="text-align:left;">

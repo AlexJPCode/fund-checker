@@ -1,51 +1,57 @@
 {
   "SBI・iシェアーズ・TOPIXインデックス・ファンド": {
     "rate": 0.0638,
-    "docID": "S100UH9W"
+    "docID": "S100XWM9"
   },
   "たわらノーロード TOPIX": {
     "rate": 0.187,
-    "docID": "S100V1II"
-  },
-  "インデックスファンドTOPIX（日本株式）": {
-    "rate": null,
-    "docID": "S100WOQ3"
+    "docID": "S100XE0J"
   },
   "インデックスポートフォリオ": {
     "rate": 0.55,
     "docID": "S100WFMG"
   },
   "ステート・ストリートTOPIXインデックス・オープン": {
-    "rate": 0.1078,
-    "docID": "S100XK0L"
+    "rate": 0.0638,
+    "docID": "S100XWM9",
+    "match_type": "partial"
   },
   "ｉＦｒｅｅ TOPIXインデックス": {
     "rate": 0.154,
-    "docID": "S100X7A3"
+    "docID": "S100XD9A",
+    "match_type": "partial"
   },
   "東京海上セレクション・日本株TOPIX": {
     "rate": 0.154,
-    "docID": "S100VE5U"
+    "docID": "S100XM0T"
   },
   "ニッセイTOPIXインデックスファンド＜購入・換金手数料なし＞": {
-    "rate": null,
-    "docID": "S100X0Y1"
-  },
-  "ニッセイTOPIXオープン": {
-    "rate": null,
-    "docID": "S100VQ89"
+    "original_edinet_name": "ニッセイTOPIXインデックスファンド<購入・換金手数料なし>",
+    "rate": 0.143,
+    "docID": "S100X0Y1",
+    "filerName": "ニッセイアセットマネジメント株式会社",
+    "submitDate": "2025-11-20"
   },
   "野村インデックスファンド・TOPIX": {
+    "original_edinet_name": "野村インデックスファンド・TOPIX",
     "rate": null,
-    "docID": "S100UIBX"
+    "docID": "S100WSGU",
+    "filerName": "野村アセットマネジメント株式会社",
+    "submitDate": "2025-11-27"
   },
   "はじめてのNISA・日本株式インデックス（TOPIX）": {
+    "original_edinet_name": "はじめてのNISA・日本株式インデックス(TOPIX)",
     "rate": null,
-    "docID": "S100WCXD"
+    "docID": "S100WCXD",
+    "filerName": "野村アセットマネジメント株式会社",
+    "submitDate": "2025-08-28"
   },
   "三井住友・DCつみたてNISA・日本株インデックスファンド": {
+    "original_edinet_name": "三井住友・DCつみたてNISA・日本株インデックスファンド",
     "rate": null,
-    "docID": "S100U7OQ"
+    "docID": "S100XIQP",
+    "filerName": "三井住友ＤＳアセットマネジメント株式会社",
+    "submitDate": "2026-02-26"
   },
   "My SMT TOPIXインデックス（ノーロード）": {
     "rate": 0.154,
@@ -55,25 +61,12 @@
     "rate": 0.407,
     "docID": "S100WF8O"
   },
-  "eMAXIS Slim 国内株式（TOPIX）": {
-    "rate": null,
-    "docID": "S100W55F"
-  },
-  "eMAXIS TOPIXインデックス": {
-    "rate": null,
-    "docID": "S100VGKV"
-  },
-  "つみたて日本株式（TOPIX）": {
-    "rate": null,
-    "docID": "S100WLAY"
-  },
   "明治安田DC・TOPIXインデックスファンド": {
-    "rate": 0.1694,
-    "docID": "S100WYZ8"
-  },
-  "Smart-i TOPIXインデックス": {
-    "rate": null,
-    "docID": "S100VSUV"
+    "original_edinet_name": "明治安田DC・TOPIXインデックスファンド",
+    "rate": 0.154,
+    "docID": "S100WYZ8",
+    "filerName": "明治安田アセットマネジメント株式会社",
+    "submitDate": "2025-12-15"
   },
   "インデックスオープン・日経２２５": {
     "rate": 0.143,
@@ -83,117 +76,90 @@
     "rate": 0.0638,
     "docID": "S100WQAY"
   },
-  "ALAMCO 日経平均ファンド": {
-    "rate": 0.2,
-    "docID": "S100XDVS"
-  },
   "たわらノーロード 日経225": {
     "rate": 0.143,
     "docID": "S100WBOH"
   },
-  "インデックスファンド２２５（日本株式）": {
-    "rate": null,
-    "docID": "S100XG11"
-  },
-  "しんきんノーロード日経225": {
-    "rate": null,
-    "docID": "S100X0Y6"
-  },
   "ｉＦｒｅｅ 日経225インデックス": {
     "rate": 0.154,
-    "docID": "S100UWAK"
+    "docID": "S100XD9F",
+    "match_type": "partial"
   },
   "つみたて日経225インデックスファンド": {
-    "rate": 0.495,
-    "docID": "S100WVVN"
+    "rate": 0.2475,
+    "docID": "S100Y0I4",
+    "match_type": "partial"
   },
   "東京海上・日経225インデックスファンド": {
     "rate": 0.2475,
     "docID": "S100Y0I4"
   },
   "ニッセイ日経平均インデックスファンド＜購入・換金手数料なし＞": {
-    "rate": null,
-    "docID": "S100WXGO"
+    "rate": 0.275,
+    "docID": "S100VPBK",
+    "match_type": "partial"
   },
   "ニッセイ日経225インデックスファンド": {
-    "rate": null,
-    "docID": "S100VOYV"
-  },
-  "農林中金＜パートナーズ＞つみたて日本株式 日経225": {
-    "rate": 0.385,
-    "docID": "S100XHMT"
-  },
-  "JAバンクよりそいノーロード日本株式 日経225": {
-    "rate": 0.1408,
-    "docID": "S100W9UJ"
-  },
-  "NZAM・ベータ　日経225": {
-    "rate": 0.176,
-    "docID": "S100WMB1"
+    "rate": 0.2475,
+    "docID": "S100Y0I4",
+    "match_type": "partial"
   },
   "野村インデックスファンド・日経225": {
+    "original_edinet_name": "野村インデックスファンド・日経225",
     "rate": null,
-    "docID": "S100WVEW"
+    "docID": "S100WVEW",
+    "filerName": "野村アセットマネジメント株式会社",
+    "submitDate": "2025-11-27"
   },
   "野村つみたて日本株投信": {
+    "original_edinet_name": "野村つみたて日本株投信",
     "rate": null,
-    "docID": "S100TJDZ"
+    "docID": "S100VV74",
+    "filerName": "野村アセットマネジメント株式会社",
+    "submitDate": "2025-07-25"
   },
   "はじめてのNISA・日本株式インデックス（日経225）": {
+    "original_edinet_name": "はじめてのNISA・日本株式インデックス(日経225)",
     "rate": null,
-    "docID": "S100TY53"
+    "docID": "S100WEHE",
+    "filerName": "野村アセットマネジメント株式会社",
+    "submitDate": "2025-08-28"
   },
   "SMBC・DCインデックスファンド（日経225）": {
+    "original_edinet_name": "SMBC・DCインデックスファンド(日経225)",
     "rate": null,
-    "docID": "S100U31F"
+    "docID": "S100XDL2",
+    "filerName": "三井住友ＤＳアセットマネジメント株式会社",
+    "submitDate": "2026-02-05"
   },
   "My SMT 日経 225 インデックス（ノーロード）": {
     "rate": 0.154,
-    "docID": "S100TQFC"
+    "docID": "S100XD9F"
   },
   "SMT 日経225インデックス・オープン": {
     "rate": 0.407,
-    "docID": "S100U343"
-  },
-  "eMAXIS Slim 国内株式（日経平均）": {
-    "rate": null,
-    "docID": "S100TONM"
-  },
-  "eMAXIS 日経225インデックス": {
-    "rate": null,
-    "docID": "S100XTCJ"
-  },
-  "つみたて日本株式（日経平均）": {
-    "rate": null,
-    "docID": "S100WLHP"
+    "docID": "S100WE67"
   },
   "楽天・プラス・日経225インデックス・ファンド": {
-    "rate": null,
-    "docID": "S100WJP7"
-  },
-  "Smart-i 日経225インデックス": {
-    "rate": null,
-    "docID": "S100VSUN"
-  },
-  "ｉＦｒｅｅ JPX日経400インデックス": {
-    "rate": 0.2145,
-    "docID": "S100VVGD"
+    "rate": 0.407,
+    "docID": "S100WFJF",
+    "match_type": "partial"
   },
   "ニッセイJPX日経400インデックスファンド＜購入・換金手数料なし＞": {
-    "rate": null,
-    "docID": "S100WI5W"
+    "rate": 0.1958,
+    "docID": "S100XZI1",
+    "match_type": "partial"
   },
   "野村インデックスファンド・JPX日経400": {
+    "original_edinet_name": "野村インデックスファンド・JPX日経400",
     "rate": null,
-    "docID": "S100WVLA"
+    "docID": "S100WVLA",
+    "filerName": "野村アセットマネジメント株式会社",
+    "submitDate": "2025-11-27"
   },
   "SMT JPX日経インデックス400・オープン": {
     "rate": 0.407,
     "docID": "S100XDHE"
-  },
-  "eMAXIS JPX日経400インデックス": {
-    "rate": null,
-    "docID": "S100VH4A"
   },
   "SBI読売333インデックス・ファンド※5": {
     "rate": 0.132,
@@ -205,90 +171,68 @@
     "docID": "S100XQAO",
     "match_type": "partial"
   },
-  "eMAXIS Slim 国内株式（読売333） ※5": {
-    "rate": null,
-    "docID": "S100VBYI",
-    "match_type": "partial"
-  },
   "マネーフォワード全世界株式インデックスファンド": {
-    "rate": 0.2323,
-    "docID": "S100WC1U"
+    "rate": 0.5335,
+    "docID": "S100WLZ3",
+    "match_type": "partial"
   },
   "インデックスオープン・世界株式": {
     "rate": 0.1099,
     "docID": "S100WDJ6"
   },
   "たわらノーロード 全世界株式": {
-    "rate": 0.1133,
-    "docID": "S100U06H"
-  },
-  "Tracers MSCI オール・カントリー・インデックス（全世界株式）": {
-    "rate": null,
-    "docID": "S100X9VK"
+    "rate": 0.1099,
+    "docID": "S100XE1W"
   },
   "ステート・ストリート全世界株式インデックス・オープン": {
+    "original_edinet_name": "ステート・ストリート全世界株式インデックス・オープン",
     "rate": 0.0748,
-    "docID": "S100XMIM"
+    "docID": "S100XMIM",
+    "filerName": "ステート・ストリート・グローバル・アドバイザーズ株式会社",
+    "submitDate": "2026-02-27"
   },
   "全世界株式インデックス・ファンド": {
+    "original_edinet_name": "全世界株式インデックス・ファンド",
     "rate": 0.528,
-    "docID": "S100XM5V"
+    "docID": "S100XM5V",
+    "filerName": "ステート・ストリート・グローバル・アドバイザーズ株式会社",
+    "submitDate": "2026-02-27"
   },
   "ｉＦｒｅｅ 全世界株式インデックス（オール・カントリー）": {
-    "rate": 0.176,
-    "docID": "S100WUJD"
+    "rate": 0.165,
+    "docID": "S100WM3G",
+    "match_type": "partial"
   },
   "全世界株式インデックス・ファンド（オール・カントリー）": {
-    "rate": 0.1925,
-    "docID": "S100VPV7"
-  },
-  "JAバンクよりそいノーロード全世界株式": {
-    "rate": 0.0976,
-    "docID": "S100WAI2"
+    "rate": 0.1122,
+    "docID": "S100XAKW",
+    "match_type": "partial"
   },
   "野村つみたて外国株投信": {
+    "original_edinet_name": "野村つみたて外国株投信",
     "rate": null,
-    "docID": "S100VVCL"
+    "docID": "S100VVCL",
+    "filerName": "野村アセットマネジメント株式会社",
+    "submitDate": "2025-07-25"
   },
   "はじめてのNISA・全世界株式インデックス（オール・カントリー）": {
+    "original_edinet_name": "はじめてのNISA・全世界株式インデックス(オール・カントリー)",
     "rate": null,
-    "docID": "S100TZ51"
+    "docID": "S100WCX0",
+    "filerName": "野村アセットマネジメント株式会社",
+    "submitDate": "2025-08-28"
   },
   "三井住友・DCつみたてNISA・全海外株インデックスファンド": {
+    "original_edinet_name": "三井住友・DCつみたてNISA・全海外株インデックスファンド",
     "rate": null,
-    "docID": "S100WIOU"
-  },
-  "eMAXIS Slim 全世界株式（除く日本）": {
-    "rate": null,
-    "docID": "S100TONT"
-  },
-  "eMAXIS Slim 全世界株式（オール・カントリー）": {
-    "rate": null,
-    "docID": "S100W56N"
-  },
-  "eMAXIS 全世界株式インデックス（除く日本）": {
-    "rate": null,
-    "docID": "S100XSAG"
-  },
-  "つみたて全世界株式": {
-    "rate": null,
-    "docID": "S100WLCD"
-  },
-  "楽天・オールカントリー株式（除く日本）インデックス・ファンド": {
-    "rate": null,
-    "docID": "S100W2YF"
+    "docID": "S100XIQJ",
+    "filerName": "三井住友ＤＳアセットマネジメント株式会社",
+    "submitDate": "2026-02-26"
   },
   "楽天・プラス・オールカントリー株式インデックス・ファンド": {
-    "rate": null,
-    "docID": "S100WJOV"
-  },
-  "Smart-i Select 全世界株式インデックス": {
-    "rate": null,
-    "docID": "S100VE9G"
-  },
-  "Smart-i Select 全世界株式インデックス（除く日本）": {
-    "rate": null,
-    "docID": "S100WOTG"
+    "rate": 0.0638,
+    "docID": "S100XOAS",
+    "match_type": "partial"
   },
   "SBI・全世界株式インデックス・ファンド": {
     "rate": 0.0682,
@@ -296,15 +240,19 @@
   },
   "SBI・V・全世界株式インデックス・ファンド": {
     "rate": 0.0638,
-    "docID": "S100UIEU"
+    "docID": "S100XY6W"
   },
   "楽天・全世界株式インデックス・ファンド": {
+    "original_edinet_name": "楽天・全世界株式インデックス・ファンド",
     "rate": 0.178,
-    "docID": "S100XLG2"
+    "docID": "S100XLG2",
+    "filerName": "楽天投信投資顧問株式会社",
+    "submitDate": "2026-04-15"
   },
   "楽天・全世界株式（除く米国）インデックス・ファンド": {
-    "rate": 0.182,
-    "docID": "S100XLGP"
+    "rate": 0.0638,
+    "docID": "S100XUQZ",
+    "match_type": "partial"
   },
   "インデックスオープン・先進国株式": {
     "rate": 0.0989,
@@ -318,61 +266,49 @@
     "rate": 0.22,
     "docID": "S100WBSI"
   },
-  "インデックスファンド海外株式（ヘッジあり）": {
-    "rate": null,
-    "docID": "S100X249"
-  },
-  "インデックスファンド海外株式（ヘッジなし）": {
-    "rate": null,
-    "docID": "S100VPKB"
-  },
-  "ステート・ストリート・グローバル株式インデックス・オープン": {
-    "rate": 0.0748,
-    "docID": "S100XMAJ"
-  },
-  "ｉＦｒｅｅ 外国株式インデックス（為替ヘッジあり）": {
-    "rate": 0.209,
-    "docID": "S100WJEN"
-  },
-  "ｉＦｒｅｅ 外国株式インデックス（為替ヘッジなし）": {
-    "rate": 0.209,
-    "docID": "S100WHJ8"
-  },
   "東京海上セレクション・外国株式インデックス": {
     "rate": 0.22,
     "docID": "S100WBD8"
   },
   "ニッセイ外国株式インデックスファンド＜購入・換金手数料なし＞": {
-    "rate": null,
-    "docID": "S100WH0Z"
-  },
-  "JAバンクよりそいノーロード先進国株式（除く日本）": {
-    "rate": 0.0976,
-    "docID": "S100WAPQ"
-  },
-  "NZAM・ベータ　先進国株式": {
-    "rate": 0.22,
-    "docID": "S100VUYE"
+    "rate": 0.275,
+    "docID": "S100X0DW",
+    "match_type": "partial"
   },
   "野村インデックスファンド・外国株式": {
+    "original_edinet_name": "野村インデックスファンド・外国株式",
     "rate": null,
-    "docID": "S100UGDK"
+    "docID": "S100WVC7",
+    "filerName": "野村アセットマネジメント株式会社",
+    "submitDate": "2025-11-27"
   },
   "野村インデックスファンド・外国株式・為替ヘッジ型": {
+    "original_edinet_name": "野村インデックスファンド・外国株式・為替ヘッジ型",
     "rate": null,
-    "docID": "S100WSYL"
+    "docID": "S100WSYL",
+    "filerName": "野村アセットマネジメント株式会社",
+    "submitDate": "2025-11-27"
   },
   "野村スリーゼロ先進国株式投信": {
-    "rate": null,
-    "docID": "S100VA1Z"
+    "original_edinet_name": "野村スリーゼロ先進国株式投信",
+    "rate": 0.11,
+    "docID": "S100XM9B",
+    "filerName": "野村アセットマネジメント株式会社",
+    "submitDate": "2026-03-18"
   },
   "外国株式指数ファンド": {
+    "original_edinet_name": "外国株式指数ファンド",
     "rate": null,
-    "docID": "S100WIKO"
+    "docID": "S100XHOV",
+    "filerName": "三井住友ＤＳアセットマネジメント株式会社",
+    "submitDate": "2026-02-26"
   },
   "SMBC・DCインデックスファンド（MSCIコクサイ）": {
+    "original_edinet_name": "SMBC・DCインデックスファンド(MSCIコクサイ)",
     "rate": null,
-    "docID": "S100U7P7"
+    "docID": "S100XIJK",
+    "filerName": "三井住友ＤＳアセットマネジメント株式会社",
+    "submitDate": "2026-02-26"
   },
   "My SMT グローバル株式インデックス（ノーロード）": {
     "rate": 0.1023,
@@ -380,40 +316,26 @@
   },
   "SMT グローバル株式インデックス・オープン": {
     "rate": 0.55,
-    "docID": "S100U2ZU"
-  },
-  "eMAXIS Slim 先進国株式インデックス（除く日本）": {
-    "rate": null,
-    "docID": "S100TQCT",
-    "match_type": "partial"
-  },
-  "eMAXIS Slim 先進国株式（含む日本）＜オール先進国＞": {
-    "rate": null,
-    "docID": "S100UI43"
+    "docID": "S100X814"
   },
   "eMAXIS 先進国株式インデックス（除く日本）": {
-    "rate": null,
-    "docID": "S100XRGR"
-  },
-  "つみたて先進国株式": {
-    "rate": null,
-    "docID": "S100U2WE"
-  },
-  "つみたて先進国株式（為替ヘッジあり）": {
-    "rate": null,
-    "docID": "S100WLB1"
+    "rate": 0.66,
+    "docID": "S100XCH5",
+    "match_type": "partial"
   },
   "楽天・プラス・先進国株式（除く日本）インデックス・ファンド": {
-    "rate": null,
-    "docID": "S100XLH4"
+    "rate": 0.0638,
+    "docID": "S100XO0S",
+    "match_type": "partial"
   },
   "Smart-i 先進国株式インデックス": {
-    "rate": null,
-    "docID": "S100XG0Q"
+    "rate": 0.66,
+    "docID": "S100XCH5",
+    "match_type": "partial"
   },
   "SBI・先進国株式インデックス・ファンド": {
     "rate": 0.0682,
-    "docID": "S100U3WB"
+    "docID": "S100WFH5"
   },
   "SBI・V･S&P500インデックス･ファンド": {
     "rate": 0.0638,
@@ -425,107 +347,108 @@
   },
   "たわらノーロード S&P500": {
     "rate": 0.0937,
-    "docID": "S100V1JC"
+    "docID": "S100WBKF"
   },
   "ステート・ストリートS&P500インデックス・オープン": {
-    "rate": 0.0748,
-    "docID": "S100XJQ7"
+    "rate": 0.1078,
+    "docID": "S100XLV1",
+    "match_type": "partial"
   },
   "米国株式インデックス・ファンド": {
-    "rate": 0.495,
-    "docID": "S100VS68"
+    "rate": 0.55,
+    "docID": "S100VNUW",
+    "match_type": "partial"
   },
   "ｉＦｒｅｅ S&P500インデックス": {
-    "rate": 0.198,
-    "docID": "S100X1XU"
-  },
-  "農林中金＜パートナーズ＞つみたて米国株式 S&P500": {
-    "rate": 0.495,
-    "docID": "S100WG0D"
-  },
-  "JAバンクよりそいノーロード米国株式 S&P500": {
-    "rate": 0.0924,
-    "docID": "S100WAPN"
-  },
-  "NZAM・ベータ　S&P500": {
-    "rate": 0.22,
-    "docID": "S100WMB7"
+    "rate": 0.0968,
+    "docID": "S100W037",
+    "match_type": "partial"
   },
   "はじめてのNISA・米国株式インデックス（S&P500）": {
+    "original_edinet_name": "はじめてのNISA・米国株式インデックス(S&P500)",
     "rate": null,
-    "docID": "S100WEIH"
+    "docID": "S100WEIH",
+    "filerName": "野村アセットマネジメント株式会社",
+    "submitDate": "2025-08-28"
   },
   "iシェアーズ　米国株式（S&P500）インデックス・ファンド": {
-    "rate": 0.0702,
-    "docID": "S100XGWA"
+    "rate": 0.0638,
+    "docID": "S100XOAS",
+    "match_type": "partial"
   },
   "つみたてiシェアーズ　米国株式（S&P500）インデックス・ファンド": {
-    "rate": 0.0921,
-    "docID": "S100WB3Q"
+    "rate": 0.0638,
+    "docID": "S100XQ71",
+    "match_type": "partial"
   },
   "SMBC・DCインデックスファンド（S&P500）": {
+    "original_edinet_name": "SMBC・DCインデックスファンド(S&P500)",
     "rate": null,
-    "docID": "S100TSTO"
+    "docID": "S100XI23",
+    "filerName": "三井住友ＤＳアセットマネジメント株式会社",
+    "submitDate": "2026-02-17"
   },
   "My SMT S&P500インデックス（ノーロード）": {
     "rate": 0.0968,
-    "docID": "S100TLK1"
+    "docID": "S100W037"
   },
   "eMAXIS S&P500インデックス": {
-    "rate": null,
-    "docID": "S100VECP"
-  },
-  "eMAXIS Slim 米国株式（S&P500）": {
-    "rate": null,
-    "docID": "S100W6QB"
-  },
-  "つみたて米国株式（S&P500）": {
-    "rate": null,
-    "docID": "S100U936"
+    "original_edinet_name": "eMAXIS S&P500インデックス",
+    "rate": 0.33,
+    "docID": "S100XSAW",
+    "filerName": "三菱ＵＦＪアセットマネジメント株式会社",
+    "submitDate": "2026-04-24"
   },
   "楽天・プラス・S&P500インデックス・ファンド": {
-    "rate": null,
-    "docID": "S100WJOR"
+    "rate": 0.0968,
+    "docID": "S100W037",
+    "match_type": "partial"
   },
   "Smart-i　S&P500インデックス": {
+    "original_edinet_name": "Smart-i S&P500インデックス",
     "rate": null,
-    "docID": "S100WDF4"
+    "docID": "S100XG18",
+    "filerName": "りそなアセットマネジメント株式会社",
+    "submitDate": "2026-03-25"
   },
   "SBI・V・全米株式インデックス・ファンド": {
     "rate": 0.0638,
     "docID": "S100WQYO"
   },
   "楽天・全米株式インデックス・ファンド": {
-    "rate": 0.162,
-    "docID": "S100WJOB"
+    "rate": 0.2035,
+    "docID": "S100XMOZ",
+    "match_type": "partial"
   },
   "たわらノーロード 新興国株式": {
     "rate": 0.1859,
-    "docID": "S100V1EX"
-  },
-  "インデックスファンド海外新興国（エマージング）株式": {
-    "rate": null,
-    "docID": "S100X9VX"
+    "docID": "S100XE1K"
   },
   "ニッセイ新興国株式インデックスファンド＜購入・換金手数料なし＞": {
-    "rate": null,
-    "docID": "S100XL8M"
-  },
-  "JAバンクよりそいノーロード新興国株式": {
-    "rate": 0.1516,
-    "docID": "S100WAI3"
+    "rate": 0.363,
+    "docID": "S100XEUY",
+    "match_type": "partial"
   },
   "野村インデックスファンド・新興国株式": {
+    "original_edinet_name": "野村インデックスファンド・新興国株式",
     "rate": null,
-    "docID": "S100UIBK"
+    "docID": "S100WSVJ",
+    "filerName": "野村アセットマネジメント株式会社",
+    "submitDate": "2025-11-27"
   },
   "はじめてのNISA・新興国株式インデックス": {
+    "original_edinet_name": "はじめてのNISA・新興国株式インデックス",
     "rate": null,
-    "docID": "S100WEHH"
+    "docID": "S100WEHH",
+    "filerName": "野村アセットマネジメント株式会社",
+    "submitDate": "2025-08-28"
   },
   "三井住友・DC新興国株式インデックスファンド": {
+    "original_edinet_name": "三井住友・DC新興国株式インデックスファンド",
     "rate": null,
-    "docID": "S100U3MK"
+    "docID": "S100XFAD",
+    "filerName": "三井住友ＤＳアセットマネジメント株式会社",
+    "submitDate": "2026-02-26"
   },
   "My SMT 新興国株式インデックス（ノーロード）": {
     "rate": 0.187,
@@ -535,307 +458,153 @@
     "rate": 0.66,
     "docID": "S100XGWV"
   },
-  "eMAXIS Slim 新興国株式インデックス": {
-    "rate": null,
-    "docID": "S100W45T"
-  },
   "eMAXIS 新興国株式インデックス": {
-    "rate": null,
-    "docID": "S100XTIQ"
-  },
-  "つみたて新興国株式": {
-    "rate": null,
-    "docID": "S100WKHU"
+    "rate": 0.66,
+    "docID": "S100XCH5",
+    "match_type": "partial"
   },
   "楽天・エマージング株式インデックス・ファンド": {
+    "original_edinet_name": "楽天・エマージング株式インデックス・ファンド",
     "rate": null,
-    "docID": "S100W2YJ"
+    "docID": "S100W2YJ",
+    "filerName": "楽天投信投資顧問株式会社",
+    "submitDate": "2025-07-01"
   },
   "Smart-i 新興国株式インデックス": {
-    "rate": null,
-    "docID": "S100WDEU"
+    "rate": 0.66,
+    "docID": "S100XCH5",
+    "match_type": "partial"
   },
   "SBI・新興国株式インデックス・ファンド": {
     "rate": 0.066,
-    "docID": "S100V5DZ"
+    "docID": "S100XHAI"
   },
   "ｉＦｒｅｅ 新興国株式インデックス": {
-    "rate": 0.374,
-    "docID": "S100VE0L"
-  },
-  "日本株式・Jリートバランスファンド": {
-    "rate": 0.209,
-    "docID": "S100WSZW"
-  },
-  "NZAM・ベータ 日本2資産（株式+REIT）": {
-    "rate": 0.242,
-    "docID": "S100XN89"
+    "rate": 0.187,
+    "docID": "S100WAG5",
+    "match_type": "partial"
   },
   "東京海上・円資産インデックスバランスファンド": {
     "rate": 0.418,
-    "docID": "S100VN1G"
-  },
-  "ニッセイ・インデックスパッケージ（国内・株式／リート／債券）": {
-    "rate": null,
-    "docID": "S100WJGY"
+    "docID": "S100XZKM"
   },
   "susten新興国インカム・インデックスファンド（年4回決算型）": {
-    "rate": 0.363,
-    "docID": "S100XYW5"
-  },
-  "ドイチェ・ETFバランス・ファンド": {
-    "rate": 0.2585,
-    "docID": "S100XAYH"
-  },
-  "NZAM・ベータ 先進国2資産（株式+REIT）": {
-    "rate": 0.242,
-    "docID": "S100VUZD"
-  },
-  "NZAM・ベータ 米国2資産（株式+REIT）": {
-    "rate": 0.407,
-    "docID": "S100XNNO"
-  },
-  "楽天・インデックス・バランス・ファンド（株式重視型）": {
-    "rate": 0.204,
-    "docID": "S100VPRW"
-  },
-  "楽天・インデックス・バランス・ファンド（均等型）": {
-    "rate": 0.212,
-    "docID": "S100VPRZ"
-  },
-  "楽天・インデックス・バランス・ファンド（債券重視型）": {
-    "rate": 0.22,
-    "docID": "S100X2KR"
+    "rate": 1.7875,
+    "docID": "S100XH1Q",
+    "match_type": "partial"
   },
   "グローバル株式ファンド": {
+    "original_edinet_name": "グローバル株式ファンド",
     "rate": 0.473,
-    "docID": "S100XDQW"
-  },
-  "ＤＣニッセイ全世界株式インデックスコレクト": {
-    "rate": null,
-    "docID": "S100VRFA"
-  },
-  "ニッセイ・インデックスパッケージ（内外・株式）": {
-    "rate": null,
-    "docID": "S100XLAG"
-  },
-  "ニッセイ世界株式ファンド（GDP型バスケット）＜購入・換金手数料なし＞": {
-    "rate": null,
-    "docID": "S100XK0D"
-  },
-  "eMAXIS Slim 全世界株式（3地域均等型）": {
-    "rate": null,
-    "docID": "S100TU7E"
-  },
-  "auスマート・ベーシック（安定）": {
-    "rate": 0.22,
-    "docID": "S100XA1G",
-    "match_type": "partial"
-  },
-  "JP4資産均等バランス": {
-    "rate": null,
-    "docID": "S100WJLX"
-  },
-  "ダイワ・ライフ・バランス30": {
-    "rate": 0.198,
-    "docID": "S100XKBZ"
-  },
-  "ダイワ・ライフ・バランス50": {
-    "rate": 0.22,
-    "docID": "S100WJVQ"
-  },
-  "ダイワ・ライフ・バランス70": {
-    "rate": 0.242,
-    "docID": "S100XKC9"
-  },
-  "スタイル9（4資産分散・保守型）": {
-    "rate": 0.45,
-    "docID": "S100V8AZ"
-  },
-  "スタイル9（4資産分散・バランス型）": {
-    "rate": 0.45,
-    "docID": "S100V8AZ",
-    "match_type": "partial"
-  },
-  "スタイル9（4資産分散・積極型）": {
-    "rate": 0.45,
-    "docID": "S100V8AZ",
-    "match_type": "partial"
+    "docID": "S100XDQW",
+    "filerName": "スカイオーシャン・アセットマネジメント株式会社",
+    "submitDate": "2026-01-15"
   },
   "ちゅうぎん４資産バランスファンド＜株式重視型＞": {
-    "rate": 0.528,
-    "docID": "S100WZMQ",
+    "rate": 0.99,
+    "docID": "S100WOB7",
     "match_type": "partial"
   },
   "ちゅうぎん４資産バランスファンド＜債券重視型＞": {
-    "rate": 0.528,
-    "docID": "S100WZMQ",
+    "rate": 0.99,
+    "docID": "S100WOB7",
     "match_type": "partial"
   },
   "東京海上ターゲット・イヤー・ファンド2035": {
     "rate": 0.308,
-    "docID": "S100VMON",
+    "docID": "S100WVUR",
     "match_type": "partial"
   },
   "東京海上ターゲット・イヤー・ファンド2040": {
     "rate": 0.308,
-    "docID": "S100VJED",
+    "docID": "S100WVUR",
     "match_type": "partial"
   },
   "東京海上ターゲット・イヤー・ファンド2045": {
     "rate": 0.308,
-    "docID": "S100VMON",
+    "docID": "S100WVUR",
     "match_type": "partial"
   },
   "東京海上ターゲット・イヤー・ファンド2050": {
     "rate": 0.308,
-    "docID": "S100VJED",
+    "docID": "S100WVUR",
     "match_type": "partial"
   },
   "東京海上ターゲット・イヤー・ファンド2055": {
     "rate": 0.308,
-    "docID": "S100VMON",
+    "docID": "S100WVUR",
     "match_type": "partial"
   },
   "東京海上ターゲット・イヤー・ファンド2060": {
     "rate": 0.308,
-    "docID": "S100VJED",
+    "docID": "S100WVUR",
     "match_type": "partial"
   },
   "東京海上ターゲット・イヤー・ファンド2065": {
     "rate": 0.308,
-    "docID": "S100VMON",
+    "docID": "S100WVUR",
     "match_type": "partial"
   },
   "東京海上ターゲット・イヤー・ファンド2070": {
     "rate": 0.308,
-    "docID": "S100VJED",
+    "docID": "S100WVUR",
     "match_type": "partial"
-  },
-  "DCニッセイワールドセレクトファンド（安定型）": {
-    "rate": null,
-    "docID": "S100VO7S"
-  },
-  "DCニッセイワールドセレクトファンド（株式重視型）": {
-    "rate": null,
-    "docID": "S100X19Y",
-    "match_type": "partial"
-  },
-  "DCニッセイワールドセレクトファンド（債券重視型）": {
-    "rate": null,
-    "docID": "S100X19Y",
-    "match_type": "partial"
-  },
-  "DCニッセイワールドセレクトファンド（標準型）": {
-    "rate": null,
-    "docID": "S100X19Y",
-    "match_type": "partial"
-  },
-  "ニッセイ・インデックスバランスファンド（4資産均等型）＜購入・換金手数料なし＞": {
-    "rate": null,
-    "docID": "S100XJZY"
   },
   "三井住友・DCターゲットイヤーファンド2040（4資産タイプ）": {
-    "rate": null,
-    "docID": "S100X52H"
+    "rate": 0.242,
+    "docID": "S100VHJE",
+    "match_type": "partial"
   },
   "三井住友・DCターゲットイヤーファンド2045（4資産タイプ）": {
-    "rate": null,
-    "docID": "S100W3N2"
+    "rate": 0.242,
+    "docID": "S100VHJE",
+    "match_type": "partial"
   },
   "三井住友・DC年金バランス30（債券重点型）": {
+    "original_edinet_name": "三井住友・DC年金バランス30(債券重点型) 三井住友・DC年金バランス50(標準型) 三井住友・DC年金バランス70(株式重点型)",
     "rate": null,
-    "docID": "S100VJUV",
-    "match_type": "partial"
+    "docID": "S100WWQL",
+    "filerName": "三井住友ＤＳアセットマネジメント株式会社",
+    "submitDate": "2025-11-13"
   },
   "三井住友・DC年金バランス50（標準型）": {
+    "original_edinet_name": "三井住友・DC年金バランス30(債券重点型) 三井住友・DC年金バランス50(標準型) 三井住友・DC年金バランス70(株式重点型)",
     "rate": null,
-    "docID": "S100VJUV",
-    "match_type": "partial"
+    "docID": "S100WWQL",
+    "filerName": "三井住友ＤＳアセットマネジメント株式会社",
+    "submitDate": "2025-11-13"
   },
   "三井住友・DC年金バランス70（株式重点型）": {
+    "original_edinet_name": "三井住友・DC年金バランス30(債券重点型) 三井住友・DC年金バランス50(標準型) 三井住友・DC年金バランス70(株式重点型)",
     "rate": null,
-    "docID": "S100VJUV",
-    "match_type": "partial"
-  },
-  "eMAXIS バランス（4資産均等型）": {
-    "rate": null,
-    "docID": "S100VHK2"
-  },
-  "つみたて4資産均等バランス": {
-    "rate": null,
-    "docID": "S100U84X"
-  },
-  "ニッセイ・インデックスパッケージ（内外・株式／リート）": {
-    "rate": null,
-    "docID": "S100XLK6"
+    "docID": "S100WWQL",
+    "filerName": "三井住友ＤＳアセットマネジメント株式会社",
+    "submitDate": "2025-11-13"
   },
   "野村インデックスファンド・海外5資産バランス": {
-    "rate": null,
-    "docID": "S100WT50"
-  },
-  "auスマート・ベーシック（安定成長）": {
-    "rate": 0.22,
-    "docID": "S100XA1G",
-    "match_type": "partial"
-  },
-  "スタイル9（6資産分散・保守型）": {
-    "rate": 0.45,
-    "docID": "S100V8AZ",
-    "match_type": "partial"
-  },
-  "スタイル9（6資産分散・積極型）": {
-    "rate": 0.45,
-    "docID": "S100V8AZ",
-    "match_type": "partial"
-  },
-  "ニッセイ・インデックスバランスファンド（6資産均等型）＜購入・換金手数料なし＞": {
-    "rate": null,
-    "docID": "S100WIUI"
+    "original_edinet_name": "野村インデックスファンド・海外5資産バランス",
+    "rate": 0.66,
+    "docID": "S100WT50",
+    "filerName": "野村アセットマネジメント株式会社",
+    "submitDate": "2025-11-27"
   },
   "世界6資産分散ファンド": {
+    "original_edinet_name": "世界6資産分散ファンド",
     "rate": null,
-    "docID": "S100WSYE"
+    "docID": "S100WSYE",
+    "filerName": "野村アセットマネジメント株式会社",
+    "submitDate": "2025-11-26"
   },
   "野村6資産均等バランス": {
+    "original_edinet_name": "野村6資産均等バランス",
     "rate": null,
-    "docID": "S100WKND"
-  },
-  "フィデリティ・ターゲット・デート・ファンド（ベーシック）2040": {
-    "rate": null,
-    "docID": "S100XB2W"
-  },
-  "フィデリティ・ターゲット・デート・ファンド（ベーシック）2045": {
-    "rate": null,
-    "docID": "S100XB38"
-  },
-  "フィデリティ・ターゲット・デート・ファンド（ベーシック）2050": {
-    "rate": null,
-    "docID": "S100XB3C"
-  },
-  "フィデリティ・ターゲット・デート・ファンド（ベーシック）2055": {
-    "rate": null,
-    "docID": "S100XB6N"
-  },
-  "フィデリティ・ターゲット・デート・ファンド（ベーシック）2060": {
-    "rate": null,
-    "docID": "S100XB7D"
-  },
-  "フィデリティ・ターゲット・デート・ファンド（ベーシック）2065": {
-    "rate": null,
-    "docID": "S100XB7T"
-  },
-  "フィデリティ・ターゲット・デート・ファンド（ベーシック）2070": {
-    "rate": null,
-    "docID": "S100XB8Q"
-  },
-  "ブラックロック・つみたて・グローバルバランスファンド": {
-    "rate": 0.4408,
-    "docID": "S100XZWB"
+    "docID": "S100WKND",
+    "filerName": "野村アセットマネジメント株式会社",
+    "submitDate": "2025-09-26"
   },
   "SBI資産設計オープン（つみたてNISA対応型）": {
     "rate": 0.55,
-    "docID": "S100THP9"
+    "docID": "S100X62J"
   },
   "SMT 世界経済インデックス・オープン": {
     "rate": 0.55,
@@ -849,52 +618,12 @@
     "rate": 0.495,
     "docID": "S100WGEK"
   },
-  "eMAXIS 最適化バランス（マイ　ゴールキーパー）": {
-    "rate": null,
-    "docID": "S100XUBR",
-    "match_type": "partial"
-  },
-  "三菱UFJ 資産配分最適化バランス（R1）": {
-    "rate": null,
-    "docID": "S100VXE7",
-    "match_type": "partial"
-  },
-  "Tracers グローバル3分法（おとなのバランス）": {
-    "rate": null,
-    "docID": "S100VDWK"
-  },
-  "ニッセイ・インデックスパッケージ（内外・株式／リート／債券）": {
-    "rate": null,
-    "docID": "S100WJGI"
-  },
   "野村インデックスファンド・内外7資産バランス・為替ヘッジ型": {
-    "rate": null,
-    "docID": "S100WT4Q"
-  },
-  "楽天・資産づくりファンド（がっちりコース）": {
-    "rate": 0.4915,
-    "docID": "S100X2LT",
-    "match_type": "partial"
-  },
-  "楽天・資産づくりファンド（しっかりコース）": {
-    "rate": 0.4915,
-    "docID": "S100X2LT",
-    "match_type": "partial"
-  },
-  "楽天・資産づくりファンド（じっくりコース）": {
-    "rate": 0.4915,
-    "docID": "S100X2LT",
-    "match_type": "partial"
-  },
-  "楽天・資産づくりファンド（なかなかコース）": {
-    "rate": 0.4915,
-    "docID": "S100X2LT",
-    "match_type": "partial"
-  },
-  "楽天・資産づくりファンド（のんびりコース）": {
-    "rate": 0.4915,
-    "docID": "S100X2LT",
-    "match_type": "partial"
+    "original_edinet_name": "野村インデックスファンド・内外7資産バランス・為替ヘッジ型",
+    "rate": 0.55,
+    "docID": "S100WT4Q",
+    "filerName": "野村アセットマネジメント株式会社",
+    "submitDate": "2025-11-27"
   },
   "たわらノーロード 最適化バランス（安定型）": {
     "rate": 0.55,
@@ -918,7 +647,7 @@
   },
   "たわらノーロード バランス（8資産均等型）": {
     "rate": 0.143,
-    "docID": "S100TZWW"
+    "docID": "S100WBJE"
   },
   "たわらノーロード バランス（堅実型）": {
     "rate": 0.143,
@@ -932,317 +661,98 @@
     "rate": 0.143,
     "docID": "S100WBRR"
   },
-  "ｉＦｒｅｅ 8資産バランス": {
-    "rate": 0.242,
-    "docID": "S100UQCF"
-  },
-  "スタイル9（8資産分散・保守型）": {
-    "rate": 0.45,
-    "docID": "S100V8AZ",
-    "match_type": "partial"
-  },
-  "スタイル9（8資産分散・積極型）": {
-    "rate": 0.45,
-    "docID": "S100V8AZ",
-    "match_type": "partial"
-  },
   "野村資産設計ファンド（DC・つみたてNISA）2030": {
+    "original_edinet_name": "野村資産設計ファンド(DC・つみたてNISA)2030",
     "rate": null,
-    "docID": "S100WFFD"
+    "docID": "S100WFFD",
+    "filerName": "野村アセットマネジメント株式会社",
+    "submitDate": "2025-09-22"
   },
   "野村資産設計ファンド（DC・つみたてNISA）2040": {
+    "original_edinet_name": "野村資産設計ファンド(DC・つみたてNISA)2040",
     "rate": null,
-    "docID": "S100WGDK"
+    "docID": "S100WGDK",
+    "filerName": "野村アセットマネジメント株式会社",
+    "submitDate": "2025-09-22"
   },
   "野村資産設計ファンド（DC・つみたてNISA）2050": {
+    "original_edinet_name": "野村資産設計ファンド(DC・つみたてNISA)2050",
     "rate": null,
-    "docID": "S100U6Y5"
+    "docID": "S100WJY0",
+    "filerName": "野村アセットマネジメント株式会社",
+    "submitDate": "2025-09-22"
   },
   "野村資産設計ファンド（DC・つみたてNISA）2060": {
+    "original_edinet_name": "野村資産設計ファンド(DC・つみたてNISA)2060",
     "rate": null,
-    "docID": "S100U5IE"
+    "docID": "S100WF8F",
+    "filerName": "野村アセットマネジメント株式会社",
+    "submitDate": "2025-09-22"
   },
   "三井住友・DCつみたてNISA・世界分散ファンド": {
+    "original_edinet_name": "三井住友・DCつみたてNISA・世界分散ファンド",
     "rate": null,
-    "docID": "S100UJSZ"
+    "docID": "S100X0N7",
+    "filerName": "三井住友ＤＳアセットマネジメント株式会社",
+    "submitDate": "2025-12-04"
   },
   "SMT 8資産インデックスバランス・オープン": {
     "rate": 0.55,
-    "docID": "S100TIYP"
-  },
-  "eMAXIS Slim バランス（8資産均等型）": {
-    "rate": null,
-    "docID": "S100TV4K"
-  },
-  "eMAXIS 最適化バランス（マイ ストライカー）": {
-    "rate": null,
-    "docID": "S100XUBR",
-    "match_type": "partial"
-  },
-  "eMAXIS 最適化バランス（マイ ディフェンダー）": {
-    "rate": null,
-    "docID": "S100XUBR",
-    "match_type": "partial"
-  },
-  "eMAXIS 最適化バランス（マイ フォワード）": {
-    "rate": null,
-    "docID": "S100XUBR",
-    "match_type": "partial"
-  },
-  "eMAXIS 最適化バランス（マイ ミッドフィルダー）": {
-    "rate": null,
-    "docID": "S100XUBR",
-    "match_type": "partial"
-  },
-  "eMAXIS バランス（8資産均等型）": {
-    "rate": null,
-    "docID": "S100XRH3"
-  },
-  "eMAXIS マイマネージャー 1970s": {
-    "rate": null,
-    "docID": "S100VH50",
-    "match_type": "partial"
-  },
-  "eMAXIS マイマネージャー 1980s": {
-    "rate": null,
-    "docID": "S100VH50",
-    "match_type": "partial"
-  },
-  "eMAXIS マイマネージャー 1990s": {
-    "rate": null,
-    "docID": "S100VH50",
-    "match_type": "partial"
-  },
-  "つみたて8資産均等バランス": {
-    "rate": null,
-    "docID": "S100WLHM"
-  },
-  "三菱UFJ 資産配分最適化バランス（R2）": {
-    "rate": null,
-    "docID": "S100VXE7",
-    "match_type": "partial"
-  },
-  "三菱UFJ 資産配分最適化バランス（R3）": {
-    "rate": null,
-    "docID": "S100VXE7",
-    "match_type": "partial"
-  },
-  "三菱UFJ 資産配分最適化バランス（R4）": {
-    "rate": null,
-    "docID": "S100VXE7",
-    "match_type": "partial"
-  },
-  "三菱UFJ 資産配分最適化バランス（R5）": {
-    "rate": null,
-    "docID": "S100VXE7",
-    "match_type": "partial"
-  },
-  "Smart-i 8資産バランス 安定型": {
-    "rate": 0.176,
-    "docID": "S100WVHV",
-    "match_type": "partial"
-  },
-  "Smart-i 8資産バランス 安定成長型": {
-    "rate": 0.176,
-    "docID": "S100WVHV",
-    "match_type": "partial"
-  },
-  "Smart-i 8資産バランス 成長型": {
-    "rate": 0.176,
-    "docID": "S100WVHV",
-    "match_type": "partial"
-  },
-  "つみたてバランスファンド": {
-    "rate": 0.237,
-    "docID": "S100XLEK"
+    "docID": "S100XHKS"
   },
   "三井住友DS・バランスファンド（保守コース）": {
+    "original_edinet_name": "三井住友DS・バランスファンド(保守コース)/(安定コース)/(標準コース)/(成長コース)/(積極コース)",
     "rate": null,
     "docID": "S100V6HO",
-    "match_type": "partial"
+    "filerName": "三井住友ＤＳアセットマネジメント株式会社",
+    "submitDate": "2025-02-10"
   },
   "三井住友DS・バランスファンド（安定コース）": {
+    "original_edinet_name": "三井住友DS・バランスファンド(保守コース)/(安定コース)/(標準コース)/(成長コース)/(積極コース)",
     "rate": null,
     "docID": "S100V6HO",
-    "match_type": "partial"
+    "filerName": "三井住友ＤＳアセットマネジメント株式会社",
+    "submitDate": "2025-02-10"
   },
   "三井住友DS・バランスファンド（標準コース）": {
+    "original_edinet_name": "三井住友DS・バランスファンド(保守コース)/(安定コース)/(標準コース)/(成長コース)/(積極コース)",
     "rate": null,
     "docID": "S100V6HO",
-    "match_type": "partial"
+    "filerName": "三井住友ＤＳアセットマネジメント株式会社",
+    "submitDate": "2025-02-10"
   },
   "三井住友DS・バランスファンド（成長コース）": {
+    "original_edinet_name": "三井住友DS・バランスファンド(保守コース)/(安定コース)/(標準コース)/(成長コース)/(積極コース)",
     "rate": null,
     "docID": "S100V6HO",
-    "match_type": "partial"
+    "filerName": "三井住友ＤＳアセットマネジメント株式会社",
+    "submitDate": "2025-02-10"
   },
   "三井住友DS・バランスファンド（積極コース）": {
+    "original_edinet_name": "三井住友DS・バランスファンド(保守コース)/(安定コース)/(標準コース)/(成長コース)/(積極コース)",
     "rate": null,
     "docID": "S100V6HO",
-    "match_type": "partial"
-  },
-  "ターゲットリターンバランスファンド（目標2%）": {
-    "rate": null,
-    "docID": "S100WDEM",
-    "match_type": "partial"
-  },
-  "ターゲットリターンバランスファンド（目標3%）": {
-    "rate": null,
-    "docID": "S100WDEM",
-    "match_type": "partial"
-  },
-  "ターゲットリターンバランスファンド（目標4%）": {
-    "rate": null,
-    "docID": "S100WDEM",
-    "match_type": "partial"
-  },
-  "ターゲットリターンバランスファンド（目標5%）": {
-    "rate": null,
-    "docID": "S100WDEM",
-    "match_type": "partial"
-  },
-  "ターゲットリターンバランスファンド（目標6%）": {
-    "rate": null,
-    "docID": "S100WDEM",
-    "match_type": "partial"
-  },
-  "りそなターゲット・イヤー・ファンド2045": {
-    "rate": 0.275,
-    "docID": "S100WVI0",
-    "match_type": "partial"
-  },
-  "りそなターゲット・イヤー・ファンド2050": {
-    "rate": 0.275,
-    "docID": "S100VMJW",
-    "match_type": "partial"
-  },
-  "りそなターゲット・イヤー・ファンド2055": {
-    "rate": 0.275,
-    "docID": "S100WVI0",
-    "match_type": "partial"
-  },
-  "りそなターゲット・イヤー・ファンド2060": {
-    "rate": 0.44,
-    "docID": "S100WVI2"
-  },
-  "りそなターゲット・イヤー・ファンド2065": {
-    "rate": 0.44,
-    "docID": "S100WVI6"
-  },
-  "りそなターゲット・イヤー・ファンド2035（運用継続型）": {
-    "rate": 0.44,
-    "docID": "S100VUT0",
-    "match_type": "partial"
-  },
-  "りそなターゲット・イヤー・ファンド2040（運用継続型）": {
-    "rate": 0.44,
-    "docID": "S100VUT0",
-    "match_type": "partial"
-  },
-  "りそなターゲット・イヤー・ファンド2045（運用継続型）": {
-    "rate": 0.44,
-    "docID": "S100VUT0",
-    "match_type": "partial"
-  },
-  "りそなターゲット・イヤー・ファンド2050（運用継続型）": {
-    "rate": 0.44,
-    "docID": "S100VUT0",
-    "match_type": "partial"
-  },
-  "りそなターゲット・イヤー・ファンド2055（運用継続型）": {
-    "rate": 0.44,
-    "docID": "S100VUT0",
-    "match_type": "partial"
-  },
-  "りそなターゲット・イヤー・ファンド2060（運用継続型）": {
-    "rate": 0.44,
-    "docID": "S100VUT0",
-    "match_type": "partial"
-  },
-  "りそなターゲット・イヤー・ファンド2065（運用継続型）": {
-    "rate": 0.44,
-    "docID": "S100VUT0",
-    "match_type": "partial"
-  },
-  "りそなターゲット・イヤー・ファンド2070": {
-    "rate": 0.44,
-    "docID": "S100VUSW",
-    "match_type": "partial"
-  },
-  "りそなターゲット・イヤー・ファンド2070（運用継続型）": {
-    "rate": 0.44,
-    "docID": "S100VUT0",
-    "match_type": "partial"
-  },
-  "りそなターゲット・イヤー・ファンド2075": {
-    "rate": 0.44,
-    "docID": "S100VUSW",
-    "match_type": "partial"
-  },
-  "りそなターゲット・イヤー・ファンド2075（運用継続型）": {
-    "rate": 0.44,
-    "docID": "S100VUT0",
-    "match_type": "partial"
-  },
-  "Niつみインデックスラップ世界10指数（安定成長型）": {
-    "rate": null,
-    "docID": "S100XG1E"
-  },
-  "Niつみインデックスラップ世界10指数（均等型）": {
-    "rate": null,
-    "docID": "S100XG17"
+    "filerName": "三井住友ＤＳアセットマネジメント株式会社",
+    "submitDate": "2025-02-10"
   },
   "Ｏｎｅ高配当利回り厳選ジャパン": {
     "rate": 1.0989,
-    "docID": "S100TKNM"
-  },
-  "年金積立 Jグロース": {
-    "rate": null,
-    "docID": "S100XG3B"
-  },
-  "コモンズ30ファンド": {
-    "rate": null,
-    "docID": "S100XVPO"
-  },
-  "ニッセイ日本株ファンド": {
-    "rate": null,
-    "docID": "S100WH5B"
-  },
-  "iTrust日本株式": {
-    "rate": 0.5,
-    "docID": "S100WOCA"
+    "docID": "S100VWLT"
   },
   "大和住銀DC国内株式ファンド": {
+    "original_edinet_name": "大和住銀DC国内株式ファンド",
     "rate": null,
-    "docID": "S100WTIS"
+    "docID": "S100XPZU",
+    "filerName": "三井住友ＤＳアセットマネジメント株式会社",
+    "submitDate": "2026-04-23"
   },
   "SMT 日本株配当貴族インデックス・オープン": {
     "rate": 0.462,
-    "docID": "S100U34A"
-  },
-  "日経平均高配当利回り株ファンド": {
-    "rate": null,
-    "docID": "S100XKH7"
-  },
-  "ひふみ投信": {
-    "rate": 0.2,
-    "docID": "S100X8ZG"
-  },
-  "ひふみプラス": {
-    "rate": null,
-    "docID": "S100X91I"
-  },
-  "結い 2101": {
-    "rate": null,
-    "docID": "S100WJR5"
+    "docID": "S100VU0K"
   },
   "EXE-i 全世界中小型株式ファンド": {
     "rate": 0.187,
     "docID": "S100WFGC"
-  },
-  "あおぞら・徹底分散グローバル株式ファンド": {
-    "rate": 0.8355,
-    "docID": "S100WDCN"
   },
   "グローバル・ハイクオリティ成長株式ファンド（為替ヘッジなし）": {
     "rate": 1.65,
@@ -1252,91 +762,36 @@
     "rate": 0.2475,
     "docID": "S100XE8F"
   },
-  "インデックスファンドNYダウ30（アメリカ株式）": {
-    "rate": null,
-    "docID": "S100VMFD"
-  },
-  "グローバル株式トップフォーカス": {
-    "rate": null,
-    "docID": "S100WV3R"
-  },
-  "アライアンス・バーンスタイン・グローバル・グロース・オポチュニティーズ（年金つみたて向け）": {
-    "rate": 1.595,
-    "docID": "S100XYKA"
-  },
-  "THEOグロース・ＡＩファンド（世界の株式中心）": {
-    "rate": null,
-    "docID": "S100Y0GK"
-  },
-  "キャピタル世界株式ファンド（DC年金つみたて専用）": {
-    "rate": 1.078,
-    "docID": "S100WUM6",
-    "match_type": "partial"
-  },
-  "GS グローバル・コア株式ファンド（DC・つみたてNISA専用）": {
-    "rate": 0.7975,
-    "docID": "S100X8YD"
-  },
-  "セゾン資産形成の達人ファンド": {
-    "rate": null,
-    "docID": "S100WM3A"
-  },
-  "iFreeNEXT FANG+インデックス": {
-    "rate": 0.7755,
-    "docID": "S100UHS8"
-  },
-  "iFreeNEXT NASDAQ100インデックス": {
-    "rate": 0.495,
-    "docID": "S100WYNH"
-  },
   "ｉＦｒｅｅ ＮＹダウ・インデックス": {
-    "rate": 0.2475,
-    "docID": "S100X1X3"
-  },
-  "ニッセイSDGｓグローバルセレクトファンド（資産成長型・為替ヘッジなし）": {
-    "rate": null,
-    "docID": "S100XPC9",
+    "rate": 0.55,
+    "docID": "S100VNV2",
     "match_type": "partial"
-  },
-  "農林中金＜パートナーズ＞長期厳選投資　おおぶね": {
-    "rate": 0.99,
-    "docID": "S100XNJG"
   },
   "野村インデックスファンド・米国株式配当貴族": {
-    "rate": null,
-    "docID": "S100VVXA"
+    "original_edinet_name": "野村インデックスファンド・米国株式配当貴族",
+    "rate": 0.55,
+    "docID": "S100VVXA",
+    "filerName": "野村アセットマネジメント株式会社",
+    "submitDate": "2025-07-17"
   },
   "野村インデックスファンド・米国株式配当貴族・為替ヘッジ型": {
-    "rate": null,
-    "docID": "S100TKSU"
-  },
-  "iTrustインド株式": {
-    "rate": 0.03,
-    "docID": "S100VW0R"
-  },
-  "iTrust新興国株式": {
-    "rate": 0.12,
-    "docID": "S100X4QA"
-  },
-  "iTrust世界株式": {
-    "rate": 0.5,
-    "docID": "S100VW0C"
-  },
-  "フィデリティ・欧州株・ファンド": {
-    "rate": null,
-    "docID": "S100XM6E"
-  },
-  "フィデリティ・米国優良株・ファンド": {
-    "rate": null,
-    "docID": "S100XM5H"
+    "original_edinet_name": "野村インデックスファンド・米国株式配当貴族・為替ヘッジ型",
+    "rate": 0.55,
+    "docID": "S100VVBW",
+    "filerName": "野村アセットマネジメント株式会社",
+    "submitDate": "2025-07-17"
   },
   "イノベーション・インデックス・ＡＩ": {
+    "original_edinet_name": "イノベーション・インデックス・AI",
     "rate": null,
-    "docID": "S100XNY3"
+    "docID": "S100XNY3",
+    "filerName": "三井住友ＤＳアセットマネジメント株式会社",
+    "submitDate": "2026-03-17"
   },
   "三井住友・ＮＹダウ・ジョーンズ・インデックスファンド（為替ノーヘッジ型）": {
-    "rate": null,
-    "docID": "S100WBM1"
+    "rate": 0.5335,
+    "docID": "S100WLZ3",
+    "match_type": "partial"
   },
   "SMT ダウ・ジョーンズ　インデックス・オープン": {
     "rate": 0.55,
@@ -1350,57 +805,14 @@
     "rate": 0.55,
     "docID": "S100VU07"
   },
-  "eMAXIS NYダウインデックス": {
-    "rate": null,
-    "docID": "S100VEO3"
-  },
-  "ベイリー・ギフォード世界長期成長株ファンド": {
-    "rate": 1.6445,
-    "docID": "S100VFVG"
-  },
-  "明治安田DC外国株式リサーチオープン（愛称：DCジェットストリーム）": {
-    "rate": null,
-    "docID": "S100XGC0",
-    "match_type": "partial"
-  },
   "楽天・米国高配当株式インデックス・ファンド": {
-    "rate": 0.192,
-    "docID": "S100WJOJ"
-  },
-  "Smart-i 先進国株式ESGインデックス": {
-    "rate": null,
-    "docID": "S100XASX"
-  },
-  "ひふみワールド": {
-    "rate": 1.628,
-    "docID": "S100VOW8"
-  },
-  "ひふみワールド＋": {
-    "rate": null,
-    "docID": "S100VOQ8"
-  },
-  "auスマート・プライム（高成長）": {
-    "rate": 0.88,
-    "docID": "S100VVHQ",
+    "rate": 0.363,
+    "docID": "S100XEUY",
     "match_type": "partial"
   },
   "セゾン・グローバルバランスファンド": {
-    "rate": null,
-    "docID": "S100WM2V"
-  },
-  "ハッピーエイジング20": {
-    "rate": null,
-    "docID": "S100WPO0",
-    "match_type": "partial"
-  },
-  "ハッピーエイジング30": {
-    "rate": null,
-    "docID": "S100WPO0",
-    "match_type": "partial"
-  },
-  "ハッピーエイジング40": {
-    "rate": null,
-    "docID": "S100WPO0",
+    "rate": 0.209,
+    "docID": "S100VU8E",
     "match_type": "partial"
   },
   "東京海上セレクション・バランス50": {
@@ -1414,81 +826,1329 @@
     "match_type": "partial"
   },
   "ブラックロックESG世界株式ファンド（為替ヘッジなし）": {
-    "rate": 0.3969,
-    "docID": "S100X6WK",
+    "rate": 1.87,
+    "docID": "S100WTD6",
     "match_type": "partial"
   },
   "世界経済インデックスファンド": {
     "rate": 0.55,
-    "docID": "S100UDY3"
+    "docID": "S100XXOS"
   },
   "世界経済インデックスファンド（株式シフト型）": {
     "rate": 0.605,
     "docID": "S100XXOV"
   },
   "資産形成ファンド": {
-    "rate": 0.5747,
-    "docID": "S100WEGW"
-  },
-  "HSBC ワールド・セレクション（成長コース）": {
-    "rate": null,
-    "docID": "S100VL45",
-    "match_type": "partial"
+    "original_edinet_name": "資産形成ファンド",
+    "rate": 0.5225,
+    "docID": "S100XGQL",
+    "filerName": "明治安田アセットマネジメント株式会社",
+    "submitDate": "2026-02-27"
   },
   "LOSA長期保有型国際分散インデックスファンド": {
     "rate": 0.5335,
     "docID": "S100WLZ3"
   },
   "のむラップ・ファンド（積極型）": {
+    "original_edinet_name": "のむラップ・ファンド(保守型)年3%目標分配金受取型、のむラップ・ファンド(積極型)年3%目標分配金受取型、のむラップ・ファンド(積極型)年6%目標分配金受取型",
     "rate": null,
     "docID": "S100VTEV",
-    "match_type": "partial"
-  },
-  "ブラックロック世界分散投資ファンド": {
-    "rate": 1.0043,
-    "docID": "S100XZW1"
-  },
-  "りそなラップ型ファンド（成長型）": {
-    "rate": 0.66,
-    "docID": "S100WJNU",
-    "match_type": "partial"
-  },
-  "iFreeETF TOPIX（年1回決算型）": {
-    "rate": null,
-    "docID": "S100VEVW"
-  },
-  "iFreeETF 日経225（年1回決算型）": {
-    "rate": null,
-    "docID": "S100WPXG"
-  },
-  "iFreeETF JPX 日経400": {
-    "rate": 0.396,
-    "docID": "S100UEHJ"
+    "filerName": "野村アセットマネジメント株式会社",
+    "submitDate": "2025-06-02"
   },
   "上場インデックスファンド世界株式（MSCI ACWI）除く日本": {
-    "rate": null,
-    "docID": "S100WJL7"
+    "original_edinet_name": "上場インデックスファンド世界株式(MSCI ACWI)除く日本",
+    "rate": 0.165,
+    "docID": "S100XLDT",
+    "filerName": "アモーヴァ・アセットマネジメント株式会社",
+    "submitDate": "2026-04-20"
   },
   "上場インデックスファンド海外先進国株式（MSCI-KOKUSAI）": {
-    "rate": null,
-    "docID": "S100WJKP"
-  },
-  "iシェアーズ・コア MSCI 先進国（除く米国） ETF": {
-    "rate": 0.2299,
-    "docID": "S100VOQX",
-    "match_type": "partial"
+    "original_edinet_name": "上場インデックスファンド海外先進国株式(MSCI-KOKUSAI)",
+    "rate": 0.165,
+    "docID": "S100XLDA",
+    "filerName": "アモーヴァ・アセットマネジメント株式会社",
+    "submitDate": "2026-04-20"
   },
   "上場インデックスファンド米国株式（S&P500)": {
-    "rate": null,
-    "docID": "S100WJL1"
-  },
-  "iシェアーズ・コア S&P 500 ETF": {
-    "rate": null,
-    "docID": "S100WX7A",
-    "match_type": "partial"
+    "original_edinet_name": "上場インデックスファンド米国株式(S&P500)",
+    "rate": 0.066,
+    "docID": "S100XLDP",
+    "filerName": "アモーヴァ・アセットマネジメント株式会社",
+    "submitDate": "2026-04-20"
   },
   "上場インデックスファンド海外新興国株式（MSCIエマージング）": {
+    "original_edinet_name": "上場インデックスファンド海外新興国株式(MSCIエマージング)",
+    "rate": 0.165,
+    "docID": "S100XLDK",
+    "filerName": "アモーヴァ・アセットマネジメント株式会社",
+    "submitDate": "2026-04-20"
+  },
+  "インデックスファンドTOPIX（日本株式）": {
+    "original_edinet_name": "インデックスファンドTOPIX(日本株式)",
     "rate": null,
-    "docID": "S100XLDK"
+    "docID": "S100WOQ3",
+    "filerName": "アモーヴァ・アセットマネジメント株式会社",
+    "submitDate": "2025-11-12"
+  },
+  "ニッセイTOPIXオープン": {
+    "original_edinet_name": "ニッセイTOPIXオープン",
+    "rate": null,
+    "docID": "S100X0XK",
+    "filerName": "ニッセイアセットマネジメント株式会社",
+    "submitDate": "2025-11-20"
+  },
+  "eMAXIS Slim 国内株式（TOPIX）": {
+    "original_edinet_name": "eMAXIS Slim 国内株式(TOPIX)",
+    "rate": 0.143,
+    "docID": "S100W55F",
+    "filerName": "三菱ＵＦＪアセットマネジメント株式会社",
+    "submitDate": "2025-07-24"
+  },
+  "eMAXIS TOPIXインデックス": {
+    "original_edinet_name": "eMAXIS TOPIXインデックス",
+    "rate": 0.44,
+    "docID": "S100XUBG",
+    "filerName": "三菱ＵＦＪアセットマネジメント株式会社",
+    "submitDate": "2026-04-24"
+  },
+  "つみたて日本株式（TOPIX）": {
+    "original_edinet_name": "つみたて日本株式(TOPIX)",
+    "rate": null,
+    "docID": "S100WLAY",
+    "filerName": "三菱ＵＦＪアセットマネジメント株式会社",
+    "submitDate": "2025-09-24"
+  },
+  "Smart-i TOPIXインデックス": {
+    "original_edinet_name": "Smart-i TOPIXインデックス",
+    "rate": null,
+    "docID": "S100XATB",
+    "filerName": "りそなアセットマネジメント株式会社",
+    "submitDate": "2026-02-26"
+  },
+  "ALAMCO 日経平均ファンド": {
+    "original_edinet_name": "ALAMCO 日経平均ファンド",
+    "rate": 0.2,
+    "docID": "S100XDVS",
+    "filerName": "朝日ライフ　アセットマネジメント株式会社",
+    "submitDate": "2026-02-16"
+  },
+  "インデックスファンド２２５（日本株式）": {
+    "original_edinet_name": "インデックスファンド225(日本株式)",
+    "rate": null,
+    "docID": "S100XG11",
+    "filerName": "アモーヴァ・アセットマネジメント株式会社",
+    "submitDate": "2026-03-16"
+  },
+  "しんきんノーロード日経225": {
+    "original_edinet_name": "しんきんノーロード日経225",
+    "rate": null,
+    "docID": "S100X0Y6",
+    "filerName": "しんきんアセットマネジメント投信株式会社",
+    "submitDate": "2025-12-05"
+  },
+  "農林中金＜パートナーズ＞つみたて日本株式 日経225": {
+    "original_edinet_name": "農林中金<パートナーズ>つみたて日本株式 日経225",
+    "rate": 0.385,
+    "docID": "S100XHMT",
+    "filerName": "農林中金全共連アセットマネジメント株式会社",
+    "submitDate": "2026-02-17"
+  },
+  "JAバンクよりそいノーロード日本株式 日経225": {
+    "original_edinet_name": "JAバンクよりそいノーロード日本株式 日経225",
+    "rate": 0.1408,
+    "docID": "S100W9UJ",
+    "filerName": "農林中金全共連アセットマネジメント株式会社",
+    "submitDate": "2025-07-11"
+  },
+  "NZAM・ベータ　日経225": {
+    "original_edinet_name": "NZAM・ベータ 日経225",
+    "rate": 0.176,
+    "docID": "S100XNJM",
+    "filerName": "農林中金全共連アセットマネジメント株式会社",
+    "submitDate": "2026-03-11"
+  },
+  "eMAXIS Slim 国内株式（日経平均）": {
+    "original_edinet_name": "eMAXIS Slim 国内株式(日経平均)",
+    "rate": 0.143,
+    "docID": "S100W1FP",
+    "filerName": "三菱ＵＦＪアセットマネジメント株式会社",
+    "submitDate": "2025-07-24"
+  },
+  "eMAXIS 日経225インデックス": {
+    "original_edinet_name": "eMAXIS 日経225インデックス",
+    "rate": 0.44,
+    "docID": "S100XTCJ",
+    "filerName": "三菱ＵＦＪアセットマネジメント株式会社",
+    "submitDate": "2026-04-24"
+  },
+  "つみたて日本株式（日経平均）": {
+    "original_edinet_name": "つみたて日本株式(日経平均)",
+    "rate": null,
+    "docID": "S100WLHP",
+    "filerName": "三菱ＵＦＪアセットマネジメント株式会社",
+    "submitDate": "2025-09-24"
+  },
+  "Smart-i 日経225インデックス": {
+    "original_edinet_name": "Smart-i 日経225インデックス",
+    "rate": null,
+    "docID": "S100XAT7",
+    "filerName": "りそなアセットマネジメント株式会社",
+    "submitDate": "2026-02-26"
+  },
+  "ｉＦｒｅｅ JPX日経400インデックス": {
+    "original_edinet_name": "iFree JPX日経400インデックス",
+    "rate": 0.2145,
+    "docID": "S100X7HG",
+    "filerName": "大和アセットマネジメント株式会社",
+    "submitDate": "2025-12-17"
+  },
+  "eMAXIS JPX日経400インデックス": {
+    "original_edinet_name": "eMAXIS JPX日経400インデックス",
+    "rate": 0.44,
+    "docID": "S100XPYY",
+    "filerName": "三菱ＵＦＪアセットマネジメント株式会社",
+    "submitDate": "2026-04-24"
+  },
+  "eMAXIS Slim 国内株式（読売333） ※5": {
+    "original_edinet_name": "eMAXIS Slim 国内株式(読売333)",
+    "rate": 0.143,
+    "docID": "S100VBYI",
+    "filerName": "三菱ＵＦＪアセットマネジメント株式会社",
+    "submitDate": "2025-03-10"
+  },
+  "Tracers MSCI オール・カントリー・インデックス（全世界株式）": {
+    "original_edinet_name": "Tracers MSCIオール・カントリー・インデックス(全世界株式)",
+    "rate": null,
+    "docID": "S100X9VK",
+    "filerName": "アモーヴァ・アセットマネジメント株式会社",
+    "submitDate": "2026-02-16"
+  },
+  "JAバンクよりそいノーロード全世界株式": {
+    "original_edinet_name": "JAバンクよりそいノーロード全世界株式",
+    "rate": 0.0976,
+    "docID": "S100WAI2",
+    "filerName": "農林中金全共連アセットマネジメント株式会社",
+    "submitDate": "2025-07-11"
+  },
+  "eMAXIS Slim 全世界株式（除く日本）": {
+    "original_edinet_name": "eMAXIS Slim 全世界株式(除く日本)",
+    "rate": 0.0578,
+    "docID": "S100W567",
+    "filerName": "三菱ＵＦＪアセットマネジメント株式会社",
+    "submitDate": "2025-07-24"
+  },
+  "eMAXIS Slim 全世界株式（オール・カントリー）": {
+    "original_edinet_name": "eMAXIS Slim 全世界株式(オール・カントリー)",
+    "rate": 0.0578,
+    "docID": "S100W56N",
+    "filerName": "三菱ＵＦＪアセットマネジメント株式会社",
+    "submitDate": "2025-07-24"
+  },
+  "eMAXIS 全世界株式インデックス（除く日本）": {
+    "original_edinet_name": "eMAXIS 全世界株式インデックス(除く日本)",
+    "rate": 0.66,
+    "docID": "S100XSAG",
+    "filerName": "三菱ＵＦＪアセットマネジメント株式会社",
+    "submitDate": "2026-04-24"
+  },
+  "つみたて全世界株式": {
+    "original_edinet_name": "つみたて全世界株式",
+    "rate": null,
+    "docID": "S100WLCD",
+    "filerName": "三菱ＵＦＪアセットマネジメント株式会社",
+    "submitDate": "2025-09-24"
+  },
+  "楽天・オールカントリー株式（除く日本）インデックス・ファンド": {
+    "original_edinet_name": "楽天・オールカントリー株式(除く日本)インデックス・ファンド",
+    "rate": null,
+    "docID": "S100W2YF",
+    "filerName": "楽天投信投資顧問株式会社",
+    "submitDate": "2025-07-01"
+  },
+  "Smart-i Select 全世界株式インデックス": {
+    "original_edinet_name": "Smart-i Select 全世界株式インデックス",
+    "rate": null,
+    "docID": "S100WOTC",
+    "filerName": "りそなアセットマネジメント株式会社",
+    "submitDate": "2025-11-17"
+  },
+  "Smart-i Select 全世界株式インデックス（除く日本）": {
+    "original_edinet_name": "Smart-i Select 全世界株式インデックス(除く日本)",
+    "rate": null,
+    "docID": "S100WOTG",
+    "filerName": "りそなアセットマネジメント株式会社",
+    "submitDate": "2025-11-17"
+  },
+  "インデックスファンド海外株式（ヘッジあり）": {
+    "original_edinet_name": "インデックスファンド海外株式(ヘッジあり)",
+    "rate": null,
+    "docID": "S100X249",
+    "filerName": "アモーヴァ・アセットマネジメント株式会社",
+    "submitDate": "2026-01-20"
+  },
+  "インデックスファンド海外株式（ヘッジなし）": {
+    "original_edinet_name": "インデックスファンド海外株式(ヘッジなし)",
+    "rate": null,
+    "docID": "S100X242",
+    "filerName": "アモーヴァ・アセットマネジメント株式会社",
+    "submitDate": "2026-01-20"
+  },
+  "ステート・ストリート・グローバル株式インデックス・オープン": {
+    "original_edinet_name": "ステート・ストリート・グローバル株式インデックス・オープン",
+    "rate": 0.0748,
+    "docID": "S100XMAJ",
+    "filerName": "ステート・ストリート・グローバル・アドバイザーズ株式会社",
+    "submitDate": "2026-02-27"
+  },
+  "ｉＦｒｅｅ 外国株式インデックス（為替ヘッジあり）": {
+    "original_edinet_name": "iFree 外国株式インデックス(為替ヘッジあり)",
+    "rate": 0.209,
+    "docID": "S100XIRL",
+    "filerName": "大和アセットマネジメント株式会社",
+    "submitDate": "2026-02-20"
+  },
+  "ｉＦｒｅｅ 外国株式インデックス（為替ヘッジなし）": {
+    "original_edinet_name": "iFree 外国株式インデックス(為替ヘッジなし)",
+    "rate": 0.209,
+    "docID": "S100XIRD",
+    "filerName": "大和アセットマネジメント株式会社",
+    "submitDate": "2026-02-20"
+  },
+  "JAバンクよりそいノーロード先進国株式（除く日本）": {
+    "original_edinet_name": "JAバンクよりそいノーロード先進国株式(除く日本)",
+    "rate": 0.0976,
+    "docID": "S100WAPQ",
+    "filerName": "農林中金全共連アセットマネジメント株式会社",
+    "submitDate": "2025-07-11"
+  },
+  "NZAM・ベータ　先進国株式": {
+    "original_edinet_name": "NZAM・ベータ 先進国株式",
+    "rate": 0.22,
+    "docID": "S100X67I",
+    "filerName": "農林中金全共連アセットマネジメント株式会社",
+    "submitDate": "2025-12-25"
+  },
+  "eMAXIS Slim 先進国株式インデックス（除く日本）": {
+    "original_edinet_name": "eMAXIS Slim 先進国株式インデックス",
+    "rate": 0.0989,
+    "docID": "S100W1EX",
+    "filerName": "三菱ＵＦＪアセットマネジメント株式会社",
+    "submitDate": "2025-07-24"
+  },
+  "eMAXIS Slim 先進国株式（含む日本）＜オール先進国＞": {
+    "original_edinet_name": "eMAXIS Slim 先進国株式(含む日本)<オール先進国>",
+    "rate": 0.0989,
+    "docID": "S100X93M",
+    "filerName": "三菱ＵＦＪアセットマネジメント株式会社",
+    "submitDate": "2026-01-23"
+  },
+  "つみたて先進国株式": {
+    "original_edinet_name": "つみたて先進国株式",
+    "rate": null,
+    "docID": "S100WLM5",
+    "filerName": "三菱ＵＦＪアセットマネジメント株式会社",
+    "submitDate": "2025-09-24"
+  },
+  "つみたて先進国株式（為替ヘッジあり）": {
+    "original_edinet_name": "つみたて先進国株式(為替ヘッジあり)",
+    "rate": null,
+    "docID": "S100WLB1",
+    "filerName": "三菱ＵＦＪアセットマネジメント株式会社",
+    "submitDate": "2025-09-24"
+  },
+  "農林中金＜パートナーズ＞つみたて米国株式 S&P500": {
+    "original_edinet_name": "農林中金<パートナーズ>つみたて米国株式 S&P500",
+    "rate": 0.495,
+    "docID": "S100XHMZ",
+    "filerName": "農林中金全共連アセットマネジメント株式会社",
+    "submitDate": "2026-02-17"
+  },
+  "JAバンクよりそいノーロード米国株式 S&P500": {
+    "original_edinet_name": "JAバンクよりそいノーロード米国株式 S&P500",
+    "rate": 0.0924,
+    "docID": "S100WAPN",
+    "filerName": "農林中金全共連アセットマネジメント株式会社",
+    "submitDate": "2025-07-11"
+  },
+  "NZAM・ベータ　S&P500": {
+    "original_edinet_name": "NZAM・ベータ S&P500",
+    "rate": 0.22,
+    "docID": "S100XNJX",
+    "filerName": "農林中金全共連アセットマネジメント株式会社",
+    "submitDate": "2026-03-11"
+  },
+  "eMAXIS Slim 米国株式（S&P500）": {
+    "original_edinet_name": "eMAXIS Slim 米国株式(S&P500)",
+    "rate": 0.0814,
+    "docID": "S100W6QB",
+    "filerName": "三菱ＵＦＪアセットマネジメント株式会社",
+    "submitDate": "2025-07-24"
+  },
+  "つみたて米国株式（S&P500）": {
+    "original_edinet_name": "つみたて米国株式(S&P500)",
+    "rate": 0.22,
+    "docID": "S100WLMC",
+    "filerName": "三菱ＵＦＪアセットマネジメント株式会社",
+    "submitDate": "2025-09-24"
+  },
+  "インデックスファンド海外新興国（エマージング）株式": {
+    "original_edinet_name": "インデックスファンド海外新興国(エマージング)株式",
+    "rate": null,
+    "docID": "S100X9VX",
+    "filerName": "アモーヴァ・アセットマネジメント株式会社",
+    "submitDate": "2026-02-17"
+  },
+  "JAバンクよりそいノーロード新興国株式": {
+    "original_edinet_name": "JAバンクよりそいノーロード新興国株式",
+    "rate": 0.1516,
+    "docID": "S100WAI3",
+    "filerName": "農林中金全共連アセットマネジメント株式会社",
+    "submitDate": "2025-07-11"
+  },
+  "eMAXIS Slim 新興国株式インデックス": {
+    "original_edinet_name": "eMAXIS Slim 新興国株式インデックス",
+    "rate": 0.1518,
+    "docID": "S100W45T",
+    "filerName": "三菱ＵＦＪアセットマネジメント株式会社",
+    "submitDate": "2025-07-24"
+  },
+  "つみたて新興国株式": {
+    "original_edinet_name": "つみたて新興国株式",
+    "rate": null,
+    "docID": "S100WKHU",
+    "filerName": "三菱ＵＦＪアセットマネジメント株式会社",
+    "submitDate": "2025-09-24"
+  },
+  "日本株式・Jリートバランスファンド": {
+    "original_edinet_name": "日本株式・Jリートバランスファンド",
+    "rate": 0.209,
+    "docID": "S100WSZW",
+    "filerName": "ＳＢＩ岡三アセットマネジメント株式会社",
+    "submitDate": "2025-12-05"
+  },
+  "NZAM・ベータ 日本2資産（株式+REIT）": {
+    "original_edinet_name": "NZAM・ベータ 日本2資産(株式+REIT)",
+    "rate": 0.242,
+    "docID": "S100XN89",
+    "filerName": "農林中金全共連アセットマネジメント株式会社",
+    "submitDate": "2026-03-11"
+  },
+  "ニッセイ・インデックスパッケージ（国内・株式／リート／債券）": {
+    "original_edinet_name": "ニッセイ・インデックスパッケージ(国内・株式/リート/債券)",
+    "rate": null,
+    "docID": "S100XL1I",
+    "filerName": "ニッセイアセットマネジメント株式会社",
+    "submitDate": "2026-02-20"
+  },
+  "ドイチェ・ETFバランス・ファンド": {
+    "original_edinet_name": "ドイチェ・ETFバランス・ファンド",
+    "rate": 0.2585,
+    "docID": "S100XAYH",
+    "filerName": "ドイチェ・アセット・マネジメント株式会社",
+    "submitDate": "2026-01-07"
+  },
+  "NZAM・ベータ 先進国2資産（株式+REIT）": {
+    "original_edinet_name": "NZAM・ベータ 先進国2資産(株式+REIT)",
+    "rate": 0.242,
+    "docID": "S100X645",
+    "filerName": "農林中金全共連アセットマネジメント株式会社",
+    "submitDate": "2025-12-25"
+  },
+  "NZAM・ベータ 米国2資産（株式+REIT）": {
+    "original_edinet_name": "NZAM・ベータ 米国2資産(株式+REIT)",
+    "rate": 0.407,
+    "docID": "S100XNNO",
+    "filerName": "農林中金全共連アセットマネジメント株式会社",
+    "submitDate": "2026-03-11"
+  },
+  "楽天・インデックス・バランス・ファンド（株式重視型）": {
+    "original_edinet_name": "楽天・インデックス・バランス・ファンド(株式重視型)",
+    "rate": 0.204,
+    "docID": "S100X2KI",
+    "filerName": "楽天投信投資顧問株式会社",
+    "submitDate": "2026-01-15"
+  },
+  "楽天・インデックス・バランス・ファンド（均等型）": {
+    "original_edinet_name": "楽天・インデックス・バランス・ファンド(均等型)",
+    "rate": 0.212,
+    "docID": "S100X2KL",
+    "filerName": "楽天投信投資顧問株式会社",
+    "submitDate": "2026-01-15"
+  },
+  "楽天・インデックス・バランス・ファンド（債券重視型）": {
+    "original_edinet_name": "楽天・インデックス・バランス・ファンド(債券重視型)",
+    "rate": 0.22,
+    "docID": "S100X2KR",
+    "filerName": "楽天投信投資顧問株式会社",
+    "submitDate": "2026-01-15"
+  },
+  "ＤＣニッセイ全世界株式インデックスコレクト": {
+    "original_edinet_name": "DCニッセイ全世界株式インデックスコレクト",
+    "rate": null,
+    "docID": "S100WZRK",
+    "filerName": "ニッセイアセットマネジメント株式会社",
+    "submitDate": "2025-11-20"
+  },
+  "ニッセイ・インデックスパッケージ（内外・株式）": {
+    "original_edinet_name": "ニッセイ・インデックスパッケージ(内外・株式)",
+    "rate": null,
+    "docID": "S100XLAG",
+    "filerName": "ニッセイアセットマネジメント株式会社",
+    "submitDate": "2026-02-20"
+  },
+  "ニッセイ世界株式ファンド（GDP型バスケット）＜購入・換金手数料なし＞": {
+    "original_edinet_name": "ニッセイ世界株式ファンド(GDP型バスケット)<購入・換金手数料なし>",
+    "rate": 0.1144,
+    "docID": "S100XK0D",
+    "filerName": "ニッセイアセットマネジメント株式会社",
+    "submitDate": "2026-02-20"
+  },
+  "eMAXIS Slim 全世界株式（3地域均等型）": {
+    "original_edinet_name": "eMAXIS Slim 全世界株式(3地域均等型)",
+    "rate": 0.0578,
+    "docID": "S100W2CS",
+    "filerName": "三菱ＵＦＪアセットマネジメント株式会社",
+    "submitDate": "2025-07-24"
+  },
+  "auスマート・ベーシック（安定）": {
+    "original_edinet_name": "auスマート・ベーシック(安定)auスマート・ベーシック(安定成長)",
+    "rate": 0.242,
+    "docID": "S100XA1G",
+    "filerName": "ａｕアセットマネジメント株式会社",
+    "submitDate": "2025-12-18"
+  },
+  "JP4資産均等バランス": {
+    "original_edinet_name": "JP4資産均等バランス",
+    "rate": null,
+    "docID": "S100XLFF",
+    "filerName": "ゆうちょアセットマネジメント株式会社",
+    "submitDate": "2026-04-15"
+  },
+  "ダイワ・ライフ・バランス30": {
+    "original_edinet_name": "ダイワ・ライフ・バランス30",
+    "rate": 0.198,
+    "docID": "S100XKBZ",
+    "filerName": "大和アセットマネジメント株式会社",
+    "submitDate": "2026-02-26"
+  },
+  "ダイワ・ライフ・バランス50": {
+    "original_edinet_name": "ダイワ・ライフ・バランス50",
+    "rate": 0.22,
+    "docID": "S100XKC7",
+    "filerName": "大和アセットマネジメント株式会社",
+    "submitDate": "2026-02-26"
+  },
+  "ダイワ・ライフ・バランス70": {
+    "original_edinet_name": "ダイワ・ライフ・バランス70",
+    "rate": 0.242,
+    "docID": "S100XKC9",
+    "filerName": "大和アセットマネジメント株式会社",
+    "submitDate": "2026-02-26"
+  },
+  "スタイル9（4資産分散・保守型）": {
+    "original_edinet_name": "スタイル9(4資産分散・保守型)",
+    "rate": 0.825,
+    "docID": "S100XKBF",
+    "filerName": "大和アセットマネジメント株式会社",
+    "submitDate": "2026-02-20"
+  },
+  "スタイル9（4資産分散・バランス型）": {
+    "original_edinet_name": "スタイル9(4資産分散・保守型)",
+    "rate": 0.825,
+    "docID": "S100XKBF",
+    "filerName": "大和アセットマネジメント株式会社",
+    "submitDate": "2026-02-20"
+  },
+  "スタイル9（4資産分散・積極型）": {
+    "original_edinet_name": "スタイル9(4資産分散・保守型)",
+    "rate": 0.825,
+    "docID": "S100XKBF",
+    "filerName": "大和アセットマネジメント株式会社",
+    "submitDate": "2026-02-20"
+  },
+  "DCニッセイワールドセレクトファンド（安定型）": {
+    "original_edinet_name": "DCニッセイワールドセレクトファンド(安定型)",
+    "rate": null,
+    "docID": "S100X1AG",
+    "filerName": "ニッセイアセットマネジメント株式会社",
+    "submitDate": "2025-11-21"
+  },
+  "DCニッセイワールドセレクトファンド（株式重視型）": {
+    "original_edinet_name": "DCニッセイワールドセレクトファンド(債券重視型)/DCニッセイワールドセレクトファンド(標準型)/DCニッセイワールドセレクトファンド(株式重視型)",
+    "rate": null,
+    "docID": "S100X19Y",
+    "filerName": "ニッセイアセットマネジメント株式会社",
+    "submitDate": "2025-11-21"
+  },
+  "DCニッセイワールドセレクトファンド（債券重視型）": {
+    "original_edinet_name": "DCニッセイワールドセレクトファンド(債券重視型)/DCニッセイワールドセレクトファンド(標準型)/DCニッセイワールドセレクトファンド(株式重視型)",
+    "rate": null,
+    "docID": "S100X19Y",
+    "filerName": "ニッセイアセットマネジメント株式会社",
+    "submitDate": "2025-11-21"
+  },
+  "DCニッセイワールドセレクトファンド（標準型）": {
+    "original_edinet_name": "DCニッセイワールドセレクトファンド(債券重視型)/DCニッセイワールドセレクトファンド(標準型)/DCニッセイワールドセレクトファンド(株式重視型)",
+    "rate": null,
+    "docID": "S100X19Y",
+    "filerName": "ニッセイアセットマネジメント株式会社",
+    "submitDate": "2025-11-21"
+  },
+  "ニッセイ・インデックスバランスファンド（4資産均等型）＜購入・換金手数料なし＞": {
+    "original_edinet_name": "ニッセイ・インデックスバランスファンド(4資産均等型)<購入・換金手数料なし>",
+    "rate": 0.154,
+    "docID": "S100XJZY",
+    "filerName": "ニッセイアセットマネジメント株式会社",
+    "submitDate": "2026-02-20"
+  },
+  "eMAXIS バランス（4資産均等型）": {
+    "original_edinet_name": "eMAXIS バランス(4資産均等型)",
+    "rate": 0.55,
+    "docID": "S100XUFN",
+    "filerName": "三菱ＵＦＪアセットマネジメント株式会社",
+    "submitDate": "2026-04-24"
+  },
+  "つみたて4資産均等バランス": {
+    "original_edinet_name": "つみたて4資産均等バランス",
+    "rate": null,
+    "docID": "S100WKHX",
+    "filerName": "三菱ＵＦＪアセットマネジメント株式会社",
+    "submitDate": "2025-09-24"
+  },
+  "ニッセイ・インデックスパッケージ（内外・株式／リート）": {
+    "original_edinet_name": "ニッセイ・インデックスパッケージ(内外・株式/リート)",
+    "rate": null,
+    "docID": "S100XLK6",
+    "filerName": "ニッセイアセットマネジメント株式会社",
+    "submitDate": "2026-02-20"
+  },
+  "auスマート・ベーシック（安定成長）": {
+    "original_edinet_name": "auスマート・ベーシック(安定)auスマート・ベーシック(安定成長)",
+    "rate": 0.242,
+    "docID": "S100XA1G",
+    "filerName": "ａｕアセットマネジメント株式会社",
+    "submitDate": "2025-12-18"
+  },
+  "ニッセイ・インデックスバランスファンド（6資産均等型）＜購入・換金手数料なし＞": {
+    "original_edinet_name": "ニッセイ・インデックスバランスファンド(6資産均等型)<購入・換金手数料なし>",
+    "rate": 0.1749,
+    "docID": "S100XLAC",
+    "filerName": "ニッセイアセットマネジメント株式会社",
+    "submitDate": "2026-02-20"
+  },
+  "フィデリティ・ターゲット・デート・ファンド（ベーシック）2040": {
+    "original_edinet_name": "フィデリティ・ターゲット・デート・ファンド(ベーシック)2040",
+    "rate": null,
+    "docID": "S100XB2W",
+    "filerName": "フィデリティ投信株式会社",
+    "submitDate": "2025-12-23"
+  },
+  "フィデリティ・ターゲット・デート・ファンド（ベーシック）2045": {
+    "original_edinet_name": "フィデリティ・ターゲット・デート・ファンド(ベーシック)2045",
+    "rate": null,
+    "docID": "S100XB38",
+    "filerName": "フィデリティ投信株式会社",
+    "submitDate": "2025-12-23"
+  },
+  "フィデリティ・ターゲット・デート・ファンド（ベーシック）2050": {
+    "original_edinet_name": "フィデリティ・ターゲット・デート・ファンド(ベーシック)2050",
+    "rate": null,
+    "docID": "S100XB3C",
+    "filerName": "フィデリティ投信株式会社",
+    "submitDate": "2025-12-23"
+  },
+  "フィデリティ・ターゲット・デート・ファンド（ベーシック）2055": {
+    "original_edinet_name": "フィデリティ・ターゲット・デート・ファンド(ベーシック)2055",
+    "rate": null,
+    "docID": "S100XB6N",
+    "filerName": "フィデリティ投信株式会社",
+    "submitDate": "2025-12-23"
+  },
+  "フィデリティ・ターゲット・デート・ファンド（ベーシック）2060": {
+    "original_edinet_name": "フィデリティ・ターゲット・デート・ファンド(ベーシック)2060",
+    "rate": null,
+    "docID": "S100XB7D",
+    "filerName": "フィデリティ投信株式会社",
+    "submitDate": "2025-12-23"
+  },
+  "フィデリティ・ターゲット・デート・ファンド（ベーシック）2065": {
+    "original_edinet_name": "フィデリティ・ターゲット・デート・ファンド(ベーシック)2065",
+    "rate": null,
+    "docID": "S100XB7T",
+    "filerName": "フィデリティ投信株式会社",
+    "submitDate": "2025-12-23"
+  },
+  "フィデリティ・ターゲット・デート・ファンド（ベーシック）2070": {
+    "original_edinet_name": "フィデリティ・ターゲット・デート・ファンド(ベーシック)2070",
+    "rate": null,
+    "docID": "S100XB8Q",
+    "filerName": "フィデリティ投信株式会社",
+    "submitDate": "2025-12-23"
+  },
+  "ブラックロック・つみたて・グローバルバランスファンド": {
+    "original_edinet_name": "ブラックロック・つみたて・グローバルバランスファンド",
+    "rate": 0.6378,
+    "docID": "S100XZWB",
+    "filerName": "ブラックロック・ジャパン株式会社",
+    "submitDate": "2026-05-01"
+  },
+  "eMAXIS 最適化バランス（マイ　ゴールキーパー）": {
+    "original_edinet_name": "eMAXIS 最適化バランス(マイゴールキーパー)/(マイディフェンダー)/(マイミッドフィルダー)/(マイフォワード)/(マイストライカー)",
+    "rate": 0.55,
+    "docID": "S100XUBR",
+    "filerName": "三菱ＵＦＪアセットマネジメント株式会社",
+    "submitDate": "2026-04-24"
+  },
+  "三菱UFJ 資産配分最適化バランス（R1）": {
+    "original_edinet_name": "三菱UFJ 資産配分最適化バランス(R1)/(R2)/(R3)/(R4)/(R5)",
+    "rate": null,
+    "docID": "S100VXE7",
+    "filerName": "三菱ＵＦＪアセットマネジメント株式会社",
+    "submitDate": "2025-06-16"
+  },
+  "Tracers グローバル3分法（おとなのバランス）": {
+    "original_edinet_name": "Tracers グローバル3分法(おとなのバランス)",
+    "rate": null,
+    "docID": "S100WOPM",
+    "filerName": "アモーヴァ・アセットマネジメント株式会社",
+    "submitDate": "2025-11-07"
+  },
+  "ニッセイ・インデックスパッケージ（内外・株式／リート／債券）": {
+    "original_edinet_name": "ニッセイ・インデックスパッケージ(内外・株式/リート/債券)",
+    "rate": null,
+    "docID": "S100XLKX",
+    "filerName": "ニッセイアセットマネジメント株式会社",
+    "submitDate": "2026-02-20"
+  },
+  "楽天・資産づくりファンド（がっちりコース）": {
+    "original_edinet_name": "楽天・資産づくりファンド(のんびりコース)/(じっくりコース)/(なかなかコース)/(しっかりコース)/(がっちりコース)",
+    "rate": 0.4915,
+    "docID": "S100X2LT",
+    "filerName": "楽天投信投資顧問株式会社",
+    "submitDate": "2026-01-21"
+  },
+  "楽天・資産づくりファンド（しっかりコース）": {
+    "original_edinet_name": "楽天・資産づくりファンド(のんびりコース)/(じっくりコース)/(なかなかコース)/(しっかりコース)/(がっちりコース)",
+    "rate": 0.4915,
+    "docID": "S100X2LT",
+    "filerName": "楽天投信投資顧問株式会社",
+    "submitDate": "2026-01-21"
+  },
+  "楽天・資産づくりファンド（じっくりコース）": {
+    "original_edinet_name": "楽天・資産づくりファンド(のんびりコース)/(じっくりコース)/(なかなかコース)/(しっかりコース)/(がっちりコース)",
+    "rate": 0.4915,
+    "docID": "S100X2LT",
+    "filerName": "楽天投信投資顧問株式会社",
+    "submitDate": "2026-01-21"
+  },
+  "楽天・資産づくりファンド（なかなかコース）": {
+    "original_edinet_name": "楽天・資産づくりファンド(のんびりコース)/(じっくりコース)/(なかなかコース)/(しっかりコース)/(がっちりコース)",
+    "rate": 0.4915,
+    "docID": "S100X2LT",
+    "filerName": "楽天投信投資顧問株式会社",
+    "submitDate": "2026-01-21"
+  },
+  "楽天・資産づくりファンド（のんびりコース）": {
+    "original_edinet_name": "楽天・資産づくりファンド(のんびりコース)/(じっくりコース)/(なかなかコース)/(しっかりコース)/(がっちりコース)",
+    "rate": 0.4915,
+    "docID": "S100X2LT",
+    "filerName": "楽天投信投資顧問株式会社",
+    "submitDate": "2026-01-21"
+  },
+  "ｉＦｒｅｅ 8資産バランス": {
+    "original_edinet_name": "iFree 8資産バランス",
+    "rate": 0.242,
+    "docID": "S100X1XI",
+    "filerName": "大和アセットマネジメント株式会社",
+    "submitDate": "2025-12-01"
+  },
+  "eMAXIS Slim バランス（8資産均等型）": {
+    "original_edinet_name": "eMAXIS Slim バランス(8資産均等型)",
+    "rate": 0.143,
+    "docID": "S100W45F",
+    "filerName": "三菱ＵＦＪアセットマネジメント株式会社",
+    "submitDate": "2025-07-24"
+  },
+  "eMAXIS 最適化バランス（マイ ストライカー）": {
+    "original_edinet_name": "eMAXIS 最適化バランス(マイゴールキーパー)/(マイディフェンダー)/(マイミッドフィルダー)/(マイフォワード)/(マイストライカー)",
+    "rate": 0.55,
+    "docID": "S100XUBR",
+    "filerName": "三菱ＵＦＪアセットマネジメント株式会社",
+    "submitDate": "2026-04-24"
+  },
+  "eMAXIS 最適化バランス（マイ ディフェンダー）": {
+    "original_edinet_name": "eMAXIS 最適化バランス(マイゴールキーパー)/(マイディフェンダー)/(マイミッドフィルダー)/(マイフォワード)/(マイストライカー)",
+    "rate": 0.55,
+    "docID": "S100XUBR",
+    "filerName": "三菱ＵＦＪアセットマネジメント株式会社",
+    "submitDate": "2026-04-24"
+  },
+  "eMAXIS 最適化バランス（マイ フォワード）": {
+    "original_edinet_name": "eMAXIS 最適化バランス(マイゴールキーパー)/(マイディフェンダー)/(マイミッドフィルダー)/(マイフォワード)/(マイストライカー)",
+    "rate": 0.55,
+    "docID": "S100XUBR",
+    "filerName": "三菱ＵＦＪアセットマネジメント株式会社",
+    "submitDate": "2026-04-24"
+  },
+  "eMAXIS 最適化バランス（マイ ミッドフィルダー）": {
+    "original_edinet_name": "eMAXIS 最適化バランス(マイゴールキーパー)/(マイディフェンダー)/(マイミッドフィルダー)/(マイフォワード)/(マイストライカー)",
+    "rate": 0.55,
+    "docID": "S100XUBR",
+    "filerName": "三菱ＵＦＪアセットマネジメント株式会社",
+    "submitDate": "2026-04-24"
+  },
+  "eMAXIS バランス（8資産均等型）": {
+    "original_edinet_name": "eMAXIS バランス(8資産均等型)",
+    "rate": 0.55,
+    "docID": "S100XRH3",
+    "filerName": "三菱ＵＦＪアセットマネジメント株式会社",
+    "submitDate": "2026-04-24"
+  },
+  "eMAXIS マイマネージャー 1970s": {
+    "original_edinet_name": "eMAXIS マイマネージャー 1970s/1980s/1990s",
+    "rate": 0.55,
+    "docID": "S100XTJ8",
+    "filerName": "三菱ＵＦＪアセットマネジメント株式会社",
+    "submitDate": "2026-04-24"
+  },
+  "eMAXIS マイマネージャー 1980s": {
+    "original_edinet_name": "eMAXIS マイマネージャー 1970s/1980s/1990s",
+    "rate": 0.55,
+    "docID": "S100XTJ8",
+    "filerName": "三菱ＵＦＪアセットマネジメント株式会社",
+    "submitDate": "2026-04-24"
+  },
+  "eMAXIS マイマネージャー 1990s": {
+    "original_edinet_name": "eMAXIS マイマネージャー 1970s/1980s/1990s",
+    "rate": 0.55,
+    "docID": "S100XTJ8",
+    "filerName": "三菱ＵＦＪアセットマネジメント株式会社",
+    "submitDate": "2026-04-24"
+  },
+  "つみたて8資産均等バランス": {
+    "original_edinet_name": "つみたて8資産均等バランス",
+    "rate": null,
+    "docID": "S100WLHM",
+    "filerName": "三菱ＵＦＪアセットマネジメント株式会社",
+    "submitDate": "2025-09-24"
+  },
+  "三菱UFJ 資産配分最適化バランス（R2）": {
+    "original_edinet_name": "三菱UFJ 資産配分最適化バランス(R1)/(R2)/(R3)/(R4)/(R5)",
+    "rate": null,
+    "docID": "S100VXE7",
+    "filerName": "三菱ＵＦＪアセットマネジメント株式会社",
+    "submitDate": "2025-06-16"
+  },
+  "三菱UFJ 資産配分最適化バランス（R3）": {
+    "original_edinet_name": "三菱UFJ 資産配分最適化バランス(R1)/(R2)/(R3)/(R4)/(R5)",
+    "rate": null,
+    "docID": "S100VXE7",
+    "filerName": "三菱ＵＦＪアセットマネジメント株式会社",
+    "submitDate": "2025-06-16"
+  },
+  "三菱UFJ 資産配分最適化バランス（R4）": {
+    "original_edinet_name": "三菱UFJ 資産配分最適化バランス(R1)/(R2)/(R3)/(R4)/(R5)",
+    "rate": null,
+    "docID": "S100VXE7",
+    "filerName": "三菱ＵＦＪアセットマネジメント株式会社",
+    "submitDate": "2025-06-16"
+  },
+  "三菱UFJ 資産配分最適化バランス（R5）": {
+    "original_edinet_name": "三菱UFJ 資産配分最適化バランス(R1)/(R2)/(R3)/(R4)/(R5)",
+    "rate": null,
+    "docID": "S100VXE7",
+    "filerName": "三菱ＵＦＪアセットマネジメント株式会社",
+    "submitDate": "2025-06-16"
+  },
+  "Smart-i 8資産バランス 安定型": {
+    "original_edinet_name": "Smart-i 8資産バランス 安定型/Smart-i 8資産バランス 安定成長型/Smart-i 8資産バランス 成長型",
+    "rate": 0.176,
+    "docID": "S100WVHV",
+    "filerName": "りそなアセットマネジメント株式会社",
+    "submitDate": "2025-12-25"
+  },
+  "Smart-i 8資産バランス 安定成長型": {
+    "original_edinet_name": "Smart-i 8資産バランス 安定型/Smart-i 8資産バランス 安定成長型/Smart-i 8資産バランス 成長型",
+    "rate": 0.176,
+    "docID": "S100WVHV",
+    "filerName": "りそなアセットマネジメント株式会社",
+    "submitDate": "2025-12-25"
+  },
+  "Smart-i 8資産バランス 成長型": {
+    "original_edinet_name": "Smart-i 8資産バランス 安定型/Smart-i 8資産バランス 安定成長型/Smart-i 8資産バランス 成長型",
+    "rate": 0.176,
+    "docID": "S100WVHV",
+    "filerName": "りそなアセットマネジメント株式会社",
+    "submitDate": "2025-12-25"
+  },
+  "つみたてバランスファンド": {
+    "original_edinet_name": "つみたてバランスファンド",
+    "rate": 0.237,
+    "docID": "S100XLEK",
+    "filerName": "りそなアセットマネジメント株式会社",
+    "submitDate": "2026-04-24"
+  },
+  "ターゲットリターンバランスファンド（目標2%）": {
+    "original_edinet_name": "ターゲットリターンバランスファンド(目標2%)/ターゲットリターンバランスファンド(目標3%)/ターゲットリターンバランスファンド(目標4%)/ターゲットリターンバランスファンド(目標5%)/ターゲットリターンバランスファンド(目標6%)",
+    "rate": null,
+    "docID": "S100XG0J",
+    "filerName": "りそなアセットマネジメント株式会社",
+    "submitDate": "2026-03-19"
+  },
+  "ターゲットリターンバランスファンド（目標3%）": {
+    "original_edinet_name": "ターゲットリターンバランスファンド(目標2%)/ターゲットリターンバランスファンド(目標3%)/ターゲットリターンバランスファンド(目標4%)/ターゲットリターンバランスファンド(目標5%)/ターゲットリターンバランスファンド(目標6%)",
+    "rate": null,
+    "docID": "S100XG0J",
+    "filerName": "りそなアセットマネジメント株式会社",
+    "submitDate": "2026-03-19"
+  },
+  "ターゲットリターンバランスファンド（目標4%）": {
+    "original_edinet_name": "ターゲットリターンバランスファンド(目標2%)/ターゲットリターンバランスファンド(目標3%)/ターゲットリターンバランスファンド(目標4%)/ターゲットリターンバランスファンド(目標5%)/ターゲットリターンバランスファンド(目標6%)",
+    "rate": null,
+    "docID": "S100XG0J",
+    "filerName": "りそなアセットマネジメント株式会社",
+    "submitDate": "2026-03-19"
+  },
+  "ターゲットリターンバランスファンド（目標5%）": {
+    "original_edinet_name": "ターゲットリターンバランスファンド(目標2%)/ターゲットリターンバランスファンド(目標3%)/ターゲットリターンバランスファンド(目標4%)/ターゲットリターンバランスファンド(目標5%)/ターゲットリターンバランスファンド(目標6%)",
+    "rate": null,
+    "docID": "S100XG0J",
+    "filerName": "りそなアセットマネジメント株式会社",
+    "submitDate": "2026-03-19"
+  },
+  "ターゲットリターンバランスファンド（目標6%）": {
+    "original_edinet_name": "ターゲットリターンバランスファンド(目標2%)/ターゲットリターンバランスファンド(目標3%)/ターゲットリターンバランスファンド(目標4%)/ターゲットリターンバランスファンド(目標5%)/ターゲットリターンバランスファンド(目標6%)",
+    "rate": null,
+    "docID": "S100XG0J",
+    "filerName": "りそなアセットマネジメント株式会社",
+    "submitDate": "2026-03-19"
+  },
+  "りそなターゲット・イヤー・ファンド2045": {
+    "original_edinet_name": "りそなターゲット・イヤー・ファンド2035/りそなターゲット・イヤー・ファンド2045/りそなターゲット・イヤー・ファンド2055",
+    "rate": 0.275,
+    "docID": "S100WVI0",
+    "filerName": "りそなアセットマネジメント株式会社",
+    "submitDate": "2025-12-25"
+  },
+  "りそなターゲット・イヤー・ファンド2050": {
+    "original_edinet_name": "りそなターゲット・イヤー・ファンド2030/りそなターゲット・イヤー・ファンド2040/りそなターゲット・イヤー・ファンド2050",
+    "rate": 0.275,
+    "docID": "S100WVHY",
+    "filerName": "りそなアセットマネジメント株式会社",
+    "submitDate": "2025-12-25"
+  },
+  "りそなターゲット・イヤー・ファンド2055": {
+    "original_edinet_name": "りそなターゲット・イヤー・ファンド2035/りそなターゲット・イヤー・ファンド2045/りそなターゲット・イヤー・ファンド2055",
+    "rate": 0.275,
+    "docID": "S100WVI0",
+    "filerName": "りそなアセットマネジメント株式会社",
+    "submitDate": "2025-12-25"
+  },
+  "りそなターゲット・イヤー・ファンド2060": {
+    "original_edinet_name": "りそなターゲット・イヤー・ファンド2060",
+    "rate": 0.44,
+    "docID": "S100WVI2",
+    "filerName": "りそなアセットマネジメント株式会社",
+    "submitDate": "2025-12-25"
+  },
+  "りそなターゲット・イヤー・ファンド2065": {
+    "original_edinet_name": "りそなターゲット・イヤー・ファンド2065",
+    "rate": 0.44,
+    "docID": "S100WVI6",
+    "filerName": "りそなアセットマネジメント株式会社",
+    "submitDate": "2025-12-25"
+  },
+  "りそなターゲット・イヤー・ファンド2035（運用継続型）": {
+    "original_edinet_name": "りそなターゲット・イヤー・ファンド2035/2040/2045/2050/2055/2060/2065(運用継続型)",
+    "rate": 0.308,
+    "docID": "S100XLDY",
+    "filerName": "りそなアセットマネジメント株式会社",
+    "submitDate": "2026-04-15"
+  },
+  "りそなターゲット・イヤー・ファンド2040（運用継続型）": {
+    "original_edinet_name": "りそなターゲット・イヤー・ファンド2035/2040/2045/2050/2055/2060/2065(運用継続型)",
+    "rate": 0.308,
+    "docID": "S100XLDY",
+    "filerName": "りそなアセットマネジメント株式会社",
+    "submitDate": "2026-04-15"
+  },
+  "りそなターゲット・イヤー・ファンド2045（運用継続型）": {
+    "original_edinet_name": "りそなターゲット・イヤー・ファンド2035/2040/2045/2050/2055/2060/2065(運用継続型)",
+    "rate": 0.308,
+    "docID": "S100XLDY",
+    "filerName": "りそなアセットマネジメント株式会社",
+    "submitDate": "2026-04-15"
+  },
+  "りそなターゲット・イヤー・ファンド2050（運用継続型）": {
+    "original_edinet_name": "りそなターゲット・イヤー・ファンド2035/2040/2045/2050/2055/2060/2065(運用継続型)",
+    "rate": 0.308,
+    "docID": "S100XLDY",
+    "filerName": "りそなアセットマネジメント株式会社",
+    "submitDate": "2026-04-15"
+  },
+  "りそなターゲット・イヤー・ファンド2055（運用継続型）": {
+    "original_edinet_name": "りそなターゲット・イヤー・ファンド2035/2040/2045/2050/2055/2060/2065(運用継続型)",
+    "rate": 0.308,
+    "docID": "S100XLDY",
+    "filerName": "りそなアセットマネジメント株式会社",
+    "submitDate": "2026-04-15"
+  },
+  "りそなターゲット・イヤー・ファンド2060（運用継続型）": {
+    "original_edinet_name": "りそなターゲット・イヤー・ファンド2060",
+    "rate": 0.44,
+    "docID": "S100WVI2",
+    "filerName": "りそなアセットマネジメント株式会社",
+    "submitDate": "2025-12-25"
+  },
+  "りそなターゲット・イヤー・ファンド2065（運用継続型）": {
+    "original_edinet_name": "りそなターゲット・イヤー・ファンド2065",
+    "rate": 0.44,
+    "docID": "S100WVI6",
+    "filerName": "りそなアセットマネジメント株式会社",
+    "submitDate": "2025-12-25"
+  },
+  "りそなターゲット・イヤー・ファンド2070": {
+    "original_edinet_name": "りそなターゲット・イヤー・ファンド2070/りそなターゲット・イヤー・ファンド2075",
+    "rate": 0.44,
+    "docID": "S100VUSW",
+    "filerName": "りそなアセットマネジメント株式会社",
+    "submitDate": "2025-06-09"
+  },
+  "りそなターゲット・イヤー・ファンド2070（運用継続型）": {
+    "original_edinet_name": "りそなターゲット・イヤー・ファンド2070(運用継続型)/りそなターゲット・イヤー・ファンド2075(運用継続型)",
+    "rate": 0.44,
+    "docID": "S100VUT0",
+    "filerName": "りそなアセットマネジメント株式会社",
+    "submitDate": "2025-06-09"
+  },
+  "りそなターゲット・イヤー・ファンド2075": {
+    "original_edinet_name": "りそなターゲット・イヤー・ファンド2070/りそなターゲット・イヤー・ファンド2075",
+    "rate": 0.44,
+    "docID": "S100VUSW",
+    "filerName": "りそなアセットマネジメント株式会社",
+    "submitDate": "2025-06-09"
+  },
+  "りそなターゲット・イヤー・ファンド2075（運用継続型）": {
+    "original_edinet_name": "りそなターゲット・イヤー・ファンド2070(運用継続型)/りそなターゲット・イヤー・ファンド2075(運用継続型)",
+    "rate": 0.44,
+    "docID": "S100VUT0",
+    "filerName": "りそなアセットマネジメント株式会社",
+    "submitDate": "2025-06-09"
+  },
+  "Niつみインデックスラップ世界10指数（安定成長型）": {
+    "original_edinet_name": "Niつみインデックスラップ世界10指数(安定成長型)",
+    "rate": null,
+    "docID": "S100XG1E",
+    "filerName": "アモーヴァ・アセットマネジメント株式会社",
+    "submitDate": "2026-03-16"
+  },
+  "Niつみインデックスラップ世界10指数（均等型）": {
+    "original_edinet_name": "Niつみインデックスラップ世界10指数(均等型)",
+    "rate": null,
+    "docID": "S100XG17",
+    "filerName": "アモーヴァ・アセットマネジメント株式会社",
+    "submitDate": "2026-03-16"
+  },
+  "年金積立 Jグロース": {
+    "original_edinet_name": "年金積立 Jグロース",
+    "rate": null,
+    "docID": "S100XG3B",
+    "filerName": "アモーヴァ・アセットマネジメント株式会社",
+    "submitDate": "2026-03-25"
+  },
+  "コモンズ30ファンド": {
+    "original_edinet_name": "コモンズ30ファンド",
+    "rate": null,
+    "docID": "S100XVPO",
+    "filerName": "コモンズ投信株式会社",
+    "submitDate": "2026-03-31"
+  },
+  "ニッセイ日本株ファンド": {
+    "original_edinet_name": "ニッセイ日本株ファンド",
+    "rate": null,
+    "docID": "S100XIPK",
+    "filerName": "ニッセイアセットマネジメント株式会社",
+    "submitDate": "2026-02-20"
+  },
+  "iTrust日本株式": {
+    "original_edinet_name": "iTrust日本株式",
+    "rate": 0.5,
+    "docID": "S100XRBQ",
+    "filerName": "ピクテ・ジャパン株式会社",
+    "submitDate": "2026-04-20"
+  },
+  "日経平均高配当利回り株ファンド": {
+    "original_edinet_name": "日経平均高配当利回り株ファンド",
+    "rate": null,
+    "docID": "S100XKH7",
+    "filerName": "三菱ＵＦＪアセットマネジメント株式会社",
+    "submitDate": "2026-03-13"
+  },
+  "ひふみ投信": {
+    "original_edinet_name": "ひふみ投信",
+    "rate": 0.2,
+    "docID": "S100X8ZG",
+    "filerName": "レオス・キャピタルワークス株式会社",
+    "submitDate": "2025-12-12"
+  },
+  "ひふみプラス": {
+    "original_edinet_name": "ひふみプラス",
+    "rate": null,
+    "docID": "S100X91I",
+    "filerName": "レオス・キャピタルワークス株式会社",
+    "submitDate": "2025-12-12"
+  },
+  "結い 2101": {
+    "original_edinet_name": "結い 2101",
+    "rate": null,
+    "docID": "S100XOPC",
+    "filerName": "鎌倉投信株式会社",
+    "submitDate": "2026-04-22"
+  },
+  "あおぞら・徹底分散グローバル株式ファンド": {
+    "original_edinet_name": "あおぞら・徹底分散グローバル株式ファンド",
+    "rate": 0.5775,
+    "docID": "S100XG3I",
+    "filerName": "あおぞら投信株式会社",
+    "submitDate": "2026-03-10"
+  },
+  "インデックスファンドNYダウ30（アメリカ株式）": {
+    "original_edinet_name": "インデックスファンドNYダウ30(アメリカ株式)",
+    "rate": null,
+    "docID": "S100WV3Z",
+    "filerName": "アモーヴァ・アセットマネジメント株式会社",
+    "submitDate": "2025-12-19"
+  },
+  "グローバル株式トップフォーカス": {
+    "original_edinet_name": "グローバル株式トップフォーカス",
+    "rate": null,
+    "docID": "S100WV3R",
+    "filerName": "アモーヴァ・アセットマネジメント株式会社",
+    "submitDate": "2025-12-17"
+  },
+  "アライアンス・バーンスタイン・グローバル・グロース・オポチュニティーズ（年金つみたて向け）": {
+    "original_edinet_name": "アライアンス・バーンスタイン・グローバル・グロース・オポチュニティーズ(年金つみたて向け)",
+    "rate": 1.595,
+    "docID": "S100XYKA",
+    "filerName": "アライアンス・バーンスタイン株式会社",
+    "submitDate": "2026-04-16"
+  },
+  "THEOグロース・ＡＩファンド（世界の株式中心）": {
+    "original_edinet_name": "THEOグロース・AIファンド(世界の株式中心)",
+    "rate": null,
+    "docID": "S100Y0GK",
+    "filerName": "株式会社お金のデザイン",
+    "submitDate": "2026-04-30"
+  },
+  "キャピタル世界株式ファンド（DC年金つみたて専用）": {
+    "original_edinet_name": "キャピタル世界株式ファンド(DC年金用)",
+    "rate": 1.078,
+    "docID": "S100WUM6",
+    "filerName": "キャピタル・インターナショナル株式会社",
+    "submitDate": "2025-11-13"
+  },
+  "GS グローバル・コア株式ファンド（DC・つみたてNISA専用）": {
+    "original_edinet_name": "GSグローバル・コア株式ファンド(DC・つみたてNISA専用)",
+    "rate": 0.7975,
+    "docID": "S100X8YD",
+    "filerName": "ゴールドマン・サックス・アセット・マネジメント株式会社",
+    "submitDate": "2025-12-10"
+  },
+  "セゾン資産形成の達人ファンド": {
+    "original_edinet_name": "セゾン資産形成の達人ファンド",
+    "rate": null,
+    "docID": "S100XNY9",
+    "filerName": "セゾン投信株式会社",
+    "submitDate": "2026-03-10"
+  },
+  "iFreeNEXT FANG+インデックス": {
+    "original_edinet_name": "iFreeNEXT FANG+インデックス",
+    "rate": 0.7755,
+    "docID": "S100XXJI",
+    "filerName": "大和アセットマネジメント株式会社",
+    "submitDate": "2026-04-23"
+  },
+  "iFreeNEXT NASDAQ100インデックス": {
+    "original_edinet_name": "iFreeNEXT NASDAQ100インデックス",
+    "rate": 0.495,
+    "docID": "S100WYNH",
+    "filerName": "大和アセットマネジメント株式会社",
+    "submitDate": "2025-11-21"
+  },
+  "ニッセイSDGｓグローバルセレクトファンド（資産成長型・為替ヘッジなし）": {
+    "original_edinet_name": "ニッセイSDGsグローバルセレクトファンド(資産成長型・為替ヘッジあり)/ニッセイSDGsグローバルセレクトファンド(資産成長型・為替ヘッジなし)",
+    "rate": null,
+    "docID": "S100XPC9",
+    "filerName": "ニッセイアセットマネジメント株式会社",
+    "submitDate": "2026-03-13"
+  },
+  "農林中金＜パートナーズ＞長期厳選投資　おおぶね": {
+    "original_edinet_name": "農林中金<パートナーズ>長期厳選投資 おおぶね",
+    "rate": 0.99,
+    "docID": "S100XNJG",
+    "filerName": "農林中金全共連アセットマネジメント株式会社",
+    "submitDate": "2026-03-19"
+  },
+  "iTrustインド株式": {
+    "original_edinet_name": "iTrustインド株式",
+    "rate": 0.03,
+    "docID": "S100X8VL",
+    "filerName": "ピクテ・ジャパン株式会社",
+    "submitDate": "2026-01-09"
+  },
+  "iTrust新興国株式": {
+    "original_edinet_name": "iTrust新興国株式",
+    "rate": 0.12,
+    "docID": "S100X4QA",
+    "filerName": "ピクテ・ジャパン株式会社",
+    "submitDate": "2025-12-15"
+  },
+  "iTrust世界株式": {
+    "original_edinet_name": "iTrust世界株式",
+    "rate": 0.5,
+    "docID": "S100X8XD",
+    "filerName": "ピクテ・ジャパン株式会社",
+    "submitDate": "2026-01-09"
+  },
+  "フィデリティ・欧州株・ファンド": {
+    "original_edinet_name": "フィデリティ・欧州株・ファンド",
+    "rate": 0.7,
+    "docID": "S100XM6E",
+    "filerName": "フィデリティ投信株式会社",
+    "submitDate": "2026-02-25"
+  },
+  "フィデリティ・米国優良株・ファンド": {
+    "original_edinet_name": "フィデリティ・米国優良株・ファンド",
+    "rate": 0.7,
+    "docID": "S100XM5H",
+    "filerName": "フィデリティ投信株式会社",
+    "submitDate": "2026-02-25"
+  },
+  "eMAXIS NYダウインデックス": {
+    "original_edinet_name": "eMAXIS NYダウインデックス",
+    "rate": 0.66,
+    "docID": "S100XUF9",
+    "filerName": "三菱ＵＦＪアセットマネジメント株式会社",
+    "submitDate": "2026-04-24"
+  },
+  "ベイリー・ギフォード世界長期成長株ファンド": {
+    "original_edinet_name": "ベイリー・ギフォード世界長期成長株ファンド",
+    "rate": 1.6445,
+    "docID": "S100XTIE",
+    "filerName": "三菱ＵＦＪアセットマネジメント株式会社",
+    "submitDate": "2026-04-24"
+  },
+  "明治安田DC外国株式リサーチオープン（愛称：DCジェットストリーム）": {
+    "original_edinet_name": "明治安田DC外国株式リサーチオープン",
+    "rate": 1.518,
+    "docID": "S100XGC0",
+    "filerName": "明治安田アセットマネジメント株式会社",
+    "submitDate": "2026-02-27"
+  },
+  "Smart-i 先進国株式ESGインデックス": {
+    "original_edinet_name": "Smart-i 先進国株式ESGインデックス",
+    "rate": null,
+    "docID": "S100XASX",
+    "filerName": "りそなアセットマネジメント株式会社",
+    "submitDate": "2026-02-25"
+  },
+  "ひふみワールド": {
+    "original_edinet_name": "ひふみワールド",
+    "rate": 1.628,
+    "docID": "S100WXB4",
+    "filerName": "レオス・キャピタルワークス株式会社",
+    "submitDate": "2025-11-07"
+  },
+  "ひふみワールド＋": {
+    "original_edinet_name": "ひふみワールド+",
+    "rate": null,
+    "docID": "S100WX2S",
+    "filerName": "レオス・キャピタルワークス株式会社",
+    "submitDate": "2025-11-07"
+  },
+  "auスマート・プライム（高成長）": {
+    "original_edinet_name": "auスマート・プライム(成長)auスマート・プライム(高成長)",
+    "rate": 0.902,
+    "docID": "S100XA2O",
+    "filerName": "ａｕアセットマネジメント株式会社",
+    "submitDate": "2025-12-18"
+  },
+  "ハッピーエイジング20": {
+    "original_edinet_name": "ハッピーエイジング・ファンド ハッピーエイジング20/ハッピーエイジング30/ハッピーエイジング40/ハッピーエイジング50/ハッピーエイジング60",
+    "rate": 1.617,
+    "docID": "S100XSC0",
+    "filerName": "ＳＯＭＰＯアセットマネジメント株式会社",
+    "submitDate": "2026-04-14"
+  },
+  "ハッピーエイジング30": {
+    "original_edinet_name": "ハッピーエイジング・ファンド ハッピーエイジング20/ハッピーエイジング30/ハッピーエイジング40/ハッピーエイジング50/ハッピーエイジング60",
+    "rate": 1.617,
+    "docID": "S100XSC0",
+    "filerName": "ＳＯＭＰＯアセットマネジメント株式会社",
+    "submitDate": "2026-04-14"
+  },
+  "ハッピーエイジング40": {
+    "original_edinet_name": "ハッピーエイジング・ファンド ハッピーエイジング20/ハッピーエイジング30/ハッピーエイジング40/ハッピーエイジング50/ハッピーエイジング60",
+    "rate": 1.617,
+    "docID": "S100XSC0",
+    "filerName": "ＳＯＭＰＯアセットマネジメント株式会社",
+    "submitDate": "2026-04-14"
+  },
+  "HSBC ワールド・セレクション（成長コース）": {
+    "original_edinet_name": "HSBCワールド・セレクション(安定コース)/(安定成長コース)/(成長コース)",
+    "rate": null,
+    "docID": "S100WUGR",
+    "filerName": "ＨＳＢＣアセットマネジメント株式会社",
+    "submitDate": "2025-11-18"
+  },
+  "ブラックロック世界分散投資ファンド": {
+    "original_edinet_name": "ブラックロック世界分散投資ファンド",
+    "rate": 0.913,
+    "docID": "S100XZW1",
+    "filerName": "ブラックロック・ジャパン株式会社",
+    "submitDate": "2026-05-01"
+  },
+  "りそなラップ型ファンド（成長型）": {
+    "original_edinet_name": "りそなラップ型ファンド(安定型) りそなラップ型ファンド(安定成長型) りそなラップ型ファンド(成長型)",
+    "rate": 0.66,
+    "docID": "S100XLEB",
+    "filerName": "りそなアセットマネジメント株式会社",
+    "submitDate": "2026-04-24"
+  },
+  "iFreeETF TOPIX（年1回決算型）": {
+    "original_edinet_name": "iFreeETF TOPIX(年1回決算型)",
+    "rate": 0.275,
+    "docID": "S100XT7Y",
+    "filerName": "大和アセットマネジメント株式会社",
+    "submitDate": "2026-04-03"
+  },
+  "iFreeETF 日経225（年1回決算型）": {
+    "original_edinet_name": "iFreeETF 日経225(年1回決算型)",
+    "rate": 0.275,
+    "docID": "S100XT82",
+    "filerName": "大和アセットマネジメント株式会社",
+    "submitDate": "2026-04-03"
+  },
+  "iFreeETF JPX 日経400": {
+    "original_edinet_name": "iFreeETF JPX日経400",
+    "rate": 0.198,
+    "docID": "S100XT69",
+    "filerName": "大和アセットマネジメント株式会社",
+    "submitDate": "2026-04-03"
+  },
+  "iシェアーズ・コア MSCI 先進国（除く米国） ETF": {
+    "original_edinet_name": "iシェアーズ・コア MSCI 先進国株(除く日本) ETF",
+    "rate": 0.209,
+    "docID": "S100WX5I",
+    "filerName": "ブラックロック・ジャパン株式会社",
+    "submitDate": "2025-11-07"
+  },
+  "iシェアーズ・コア S&P 500 ETF": {
+    "original_edinet_name": "iシェアーズ・コア 日本国債 ETF",
+    "rate": null,
+    "docID": "S100XVHV",
+    "filerName": "ブラックロック・ジャパン株式会社",
+    "submitDate": "2026-04-10"
   }
 }
