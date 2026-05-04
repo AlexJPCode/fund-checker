@@ -6,7 +6,13 @@ document.getElementById("search-btn").addEventListener("click", search);
 document.getElementById("fund-input").addEventListener("keypress", function(e) {
   if (e.key === "Enter") { closeDropdown(); search(); }
 });
-document.getElementById("fund-input").addEventListener("input", onInput);
+let isComposing = false;
+document.getElementById("fund-input").addEventListener("compositionstart", () => isComposing = true);
+document.getElementById("fund-input").addEventListener("compositionend", () => {
+  isComposing = false;
+  onInput();
+});
+document.getElementById("fund-input").addEventListener("input", () => { if (!isComposing) onInput(); });
 document.getElementById("fund-input").addEventListener("keydown", onKeydown);
 document.addEventListener("click", function(e) {
   if (!e.target.closest(".search-box")) closeDropdown();
@@ -18,7 +24,7 @@ let dropdownIndex = -1;
 
 function onInput() {
   const q = document.getElementById("fund-input").value.trim();
-  if (q.length < 2) { closeDropdown(); return; }
+  if (q.length < 1) { closeDropdown(); return; }
   const suggestions = getSuggestions(q, 10);
   renderDropdown(suggestions);
 }
@@ -99,7 +105,9 @@ function getSuggestions(q, limit) {
   for (const entry of nicknames) {
     if (entry.alias.some(a => {
       const na = normalize(a);
-      return na.includes(qn) || qn.includes(na);
+      // 3文字未満のクエリはエイリアス完全一致のみ
+      if (qn.length < 3) return na === qn;
+      return na.startsWith(qn) || qn.startsWith(na) || (qn.length >= 4 && na.includes(qn));
     })) {
       // キーワードをパーツに分割（「全世界株式（オール・カントリー）」→ ["全世界株式", "オールカントリー"]）
       const parts = entry.keyword
@@ -140,12 +148,12 @@ function getSuggestions(q, limit) {
     if (!score && fn.startsWith(qn)) score = 80;
     // ファンド名部分一致
     else if (!score && fn.includes(qn)) score = 70;
-    // 会社名一致
-    else if (!score && fc.includes(qn) && qn.length >= 3) score = 50;
-    // 指数・資産クラス一致
-    else if (!score && (fi.includes(qn) || fa.includes(qn)) && qn.length >= 3) score = 40;
-    // 部分文字列マッチ
-    else if (!score && qn.length >= 4 && fn.includes(qn.slice(0, Math.max(4, Math.floor(qn.length * 0.6))))) score = 30;
+    // 会社名一致（3文字以上）
+    else if (!score && qn.length >= 3 && fc.includes(qn)) score = 50;
+    // 指数・資産クラス一致（4文字以上のみ、誤検知防止）
+    else if (!score && qn.length >= 4 && (fi.includes(qn) || fa.includes(qn))) score = 40;
+    // 部分文字列マッチ（5文字以上）
+    else if (!score && qn.length >= 5 && fn.includes(qn.slice(0, Math.floor(qn.length * 0.7)))) score = 30;
 
     if (score > 0 && !seen.has(f.name)) {
       seen.add(f.name);
