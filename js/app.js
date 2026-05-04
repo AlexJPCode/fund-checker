@@ -430,6 +430,7 @@ function showResult(fund) {
 
   renderFeeTable(fund);
   renderComparisonTable(fund);
+  renderSimulation(fund);
 
   document.getElementById("summary-box").innerHTML = `
     <strong>事実サマリー</strong><br><br>
@@ -446,4 +447,131 @@ function showResult(fund) {
 
   document.getElementById("result").classList.remove("hidden");
   document.getElementById("result").scrollIntoView({ behavior: "smooth" });
+}
+
+// ---- 積立シミュレーション ----
+
+function calcFV(monthly, years, annualReturn, feeRate) {
+  const netReturn = annualReturn - feeRate;
+  const r = Math.pow(1 + netReturn / 100, 1 / 12) - 1;
+  const n = years * 12;
+  if (r <= 0) return monthly * n;
+  return monthly * ((Math.pow(1 + r, n) - 1) / r) * (1 + r);
+}
+
+function renderSimulation(fund) {
+  const section = document.getElementById("simulation-section");
+  section.classList.remove("hidden");
+
+  section.innerHTML = `
+    <h3>積立シミュレーション</h3>
+    <p class="note">同カテゴリー最低コストファンドとの将来価値の差を試算します。信託報酬以外の条件（分配金・相場変動等）は同一と仮定しています。</p>
+    <div class="sim-inputs">
+      <div class="sim-input-group">
+        <label>月積立額</label>
+        <div style="display:flex; align-items:center; gap:4px;">
+          <input type="number" id="sim-monthly" value="30000" min="1000" step="1000">
+          <span class="sim-input-suffix">円</span>
+        </div>
+      </div>
+      <div class="sim-input-group">
+        <label>積立年数</label>
+        <div style="display:flex; align-items:center; gap:4px;">
+          <input type="number" id="sim-years" value="20" min="1" max="40">
+          <span class="sim-input-suffix">年</span>
+        </div>
+      </div>
+      <div class="sim-input-group">
+        <label>想定年率リターン（手数料控除前）</label>
+        <div style="display:flex; align-items:center; gap:4px;">
+          <input type="number" id="sim-return" value="5" min="0" max="30" step="0.1">
+          <span class="sim-input-suffix">%</span>
+        </div>
+      </div>
+    </div>
+    <div id="sim-result"></div>
+    <p class="note" style="margin-top:0.8rem;">
+      ※試算は複利計算（月次積立・月次複利）に基づく参考値です。実際の運用成果を保証するものではありません。<br>
+      ※信託報酬以外のコスト（売買委託手数料・監査費用等）は考慮していません。投資判断はご自身の責任でお願いします。
+    </p>
+  `;
+
+  const siblings = getSiblings(fund);
+  const allFunds = [fund, ...siblings];
+  const cheapest = allFunds
+    .filter(f => getFeeRate(f.name) != null)
+    .sort((a, b) => getFeeRate(a.name) - getFeeRate(b.name))[0] || null;
+
+  const update = () => updateSimulation(fund, cheapest);
+  ["sim-monthly", "sim-years", "sim-return"].forEach(id => {
+    document.getElementById(id).addEventListener("input", update);
+  });
+  update();
+}
+
+function updateSimulation(fund, cheapest) {
+  const monthly = Math.max(1000, parseInt(document.getElementById("sim-monthly").value) || 30000);
+  const years   = Math.min(40, Math.max(1, parseInt(document.getElementById("sim-years").value) || 20));
+  const ret     = parseFloat(document.getElementById("sim-return").value) ?? 5;
+
+  const targetRate   = getFeeRate(fund.name);
+  const cheapestRate = cheapest ? getFeeRate(cheapest.name) : null;
+  const isSame = cheapest && cheapest.name === fund.name;
+
+  const totalContrib = monthly * years * 12;
+  const fmt = v => Math.round(v).toLocaleString("ja-JP");
+
+  if (targetRate == null && cheapestRate == null) {
+    document.getElementById("sim-result").innerHTML =
+      `<div class="sim-no-data">このカテゴリーは信託報酬の実値データが不足しているため試算できません。</div>`;
+    return;
+  }
+
+  const targetFV   = targetRate   != null ? calcFV(monthly, years, ret, targetRate)   : null;
+  const cheapestFV = cheapestRate != null ? calcFV(monthly, years, ret, cheapestRate) : null;
+  const maxFV = Math.max(targetFV ?? 0, cheapestFV ?? 0);
+
+  const cardHtml = (label, f, rate, fv, cls) => {
+    const name = f.name.length > 40 ? f.name.slice(0, 40) + "…" : f.name;
+    const barPct = maxFV > 0 && fv != null ? (fv / maxFV * 100).toFixed(1) : 0;
+    return `
+      <div class="sim-card ${cls}">
+        <div class="sim-card-label">${label}</div>
+        <div class="sim-card-name">${name}</div>
+        <div class="sim-card-fee">信託報酬 ${rate != null ? rate.toFixed(3) + "% /年" : "データなし"}</div>
+        ${fv != null
+          ? `<div class="sim-card-fv">${fmt(fv)}<span class="sim-card-fv-unit">円</span></div>
+             <div class="sim-card-bar-wrap"><div class="sim-card-bar" style="width:${barPct}%"></div></div>`
+          : `<div style="color:#aaa; font-size:0.85rem; margin-top:8px;">試算不可（手数料データなし）</div>`
+        }
+      </div>`;
+  };
+
+  let html = `<div class="sim-cards">`;
+  html += cardHtml("このファンド", fund, targetRate, targetFV, "is-target");
+  if (!isSame && cheapest) {
+    html += cardHtml("同カテゴリー 最低コスト", cheapest, cheapestRate, cheapestFV, "is-cheapest");
+  } else if (isSame) {
+    html += `<div class="sim-card is-cheapest">
+      <div class="sim-card-label">同カテゴリー 最低コスト</div>
+      <div class="sim-card-name" style="padding-top:0.5rem; font-weight:bold; color:#2a9d5c;">このファンドが最低コストです</div>
+    </div>`;
+  }
+  html += `</div>`;
+
+  if (!isSame && targetFV != null && cheapestFV != null) {
+    const diff = cheapestFV - targetFV;
+    html += `
+      <div class="sim-diff-box">
+        <div class="sim-diff-label">最低コストファンドとの差（${years}年後）</div>
+        <div class="sim-diff-amount">+${fmt(diff)}円</div>
+        <div class="sim-diff-note">
+          積立元本 ${fmt(totalContrib)}円 に対し、手数料の差（年率 ${(targetRate - cheapestRate).toFixed(3)}%）が
+          ${years}年間で <strong>${fmt(diff)}円</strong> の差となります。<br>
+          同じ指数・運用方針であれば、信託報酬の低いファンドほど手取りの最終額が大きくなります。
+        </div>
+      </div>`;
+  }
+
+  document.getElementById("sim-result").innerHTML = html;
 }

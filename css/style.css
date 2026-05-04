@@ -269,6 +269,180 @@ tr:hover td {
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
+.simulation {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  margin-bottom: 1.5rem;
+}
+
+.simulation h3 {
+  color: #1a3a5c;
+  margin-bottom: 0.5rem;
+}
+
+.sim-inputs {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin: 1rem 0 1.5rem;
+  padding: 1rem 1.2rem;
+  background: #f5f7fa;
+  border-radius: 8px;
+}
+
+.sim-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.sim-input-group label {
+  font-size: 0.78rem;
+  color: #888;
+}
+
+.sim-input-group input {
+  width: 120px;
+  padding: 0.45rem 0.6rem;
+  font-size: 0.95rem;
+  border: 1.5px solid #ccc;
+  border-radius: 6px;
+  text-align: right;
+}
+
+.sim-input-group input:focus {
+  outline: none;
+  border-color: #1a3a5c;
+}
+
+.sim-input-suffix {
+  font-size: 0.85rem;
+  color: #555;
+  align-self: flex-end;
+  margin-bottom: 6px;
+}
+
+.sim-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+}
+
+.sim-card {
+  border-radius: 8px;
+  padding: 1rem 1.2rem;
+  background: #f5f7fa;
+  border: 2px solid #e0e0e0;
+}
+
+.sim-card.is-target {
+  border-color: #1a3a5c;
+  background: #eef3f9;
+}
+
+.sim-card.is-cheapest {
+  border-color: #2a9d5c;
+  background: #e6f4ea;
+}
+
+.sim-card-label {
+  font-size: 0.72rem;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  color: #888;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+}
+
+.sim-card.is-target .sim-card-label { color: #1a3a5c; }
+.sim-card.is-cheapest .sim-card-label { color: #2a9d5c; }
+
+.sim-card-name {
+  font-size: 0.82rem;
+  color: #333;
+  margin-bottom: 6px;
+  line-height: 1.4;
+  min-height: 2.8em;
+}
+
+.sim-card-fee {
+  font-size: 0.8rem;
+  color: #888;
+  margin-bottom: 8px;
+}
+
+.sim-card-fv {
+  font-size: 1.55rem;
+  font-weight: bold;
+  color: #1a3a5c;
+  line-height: 1;
+}
+
+.sim-card.is-cheapest .sim-card-fv {
+  color: #2a9d5c;
+}
+
+.sim-card-fv-unit {
+  font-size: 0.8rem;
+  font-weight: normal;
+  color: #888;
+  margin-left: 2px;
+}
+
+.sim-card-bar-wrap {
+  margin-top: 8px;
+  height: 8px;
+  background: #e0e0e0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.sim-card-bar {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.4s ease;
+}
+
+.sim-card.is-target .sim-card-bar { background: #1a3a5c; }
+.sim-card.is-cheapest .sim-card-bar { background: #2a9d5c; }
+
+.sim-diff-box {
+  background: #fff8e1;
+  border-left: 4px solid #f4a300;
+  border-radius: 6px;
+  padding: 1rem 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.sim-diff-label {
+  font-size: 0.82rem;
+  color: #888;
+  margin-bottom: 4px;
+}
+
+.sim-diff-amount {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #e84545;
+}
+
+.sim-diff-note {
+  font-size: 0.78rem;
+  color: #888;
+  margin-top: 6px;
+  line-height: 1.6;
+}
+
+.sim-no-data {
+  font-size: 0.85rem;
+  color: #aaa;
+  text-align: center;
+  padding: 2rem 0;
+}
+
 footer {
   text-align: center;
   padding: 2rem;
