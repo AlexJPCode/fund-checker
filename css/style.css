@@ -449,3 +449,104 @@ footer {
   font-size: 0.8rem;
   color: #aaa;
 }
+
+@media (max-width: 640px) {
+  header {
+    padding: 1.2rem 1rem;
+  }
+
+  header h1 {
+    font-size: 1.2rem;
+  }
+
+  header p {
+    font-size: 0.82rem;
+  }
+
+  main {
+    margin: 1rem auto;
+    padding: 0 0.75rem;
+  }
+
+  .search-box {
+    padding: 1.2rem;
+  }
+
+  #fund-input {
+    display: block;
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 0.6rem;
+    font-size: 16px; /* iOSのズームイン防止 */
+  }
+
+  #search-btn {
+    display: block;
+    width: 100%;
+    font-size: 16px;
+  }
+
+  .fund-card {
+    padding: 1rem;
+  }
+
+  .fund-info-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .fee-detail,
+  .comparison {
+    padding: 1rem;
+    overflow-x: auto;
+  }
+
+  #fee-table th:nth-child(2),
+  #fee-table td:nth-child(2) {
+    display: none;
+  }
+
+  #comparison-table th:nth-child(3),
+  #comparison-table td:nth-child(3) {
+    display: none;
+  }
+
+  .simulation {
+    padding: 1rem;
+  }
+
+  .sim-inputs {
+    flex-direction: column;
+    gap: 0.8rem;
+    padding: 0.8rem 1rem;
+  }
+
+  .sim-input-group input {
+    width: 100%;
+  }
+
+  .sim-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .sim-card-fv {
+    font-size: 1.3rem;
+  }
+
+  .sim-diff-amount {
+    font-size: 1.5rem;
+  }
+
+  .summary {
+    padding: 1rem;
+  }
+
+  td {
+    padding: 0.5rem 0.6rem;
+    font-size: 0.82rem;
+  }
+
+  th {
+    padding: 0.5rem 0.6rem;
+    font-size: 0.82rem;
+  }
+}
