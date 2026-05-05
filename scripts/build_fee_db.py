@@ -165,12 +165,31 @@ def parse_csv_zip(raw_bytes):
 # ---- ファンドデータ読み込み ----
 
 def load_funds():
+    # つみたて投資枠
     js_path = ROOT / "data" / "funds.js"
     text = js_path.read_text(encoding="utf-8")
     m = re.search(r'const fundDatabase\s*=\s*(\[.*?\]);', text, re.DOTALL)
     if not m:
         sys.exit("funds.js から fundDatabase が読み取れません")
-    return json.loads(m.group(1))
+    tsumitate = json.loads(m.group(1))
+
+    # 成長投資枠（重複除外）
+    growth_path = ROOT / "data" / "growth_funds.js"
+    growth = []
+    if growth_path.exists():
+        gt = growth_path.read_text(encoding="utf-8")
+        gm = re.search(r'const growthFundDatabase\s*=\s*(\[.*?\]);', gt, re.DOTALL)
+        if gm:
+            tsu_names = {normalize_full(f["name"]) for f in tsumitate}
+            for f in json.loads(gm.group(1)):
+                if normalize_full(f["name"]) not in tsu_names:
+                    growth.append(f)
+
+    all_funds = tsumitate + growth
+    print(f"  つみたて投資枠: {len(tsumitate)} 件")
+    print(f"  成長投資枠（重複除く）: {len(growth)} 件")
+    print(f"  合計: {len(all_funds)} 件")
+    return all_funds
 
 
 # ---- メイン ----
